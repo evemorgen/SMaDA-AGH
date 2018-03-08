@@ -5,3 +5,4 @@ This repo *will* contain all things related to courses during first year of stud
 TOC:  
 1. [Modelling of Physical Systems](ModelingOfPhysicalSystems/README.md)
 2. [Computational Intelligence](ComputionalIntelligence/README.md)
+3. [Knowledge Representation and Reasoning](KnowledgeRepresentation/README.md)
