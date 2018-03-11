@@ -1,3 +1,12 @@
+# Advanced Statistics lab1
+
+## There were 2 things to be done on this lab:
+  - [Basic guide to R language by Dr. Mirka](as-lab1-rbasics.pdf)
+  - [More stuff by Dr. Krystian](lab1_more_stuff.pdf)
+
+
+## First part is done in here.
+
 1. Create a directory on the disk (the first letter of the name + surname). It will be your Working Directory.  
    - no point for doing that
 2. Run RStudio
