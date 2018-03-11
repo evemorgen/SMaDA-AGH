@@ -1,0 +1,7 @@
+#vim files
+**/*.swp
+**/*.swo
+
+#python cache stuff
+**/*.pyc
+**/*.pyo

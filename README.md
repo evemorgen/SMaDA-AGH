@@ -6,3 +6,4 @@ TOC:
 1. [Modelling of Physical Systems](ModelingOfPhysicalSystems/README.md)
 2. [Computational Intelligence](ComputionalIntelligence/README.md)
 3. [Knowledge Representation and Reasoning](KnowledgeRepresentation/README.md)
+4. [Advanced Statistics](AdvancedStatistics/README.md)
