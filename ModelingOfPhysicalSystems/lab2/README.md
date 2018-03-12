@@ -1,8 +1,8 @@
 ## Important stuff for this lab:  
   - [report pdf](lab-report-lab-1-2.pdf)
   - [report in latex](main.tex)
-  - [high res pictures from report]()
-  - [all the .m files]()
+  - [high res pictures from report](https://github.com/evemorgen/1yearSMADA/tree/master/ModelingOfPhysicalSystems/lab2/pictures)
+  - [all the .m files](https://github.com/evemorgen/1yearSMADA/tree/master/ModelingOfPhysicalSystems/lab2)
 
 ## Report guidelines:
 1. Write 1 - 2 sentences about aim of lab
