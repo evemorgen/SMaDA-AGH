@@ -13,17 +13,18 @@ function [] = square_mean(dims, num_of_movements, num_of_particles)
 
     if dims == 1
            plot(sum(x.^2)/num_of_parts');
-           figure;
-           histogram(x);
+           xlabel('timestamp');
+           ylabel('Square mean of displacement in 1d');
+           title(['1 dimension for ' num2str(num_of_parts) ' particles']);
        elseif dims == 2
            plot(sum(x.^2 + y.^2)/num_of_parts');
-           figure;
-           histogram2(x,y);
+           xlabel('timestamp');
+           ylabel('Square mean of displacement in 2d');
+           title(['2 dimensions for ' num2str(num_of_parts) ' particles']);
        elseif dims == 3
            plot(sum(x.^2 + y.^2 + z.^2)/num_of_parts');
-           figure;
-           hist3(x,y,z);
+           xlabel('timestamp');
+           ylabel('Square mean of displacement in 3d');
+           title(['3 dimensions for ' num2str(num_of_parts) ' particles']);
     end
-    ylabel('x coordinate');
-    xlabel('timestamp');
 end

@@ -1,11 +1,12 @@
 function [] = brownian(dims, num_of_movements, num_of_particles)
-   figure;
    for i = 1:num_of_particles
+       % initiaze variables
        N = num_of_movements;
        X(1) = 0;
        Y(1) = 0;
        Z(1) = 0;
 
+       % generate random vectors
        for i=2:N
            X(i) = X(i-1) + randn();
            Y(i) = Y(i-1) + randn();
