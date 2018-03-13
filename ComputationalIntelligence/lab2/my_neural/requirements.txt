@@ -1,0 +1,3 @@
+pandas
+xlrd
+singleton-decorator=1.0.0
