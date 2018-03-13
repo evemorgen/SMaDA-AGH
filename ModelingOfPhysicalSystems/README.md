@@ -9,3 +9,4 @@ Main tool used during classes is MATLAB (ugh)
 TOC:
   - [Lab 1: Brownian movements](lab1/README.md)
   - [Lab 2: More Brownian movements](lab2/README.md)
+  - [Lab 3: Heat transfer simulation](lab3/README.md)
