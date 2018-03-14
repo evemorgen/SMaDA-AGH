@@ -6,7 +6,7 @@ Lab website: <https://upel.agh.edu.pl/weaiib/mod/page/view.php?id=15601>
 ## Exc 1
 All objects are avaliable in [documents.json](documents.json) file.  
 To put them into couchdb curl query has been written:  
-```curl
+```bash
 curl -X POST $COUCH/pgalczynski -H'content-type: application/json' -d '{ \
 >   "date": "2018-03-14", \
 >   "subject": "We all gonna die like Hawking did today." \
@@ -16,7 +16,7 @@ and so on..
   
 ## Exc 2
 To create db another curl request has been prepared  
-```curl
+```bash
 curl -X PUT $COUCH/pgalczynski
 {"ok":true}
 ```
