@@ -7,3 +7,4 @@ TOC:
 2. [Computational Intelligence](ComputionalIntelligence/README.md)
 3. [Knowledge Representation and Reasoning](KnowledgeRepresentation/README.md)
 4. [Advanced Statistics](AdvancedStatistics/README.md)
+5, [Advanced Database Systems](AdvancedDatabaseSystems/README.md)
