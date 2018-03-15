@@ -5,3 +5,4 @@
 #python cache stuff
 **/*.pyc
 **/*.pyo
+**/__pycache__
