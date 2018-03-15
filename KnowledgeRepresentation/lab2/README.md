@@ -2,8 +2,7 @@
 # Lab 2: more constraint programming with miniZinc
 Lab webpage: <https://ai.ia.agh.edu.pl/wiki/en:dydaktyka:csp:lab1>
 
-##N Queens problem
-
+## N Queens problem
 ```
 %declare variables
 int: N=16;
