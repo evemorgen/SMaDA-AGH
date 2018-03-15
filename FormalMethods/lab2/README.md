@@ -10,7 +10,7 @@
   - no more constraints I guess?
 
 
-In team up with (Konrad)[https://github.com/najder-k], we came up with something like this:
+In team up with [Konrad](https://github.com/najder-k), we came up with something like this:
 1. Easy way
 2. Hard to read-and-understand-way
 
