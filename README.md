@@ -8,3 +8,4 @@ TOC:
 3. [Knowledge Representation and Reasoning](KnowledgeRepresentation/README.md)
 4. [Advanced Statistics](AdvancedStatistics/README.md)
 5. [Advanced Database Systems](AdvancedDatabaseSystems/README.md)
+6. [Formal Methods](FormalMethods/README.md)
