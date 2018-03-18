@@ -1,9 +1,9 @@
 TOC:
   - [PDF with lab content](lab2.pdf)
-  - [Part 1 - loading data from csv](#part-1-loading-data)
-  - [Part 2 - Operations on vectors](#part-2-vectorized-operations)
-  - [Part 3 - Subsetting data](#part-3-subsetting-data)
-  - [Part 4 - Control structures](#part-4-control-structures)
+  - [Part 1 - loading data from csv](#part-1---loading-data)
+  - [Part 2 - Operations on vectors](#part-2---vectorized-operations)
+  - [Part 3 - Subsetting data](#part-3---subsetting-data)
+  - [Part 4 - Control structures](#part-4---control-structures)
   - [Part 5 - Exercises](#part-5-exercises)
 
 
@@ -252,7 +252,7 @@ W poleceniu 'a + e':
   długość dłuszego obiektu nie jest wielokrotnością długości krótszego obiektu
 ```
 
-# Part 3 - Subsetting data
+## Part 3 - Subsetting data
 1. Create a vector animal as in the example below. Then subset this vector with first three and then last three characters.
 ```
 > animal <- c('m', 'o', 'n', 'k', 'e', 'y')
@@ -367,12 +367,12 @@ downloaded 2282 bytes
 [1] 1
 ```
 
-# Part 4 - Control structures
+## Part 4 - Control structures
 1. Analyze how this `for loop` works:
 2. Analyze how this `while loop` works:
 3. Analyze how below repeat loop works. Pay attention to the `if-else`, `next` and `break` structures.
 
-# Part 5 - Exercise
+## Part 5 - Exercise
 1. Suppose you want to determine the maximum inflammation for patient 5 across days three to seven. To do this you would extract the relevant subset from the data frame and calculate the maximum value. Which of the following lines of R code gives the correct answer?
   - `max(dat[5,])`
   - `max(dat[3:7, 5])`
