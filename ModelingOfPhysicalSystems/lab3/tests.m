@@ -1,6 +1,3 @@
-
-
-
 % plane variables
 outer_size = 25;                 % cm
 inner_size = 5;                  % cm
