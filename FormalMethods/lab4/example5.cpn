@@ -673,28 +673,7 @@ else {a=B,b=B}</text>
         </value>
       </option>
     </options>
-    <binders>
-      <cpnbinder id="ID2222"
-                 x="261"
-                 y="145"
-                 width="600"
-                 height="400">
-        <sheets>
-          <cpnsheet id="ID2215"
-                    panx="-6.000000"
-                    pany="-5.000000"
-                    zoom="1.000000"
-                    instance="ID2149">
-            <zorder>
-              <position value="0"/>
-            </zorder>
-          </cpnsheet>
-        </sheets>
-        <zorder>
-          <position value="0"/>
-        </zorder>
-      </cpnbinder>
-    </binders>
+    <binders/>
     <monitorblock name="Monitors"/>
     <IndexNode expanded="true">
       <IndexNode expanded="false"/>
