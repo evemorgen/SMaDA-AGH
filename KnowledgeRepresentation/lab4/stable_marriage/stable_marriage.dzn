@@ -1,0 +1,34 @@
+% Number of women and men to be matched
+n = 10;
+
+% Names, old Polish style, just for fun
+m_names = [ "Włościbór", "Bojomir","Tworzymir", "Pakosław", "Polemir", "Spitymir", "Sławogost", "Cerpimił", "Dzierżysław", "Domogost" ];
+w_names = [ "Świetochna", "Radosta", "Niemira", "Krasnoroda", "Żytosława", "Dąbrówka", "Libusza", "Włastymira", "Bogna", "Tomira"];
+
+% m_ranks[i,j] = how much i'th woman is liked by the j'th man, lower the better
+m_ranks = array2d(1..n ,1..n,
+  [ 5, 3, 10, 9, 1, 7, 8, 7, 6, 10, 
+    4, 2, 4, 6, 4, 3, 3, 2, 5, 4, 
+    8, 1, 1, 2, 10, 5, 9, 8, 3, 7, 
+    10, 6, 7, 10, 7, 10, 7, 10, 1, 2, 
+    1, 4, 8, 5, 9, 2, 6, 9, 8, 3, 
+    6, 9, 3, 3, 8, 6, 4, 3, 2, 9, 
+    7, 10, 5, 7, 3, 4, 1, 6, 9, 6, 
+    3, 8, 9, 1, 5, 8, 10, 5, 4, 1, 
+    9, 5, 2, 8, 6, 9, 2, 4, 10, 8, 
+    2, 7, 6, 4, 2, 1, 5, 1, 7, 5, 
+]);
+
+% w_ranks[i,j] = how much i'th man is liked by the j'th woman, lower the better
+w_ranks = array2d(1..n ,1..n,
+  [ 2,  3,  8,  6,  1,  8,  9,  9,  2,  4,  
+    9,  10,  10,  3,  2,  4,  8,  5,  8,  1,  
+    10,  4,  5,  4,  10,  9,  4,  7,  7,  6,  
+    4,  2,  3,  9,  8,  2,  6,  8,  3,  8,  
+    8,  7,  9,  5,  9,  10,  5,  1,  4,  2,  
+    7,  5,  7,  2,  7,  5,  10,  3,  5,  10,  
+    5,  9,  4,  7,  5,  7,  2,  10,  1,  7,  
+    3,  1,  6,  1,  3,  3,  1,  4,  9,  9,  
+    1,  6,  1,  8,  6,  1,  3,  6,  10,  5,  
+    6,  8,  2,  10,  4,  6,  7,  2,  6,  3,  
+]);
