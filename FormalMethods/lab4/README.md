@@ -19,3 +19,7 @@ Weird ML language syntax:
     - `andalso`,
     - `orelse`
   - documentation is avaliable at <http://cpntools.org/2018/01/16/>
+
+Exercise:
+  - Refactor traffic lights model to use if and case statements, functions and stuff
+  - solution: [traffic.cpn](traffic.cpn)
