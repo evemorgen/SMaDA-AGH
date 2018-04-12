@@ -12,7 +12,8 @@ Hierarchy - How it works:
 
 Examples:
   - [Example 1 - create hierarchy from group](example1.cpn)
+  - [Example 2 - ???](example2.cpn)
 
 Exercises:
-  - [Exc 1. Change data types to use record instead of product](simple-protocol-record.cpn)
-  - [Exc 2. Change data types to use union instead of record (one tyoe to rule them all)](simple-protocol-union.cpn)
+  - [Exc 1. Change data types to use record instead of product](simple_protocol_record.cpn)
+  - [Exc 2. Change data types to use union instead of record (one tyoe to rule them all)](simple_protocol_union.cpn)
