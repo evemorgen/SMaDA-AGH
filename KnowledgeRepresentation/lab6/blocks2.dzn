@@ -1,0 +1,32 @@
+n_blocks = 5;
+
+% Table = 0
+% a = 1;
+% b = 2;
+% c = 3;
+% d = 4;
+% e = 5;
+
+% Initial state:
+%
+%  E
+%  D
+%  C
+%  B
+%  A
+% ---
+%              A  B  C  D  E
+initial_loc = [0, 1, 2, 3, 4];
+
+% Goal state:
+%
+%  A
+%  B
+%  C
+%  D
+%  E
+% ---
+%            A  B  C  D  E
+final_loc = [2, 3, 4, 5, 0];
+
+n_steps = 6;

@@ -1,0 +1,26 @@
+n_blocks = 3;
+
+%Table = 0
+%a = 1;
+%b = 2;
+%c = 3;
+
+% Initial state:
+%
+%  C
+%  A
+%  B
+% ---
+%              A  B  C
+initial_loc = [2, 0, 1];
+
+% Goal state:
+%
+%  A
+%  B
+%  C
+% ---
+%            A  B  C
+final_loc = [2, 3, 0];
+
+n_steps = 10; % increase maximal length
