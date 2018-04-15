@@ -33,6 +33,7 @@ postgres=# explain select * from orders where composition_id = 'buk1 ';
    Filter: (composition_id = 'buk1 '::bpchar)
 (2 rows)
 ```  
+
     - [Add a hash-based index](https://www.postgresql.org/docs/9.1/static/sql-createindex.html) which can accelerate the aforementioned query to the orders table. Take note of the plan and execution plan.
 ```
 postgres=# create index composition_id_hash_idx on orders using hash (composition_id);
@@ -46,6 +47,7 @@ postgres=# explain select * from orders where composition_id = 'buk1 ';
          Index Cond: (composition_id = 'buk1 '::bpchar)
 (4 rows)
 ```  
+
     - we are using `=` operator, when checking for `buk1` because `hash index` can only handle check for equality
 
   - B-tree indexes
@@ -64,6 +66,7 @@ postgres=# explain select * from orders where composition_id = 'buk1 ';
          Index Cond: (composition_id = 'buk1 '::bpchar)
 (4 rows)
 ```  
+
     - Execute a query displaying orders of all compositions with IDs beginning with letters appearing before the letter 'b' in the alphabet. Is the index in use? - YEP IT IS
 ```
 postgres=# explain select * from orders where composition_id < 'c';
@@ -74,6 +77,7 @@ postgres=# explain select * from orders where composition_id < 'c';
    ->  Bitmap Index Scan on composition_id_btree_idx  (cost=0.00..38.91 rows=1950 width=0)
          Index Cond: (composition_id < 'c'::bpchar)
 ```  
+
     - Run another query, displaying the remaining orders (beginning with 'b' and so on). Is the index in use now? - NOPE IT IS NOT
 ```
 postgres=# explain select * from orders where composition_id > 'c';
@@ -83,6 +87,7 @@ postgres=# explain select * from orders where composition_id > 'c';
    Filter: (composition_id > 'c'::bpchar)
 (2 rows)
 ```  
+
     - Try forcing the use of indexes by switching the enable_seqscan parameter:
 ```
 postgres=# SET ENABLE_SEQSCAN TO OFF;
@@ -96,4 +101,5 @@ postgres=# explain select * from orders where composition_id > 'c';
          Index Cond: (composition_id > 'c'::bpchar)
 (4 rows)
 ```  
+
     - This will "encourage" PostgreSQL to use indexes – this kind of optimisation may be useful when using mass storage with short seek times, such as SSD drives. Repeat the two queries and compare their execution plans and times. YEAH, THATS COOL
