@@ -21,10 +21,11 @@
 ## 2. Meet my friends:
   - ANALYZE - this command help Postgres to learn about your data, and optimize its queries against it. We can analyze `tables` or `columns`. [Docs](https://www.postgresql.org/docs/9.1/static/sql-analyze.html)
   - EXPLAIN - shows us query plan - that is how postgres handles provided query, what indexes it uses, estimates time etc. [Docs](https://www.postgresql.org/docs/9.1/static/using-explain.html)
+  - when typing `explain analyze ...` - postgres will tell you how much time query took
 
 ## 3. Jump into it:
 1. Hash-based indexes 
-  - Execute a query which displays all orders for the buk1 composition. Check the execution plan and take note of the execution times.  
+  - Execute a query which displays all orders for the `buk1` composition. Check the execution plan and take note of the execution times.  
 ```
 postgres=# explain select * from orders where composition_id = 'buk1 ';
                         QUERY PLAN
@@ -68,7 +69,7 @@ postgres=# explain select * from orders where composition_id = 'buk1 ';
 (4 rows)
 ```  
 
-- Execute a query displaying orders of all compositions with IDs beginning with letters appearing before the letter 'b' in the alphabet. Is the index in use? - YEP IT IS
+- Execute a query displaying orders of all compositions with IDs beginning with letters appearing before the letter 'b' in the alphabet. Is the index in use? - **YEP IT IS**
 ```
 postgres=# explain select * from orders where composition_id < 'c';
                                         QUERY PLAN
