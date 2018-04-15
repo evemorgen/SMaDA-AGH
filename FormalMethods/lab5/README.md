@@ -1,10 +1,10 @@
 
 
 Cool stuff:
-  - haraki is about replacing subnet with one transition
+  - hierarchy is about replacing subnet with one transition
   - subnets always connect with transition
-  - haraki (subnet) connects with "sockets" 
-  - in haraki we need to define "port" that socket corresponds to
+  - hierarchy (subnet) connects with "sockets" 
+  - in hierarchy we need to define "port" that socket corresponds to
  
 Hierarchy - How it works:
   - to create group chose tool from "view"
@@ -12,6 +12,7 @@ Hierarchy - How it works:
 
 Examples:
   - [Example 1 - create hierarchy from group](example1.cpn)
+  - [Example 2 - simple protocol](simple-protocol.cpn)
 
 Exercises:
   - [Exc 1. Change data types to use record instead of product](simple-protocol-record.cpn)
