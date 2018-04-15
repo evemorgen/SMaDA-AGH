@@ -9,3 +9,4 @@ TOC:
 4. [Advanced Statistics](AdvancedStatistics/README.md)
 5. [Advanced Database Systems](AdvancedDatabaseSystems/README.md)
 6. [Formal Methods](FormalMethods/README.md)
+7. [Model Checking](ModelChecking/README.md)

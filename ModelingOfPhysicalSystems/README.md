@@ -10,3 +10,5 @@ TOC:
   - [Lab 1: Brownian movements](lab1/README.md)
   - [Lab 2: More Brownian movements](lab2/README.md)
   - [Lab 3: Heat transfer simulation](lab3/README.md)
+  - [Lab 4: Heat transfer simulation #2](lab4/README.md)
+  - [Lab 5: Mean earth temperature](lab5/README.md)
