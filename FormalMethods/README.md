@@ -5,4 +5,5 @@ Labs:
   - [Lab 2: Shibuya crossing model with petri nets](lab2/README.md)
   - [Lab 3: Shibuya crossing model with time based colored petri nets](lab3/README.md)
   - [Lab 4: Refactor traffic lights with if and case statements](lab4/README.md)
-  - [Lab 5: Haraki stuff](lab5/README.md)
+  - [Lab 5: Hierarchy stuff](lab5/README.md)
+  - [Lab 6: First real life example](lab6/README.md)
