@@ -1,0 +1,84 @@
+CPN Tools state space report for:
+/cygdrive/C/Users/evemorgen/1yearSMADA/FormalMethods/lab6/bad_easier_crossing.cpn
+Report generated: Mon Apr 23 23:00:17 2018
+
+
+ Statistics
+------------------------------------------------------------------------
+
+  State Space
+     Nodes:  5
+     Arcs:   6
+     Secs:   0
+     Status: Full
+
+  Scc Graph
+     Nodes:  2
+     Arcs:   1
+     Secs:   0
+
+
+ Boundedness Properties
+------------------------------------------------------------------------
+
+  Best Integer Bounds
+                             Upper      Lower
+     model'Cars1 1           3          3
+     model'Cars2 1           3          3
+     model'Light1 1          1          1
+     model'Light2 1          1          1
+
+  Best Upper Multi-set Bounds
+     model'Cars1 1       3`C
+     model'Cars2 1       3`C
+     model'Light1 1      1`R++
+1`Y++
+1`G
+     model'Light2 1      1`R++
+1`Y++
+1`G
+
+  Best Lower Multi-set Bounds
+     model'Cars1 1       3`C
+     model'Cars2 1       3`C
+     model'Light1 1      empty
+     model'Light2 1      empty
+
+
+ Home Properties
+------------------------------------------------------------------------
+
+  Home Markings
+     [4]
+
+
+ Liveness Properties
+------------------------------------------------------------------------
+
+  Dead Markings
+     [4]
+
+  Dead Transition Instances
+     None
+
+  Live Transition Instances
+     None
+
+
+ Fairness Properties
+------------------------------------------------------------------------
+
+  Impartial Transition Instances
+     model'Cars_passing1 1
+
+  Fair Transition Instances
+     model'Cars_passing2 1
+     model'Light_change2 1
+
+  Just Transition Instances
+     model'Bad_transition1 1
+     model'Bad_transition2 1
+     model'Light_change1 1
+
+  Transition Instances with No Fairness
+     None
