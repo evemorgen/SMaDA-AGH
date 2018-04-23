@@ -9,10 +9,10 @@ Things to do:
 
 Solution:
   - working stuff:
-      - (easier_crossing.cpn - working example)[easier_crossing.cpn]
-      - (easier crossing state space)[ec_ss.png]
-      - (easier crossing report - 0 dead markings)[ec_report]
+      - [easier_crossing.cpn - working example](easier_crossing.cpn)
+      - [easier crossing state space](ec_ss.png)
+      - [easier crossing report - 0 dead markings](ec_report)
   - not working stuff:
-      - (bad_easier_crossing.cpn - example with 2 bad transitions)[bad_easier_crossing.cpn]
-      - (bad easier crossing state space)[bec_ss.png]
-      - (bad easier crossing report - 4 dead markings)[bec_report]
+      - [bad_easier_crossing.cpn - example with 2 bad transitions](bad_easier_crossing.cpn)
+      - [bad easier crossing state space](bec_ss.png)
+      - [bad easier crossing report - 4 dead markings](bec_report)
