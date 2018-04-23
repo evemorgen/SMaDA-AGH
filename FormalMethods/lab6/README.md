@@ -8,6 +8,11 @@ Things to do:
   - and then break it with some stupid "mistake" (lecturer won't accept obvious one, lol)
 
 Solution:
-  - (easier_crossing.cpn - working example)[easier_crossing.cpn]
-  - (easier crossing state space)
-  - (easier crossing report)[ec_report]
+  - working stuff:
+      - (easier_crossing.cpn - working example)[easier_crossing.cpn]
+      - (easier crossing state space)[ec_ss.png]
+      - (easier crossing report - 0 dead markings)[ec_report]
+  - not working stuff:
+      - (bad_easier_crossing.cpn - example with 2 bad transitions)[bad_easier_crossing.cpn]
+      - (bad easier crossing state space)[bec_ss.png]
+      - (bad easier crossing report - 4 dead markings)[bec_report]
