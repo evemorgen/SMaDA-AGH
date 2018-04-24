@@ -1,5 +1,6 @@
 % TAYLOR - QUICKEST METHOD
 
+% define parameters
 len     = 100;    % m
 wid     = 5;      % m
 dep     = 1;      % m
@@ -21,14 +22,14 @@ c = [];
 % initial condition
 for j = 1:(len/dx)
     if j*dx == inject
-        c(1,j) = tracer;
+        c(1,j) = tracer/(dx*dep*wid);
     else
         c(1, j) = 0;
     end
 end
-
-% calculate real time
-for i = 1:(t/dt)
+sums = [];
+% calculate in real time
+for i = 1:nt
     for j = 3:(len/dx)-1
         c(i+1, j) = c(i, j) + ...
             (Cd*(1-Ca) - (Ca/6)*(Ca^2 - 3*Ca + 2))*c(i,j+1) - ...
@@ -36,7 +37,17 @@ for i = 1:(t/dt)
             (Cd*(1 - 3*Ca) - (Ca/2)*(Ca^2 - Ca - 2))*c(i,j-1) + ...
             (Cd*Ca + (Ca/6)*(Ca^2 - 1))*c(i,j-2);
     end
-    plot(c(i,:));
+    
+    % plot results
+    %subplot(2,1,1);
+    %plot(1:(len/dx), c(i,:));
+    sums(i) = sum(c(i,:));
+    %xlabel('t');
+    %ylabel('c(t)');
+    %subplot(2,1,2);
+    %plot(c(:,measure/dx));
+    %xlabel('x');
+    %ylabel('c(x)');
     drawnow;
     pause(0.1);
 end
