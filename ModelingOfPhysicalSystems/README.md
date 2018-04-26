@@ -12,3 +12,5 @@ TOC:
   - [Lab 3: Heat transfer simulation](lab3/README.md)
   - [Lab 4: Heat transfer simulation #2](lab4/README.md)
   - [Lab 5: Mean earth temperature](lab5/README.md)
+  - [Lab 6: Taylor model](lab6/README.md)
+  - [Lab 7: Application of box models to Upper Danube catchment simulation](lab7/README.md)
