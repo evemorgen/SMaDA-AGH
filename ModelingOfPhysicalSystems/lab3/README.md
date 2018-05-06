@@ -1,9 +1,15 @@
 
 # Lab 3 and 4 - Heat transfer simulation
 
-Important stuff:
+Table of contents:
+  - [lab report pdf](report/lab-report-heat-transfer.pdf)
+  - [lab report source tex](report/report.tex)
+  - [lab report pics](report/)
   - [lab description pdf](L02.pdf)
-  - [Pic with Dsc notes](board.jpg)
+  - [Pic of Dsc notes](board.jpg)
+  - [report m file](report.m)
+
+Important stuff:
   - B = 5x5cm
   - A = 20cm
   - TODO: calculate time to stabilize system  - TODO: find relationship between time resolution and oscylation

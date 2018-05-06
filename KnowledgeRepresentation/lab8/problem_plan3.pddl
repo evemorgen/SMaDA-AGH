@@ -1,0 +1,6 @@
+﻿(define (problem plan3)
+  (:domain blocksworld)
+  (:objects a - isBlock b - isBlock c - isBlock)
+  (:init (on c a) (ontable a) (ontable b) (clear b) (clear c) (handempty))
+  (:goal (and (on b c) (on a b)))
+)

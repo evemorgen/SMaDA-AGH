@@ -7,3 +7,5 @@ TOC:
   - [Lab 4: Redundand constraints](lab4/README.md)
   - [Lab 5: Solver configuration](lab5/README.md)
   - [Lab 6: Automated Planning: 101](lab6/README.md)
+  - [Lab 7: The test](lab7/README.md)
+  - [Lab 8: Strips and PDDL](lab8/README.md)
