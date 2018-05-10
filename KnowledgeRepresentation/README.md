@@ -9,3 +9,4 @@ TOC:
   - [Lab 6: Automated Planning: 101](lab6/README.md)
   - [Lab 7: The test](lab7/README.md)
   - [Lab 8: Strips and PDDL](lab8/README.md)
+  - [Lab 9: Automated Planning: Fluents](lab9/README.md)
