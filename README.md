@@ -10,3 +10,4 @@ TOC:
 5. [Advanced Database Systems](AdvancedDatabaseSystems/README.md)
 6. [Formal Methods](FormalMethods/README.md)
 7. [Model Checking](ModelChecking/README.md)
+8. [Global society & international institutions](GlobalSocietyAndInternationalInstitutions/README.md)
