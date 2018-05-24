@@ -1,0 +1,28 @@
+% maxwell is a student
+student(maxwell). 
+% joan also is a student
+student(joan).
+
+% there is 50% chance that handwriting is illegible
+0.5::handwriting(Name, illegible);
+% there is 40% chance that handwriting is partly_legible
+0.4::handwriting(Name, partly_legible);
+% there is 10% chance that handwriting is legible and it belongs to student(Name)
+0.1::handwriting(Name, legible ):- student(Name).
+% ??
+0.5::heads(Name):- student(Name).
+
+% there is 40% chance that student knows the answare
+0.4::knows_the_answer(Name):- student(Name).
+
+
+0.3::pass_exam(Student) :-handwriting(Student, illegible), heads(Student).
+0.7::pass_exam(Student) :-handwriting(Student, illegible), knows_the_answer(Student).
+
+0.3::pass_exam(Student) :- handwriting(Student, partly_legible), \+ knows_the_answer(Student).
+0.7::pass_exam(Student) :- handwriting(Student, partly_legible), knows_the_answer(student).
+
+0.3::pass_exam(Student) :-handwriting(Student, legible), \+ knows_the_answer(Student).
+0.7::pass_exam(Student) :-handwriting(Student, legible), knows_the_answer(Student).
+
+query(handwriting(maxwell, partly_legible)).
