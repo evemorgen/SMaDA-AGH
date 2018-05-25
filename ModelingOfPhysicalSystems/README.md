@@ -7,7 +7,7 @@ Logins are based on student surname prefixed with _v_ for some reason.
 Main tool used during classes is MATLAB (ugh)
 
 TOC:
-  - [Project: multibody collisions](project/README.md)
+  - [Project: multibody collisions](https://github.com/evemorgen/physics_assignment)
   - [Lab 1: Brownian movements](lab2/README.md)
   - [Lab 2: More Brownian movements](lab2/README.md)
   - [Lab 3: Heat transfer simulation](lab3/README.md)
