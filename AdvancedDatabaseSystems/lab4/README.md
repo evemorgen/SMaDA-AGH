@@ -1,17 +1,17 @@
 # ADS - Spatial Data Postgis
 
-## Project desctiption
-  Spatial data version control system for Neo4j:
-    - git for neo4j changesets
-    - if we can handle spatial data without writing java code
-    - shell scripts are FINE, no gui is required, just md pages with docs
-    - assign things to existing "ways" (roads?) and resolve conflicts when merging new changeset,if there was lamp on a street and:
-        - it gets split - lamp should - assign to both with "temporary" property with warning for user that one have to resolve this conflict (ideal way would be to check by geometry)
-        - when merging with another road, it should assign lamp to new one
-        - when road deleted, all objects should be deleted recursively
-
-
-## Lab dump
+## Project desctiption  
+  Spatial data version control system for Neo4j:  
+    - git for neo4j changesets  
+    - if we can handle spatial data without writing java code  
+    - shell scripts are FINE, no gui is required, just md pages with docs  
+    - assign things to existing "ways" (roads?) and resolve conflicts when merging new changeset,if there was lamp on a street and:  
+        - it gets split - lamp should - assign to both with "temporary" property with warning for user that one have to resolve this conflict (ideal way would be to check by geometry)  
+        - when merging with another road, it should assign lamp to new one  
+        - when road deleted, all objects should be deleted recursively  
+  
+  
+## Lab dump  
 
 1. Log into server:
 ```
