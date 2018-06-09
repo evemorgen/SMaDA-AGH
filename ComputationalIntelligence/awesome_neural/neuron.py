@@ -1,30 +1,32 @@
 from math import exp
+from functools import lru_cache
 
 from utils import NamePicker, constants
 from math import tanh
 from random import uniform
 
 
-#def activation(value):
-#    beta = constants['beta']
-#    return 1.0 / (1 + exp(-1 * beta * value))
+def activation(value):
+    beta = constants['beta']
+    return 1.0 / (1 + exp(-1 * beta * value))
 
 
 #def activation(value):
 #    beta = constants['beta']
 #    return 2.0 / (1.0 + exp(-1.0 * beta * value))
 
-def activation(value):
-    return tanh(constants['beta'] * value)
+#def activation(value):
+#    return tanh(constants['beta'] * value)
 
 
 class Connection:
-    def __init__(self, one, another, weight=constants['weight']):
+    def __init__(self, one, another, weight=0.1):
         self.one = one
         self.another = another
         #self.weight = weight
-        self.weight = uniform(constants['weight'], 0)
+        self.weight = uniform(constants['weight_to'], constants['weight_from'])
 
+    @lru_cache(maxsize=None)
     def exist(self, one, another):
         return (self.one == one and self.another == another) or \
                (self.one == another and self.another == one)
@@ -121,6 +123,13 @@ class Neuron:
             round(self.value, 2),
             round(self.delta, 2)
         )
+
+    def dump_neuron(self):
+        return {
+            'class': self.__class__.__name__,
+            'name': self.name,
+
+        }
 
 
 class InputNeuron(Neuron):

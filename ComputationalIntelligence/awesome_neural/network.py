@@ -1,12 +1,25 @@
+import yaml
+from time import time
+from distutils.dist import strtobool
+
 from texttable import Texttable
 
 from layer import OutputLayer
+from utils import constants
+
+
+
+def load_network(filename):
+    with open(filename, 'r') as file:
+        network = yaml.load(file, yaml.Loader)
+    return network
 
 
 class Network:
     def __init__(self, layers):
         self.layers = layers
         self.data = None
+        self.constants = constants
 
     def connect(self):
         for idx in range(len(self.layers) - 1):
@@ -16,26 +29,19 @@ class Network:
         self.data = data
 
     def print_data(self):
-        table = Texttable()
-        table.set_cols_align(["l", "l", "l"])
-        table.set_cols_valign(["m", "m", "m"])
-        table.add_row(
-            ["In%s" % n for n in range(len(self.data[0]['inputs']))] +
-            ["Out%s" % n for n in range(len(self.data[0]['outputs']))]
+        self.print_io(
+            [input['inputs'] for input in self.data],
+            [output['outputs'] for output in self.data]
         )
-        for row in self.data:
-            table.add_row(row['inputs'] + row['outputs'])
 
-        print(table.draw())
-
-    def print_io(self, inputs, outputs):
+    def print_io(self, inputs, outputs, input_names=None, output_names=None):
+        number_of_columns = len(inputs[0]) + len(outputs[0])
         table = Texttable()
-        table.set_cols_align(["l", "l", "l"])
-        table.set_cols_valign(["m", "m", "m"])
-        table.add_row(
-            ["In%s" % n for n in range(len(inputs[0]))] +
-            ["Out%s" % n for n in range(len(outputs[0]))]
-        )
+        table.set_cols_align(["l" for _ in range(number_of_columns)])
+        table.set_cols_valign(["m" for _ in range(number_of_columns)])
+        input_names = input_names or ["In%s" % n for n in range(len(inputs[0]))]
+        output_names = output_names or ["Out%s" % n for n in range(len(outputs[0]))]
+        table.add_row(input_names + output_names)
         for i, o in zip(inputs, outputs):
             table.add_row(i + o)
 
@@ -67,14 +73,28 @@ class Network:
         self.layers[-1].set_output(outputs)
 
     def learn(self, times=1):
-        for _ in range(times):
+        start_time = time()
+        for n in range(times):
             for data in self.data:
                 self.next_dataset(data['inputs'], data['outputs'])
                 self.stimulate()
                 self.backpropagate()
+            if n % (times/10) == 0:
+                print("done course no #{} in {}s".format(n, time() - start_time))
 
     def test(self, input):
         self.next_dataset(input, [])
         self.stimulate()
         return [output.get_value() for output in self.layers[-1].neurons]
+
+    def dump_network(self, filename, prompt=False):
+        if prompt and not strtobool(input("Do you want to save network? [y/n]\n")):
+            return
+        with open(filename, 'w') as file:
+            yaml.dump(
+                self,
+                file,
+                width=80,
+                default_flow_style=False
+            )
 

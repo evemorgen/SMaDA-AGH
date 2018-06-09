@@ -1,3 +1,4 @@
-weight: 4
-learning_factor: 0.3
-beta: 0.5
+weight_to: 5
+weight_from: -5
+learning_factor: 0.1
+beta: 1

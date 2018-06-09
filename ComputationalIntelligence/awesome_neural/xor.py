@@ -1,4 +1,4 @@
-
+import yaml
 
 from layer import Layer, InputLayer, OutputLayer
 from network import Network
@@ -34,3 +34,5 @@ network.print_io(i, o)
 
 print("------ weights -----")
 network.print_weights()
+
+network.dump_network('data/trained_networks/xor-dump2.yaml', prompt=True)
