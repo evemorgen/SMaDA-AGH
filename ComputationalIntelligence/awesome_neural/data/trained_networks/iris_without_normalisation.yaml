@@ -1,0 +1,1299 @@
+!!python/object:network.Network
+constants:
+  activation: sigmoid
+  beta: 1
+  learning_factor: 0.1
+  weight_from: -5
+  weight_to: 5
+data:
+- inputs:
+  - 5.1
+  - 3.5
+  - 1.4
+  - 0.2
+  outputs: &id001
+  - 0
+  - 0
+  - 1
+- inputs:
+  - 4.9
+  - 3.0
+  - 1.4
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 4.7
+  - 3.2
+  - 1.3
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 4.6
+  - 3.1
+  - 1.5
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 5.0
+  - 3.6
+  - 1.4
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 5.4
+  - 3.9
+  - 1.7
+  - 0.4
+  outputs: *id001
+- inputs:
+  - 4.6
+  - 3.4
+  - 1.4
+  - 0.3
+  outputs: *id001
+- inputs:
+  - 5.0
+  - 3.4
+  - 1.5
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 4.4
+  - 2.9
+  - 1.4
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 4.9
+  - 3.1
+  - 1.5
+  - 0.1
+  outputs: *id001
+- inputs:
+  - 5.4
+  - 3.7
+  - 1.5
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 4.8
+  - 3.4
+  - 1.6
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 4.8
+  - 3.0
+  - 1.4
+  - 0.1
+  outputs: *id001
+- inputs:
+  - 4.3
+  - 3.0
+  - 1.1
+  - 0.1
+  outputs: *id001
+- inputs:
+  - 5.8
+  - 4.0
+  - 1.2
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 5.7
+  - 4.4
+  - 1.5
+  - 0.4
+  outputs: *id001
+- inputs:
+  - 5.4
+  - 3.9
+  - 1.3
+  - 0.4
+  outputs: *id001
+- inputs:
+  - 5.1
+  - 3.5
+  - 1.4
+  - 0.3
+  outputs: *id001
+- inputs:
+  - 5.7
+  - 3.8
+  - 1.7
+  - 0.3
+  outputs: *id001
+- inputs:
+  - 5.1
+  - 3.8
+  - 1.5
+  - 0.3
+  outputs: *id001
+- inputs:
+  - 5.4
+  - 3.4
+  - 1.7
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 5.1
+  - 3.7
+  - 1.5
+  - 0.4
+  outputs: *id001
+- inputs:
+  - 4.6
+  - 3.6
+  - 1.0
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 5.1
+  - 3.3
+  - 1.7
+  - 0.5
+  outputs: *id001
+- inputs:
+  - 4.8
+  - 3.4
+  - 1.9
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 5.0
+  - 3.0
+  - 1.6
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 5.0
+  - 3.4
+  - 1.6
+  - 0.4
+  outputs: *id001
+- inputs:
+  - 5.2
+  - 3.5
+  - 1.5
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 5.2
+  - 3.4
+  - 1.4
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 4.7
+  - 3.2
+  - 1.6
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 4.8
+  - 3.1
+  - 1.6
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 5.4
+  - 3.4
+  - 1.5
+  - 0.4
+  outputs: *id001
+- inputs:
+  - 5.2
+  - 4.1
+  - 1.5
+  - 0.1
+  outputs: *id001
+- inputs:
+  - 5.5
+  - 4.2
+  - 1.4
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 4.9
+  - 3.1
+  - 1.5
+  - 0.1
+  outputs: *id001
+- inputs:
+  - 5.0
+  - 3.2
+  - 1.2
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 5.5
+  - 3.5
+  - 1.3
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 4.9
+  - 3.1
+  - 1.5
+  - 0.1
+  outputs: *id001
+- inputs:
+  - 4.4
+  - 3.0
+  - 1.3
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 5.1
+  - 3.4
+  - 1.5
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 5.0
+  - 3.5
+  - 1.3
+  - 0.3
+  outputs: *id001
+- inputs:
+  - 4.5
+  - 2.3
+  - 1.3
+  - 0.3
+  outputs: *id001
+- inputs:
+  - 4.4
+  - 3.2
+  - 1.3
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 5.0
+  - 3.5
+  - 1.6
+  - 0.6
+  outputs: *id001
+- inputs:
+  - 5.1
+  - 3.8
+  - 1.9
+  - 0.4
+  outputs: *id001
+- inputs:
+  - 4.8
+  - 3.0
+  - 1.4
+  - 0.3
+  outputs: *id001
+- inputs:
+  - 5.1
+  - 3.8
+  - 1.6
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 4.6
+  - 3.2
+  - 1.4
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 5.3
+  - 3.7
+  - 1.5
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 5.0
+  - 3.3
+  - 1.4
+  - 0.2
+  outputs: *id001
+- inputs:
+  - 7.0
+  - 3.2
+  - 4.7
+  - 1.4
+  outputs: &id002
+  - 0
+  - 1
+  - 0
+- inputs:
+  - 6.4
+  - 3.2
+  - 4.5
+  - 1.5
+  outputs: *id002
+- inputs:
+  - 6.9
+  - 3.1
+  - 4.9
+  - 1.5
+  outputs: *id002
+- inputs:
+  - 5.5
+  - 2.3
+  - 4.0
+  - 1.3
+  outputs: *id002
+- inputs:
+  - 6.5
+  - 2.8
+  - 4.6
+  - 1.5
+  outputs: *id002
+- inputs:
+  - 5.7
+  - 2.8
+  - 4.5
+  - 1.3
+  outputs: *id002
+- inputs:
+  - 6.3
+  - 3.3
+  - 4.7
+  - 1.6
+  outputs: *id002
+- inputs:
+  - 4.9
+  - 2.4
+  - 3.3
+  - 1.0
+  outputs: *id002
+- inputs:
+  - 6.6
+  - 2.9
+  - 4.6
+  - 1.3
+  outputs: *id002
+- inputs:
+  - 5.2
+  - 2.7
+  - 3.9
+  - 1.4
+  outputs: *id002
+- inputs:
+  - 5.0
+  - 2.0
+  - 3.5
+  - 1.0
+  outputs: *id002
+- inputs:
+  - 5.9
+  - 3.0
+  - 4.2
+  - 1.5
+  outputs: *id002
+- inputs:
+  - 6.0
+  - 2.2
+  - 4.0
+  - 1.0
+  outputs: *id002
+- inputs:
+  - 6.1
+  - 2.9
+  - 4.7
+  - 1.4
+  outputs: *id002
+- inputs:
+  - 5.6
+  - 2.9
+  - 3.6
+  - 1.3
+  outputs: *id002
+- inputs:
+  - 6.7
+  - 3.1
+  - 4.4
+  - 1.4
+  outputs: *id002
+- inputs:
+  - 5.6
+  - 3.0
+  - 4.5
+  - 1.5
+  outputs: *id002
+- inputs:
+  - 5.8
+  - 2.7
+  - 4.1
+  - 1.0
+  outputs: *id002
+- inputs:
+  - 6.2
+  - 2.2
+  - 4.5
+  - 1.5
+  outputs: *id002
+- inputs:
+  - 5.6
+  - 2.5
+  - 3.9
+  - 1.1
+  outputs: *id002
+- inputs:
+  - 5.9
+  - 3.2
+  - 4.8
+  - 1.8
+  outputs: *id002
+- inputs:
+  - 6.1
+  - 2.8
+  - 4.0
+  - 1.3
+  outputs: *id002
+- inputs:
+  - 6.3
+  - 2.5
+  - 4.9
+  - 1.5
+  outputs: *id002
+- inputs:
+  - 6.1
+  - 2.8
+  - 4.7
+  - 1.2
+  outputs: *id002
+- inputs:
+  - 6.4
+  - 2.9
+  - 4.3
+  - 1.3
+  outputs: *id002
+- inputs:
+  - 6.6
+  - 3.0
+  - 4.4
+  - 1.4
+  outputs: *id002
+- inputs:
+  - 6.8
+  - 2.8
+  - 4.8
+  - 1.4
+  outputs: *id002
+- inputs:
+  - 6.7
+  - 3.0
+  - 5.0
+  - 1.7
+  outputs: *id002
+- inputs:
+  - 6.0
+  - 2.9
+  - 4.5
+  - 1.5
+  outputs: *id002
+- inputs:
+  - 5.7
+  - 2.6
+  - 3.5
+  - 1.0
+  outputs: *id002
+- inputs:
+  - 5.5
+  - 2.4
+  - 3.8
+  - 1.1
+  outputs: *id002
+- inputs:
+  - 5.5
+  - 2.4
+  - 3.7
+  - 1.0
+  outputs: *id002
+- inputs:
+  - 5.8
+  - 2.7
+  - 3.9
+  - 1.2
+  outputs: *id002
+- inputs:
+  - 6.0
+  - 2.7
+  - 5.1
+  - 1.6
+  outputs: *id002
+- inputs:
+  - 5.4
+  - 3.0
+  - 4.5
+  - 1.5
+  outputs: *id002
+- inputs:
+  - 6.0
+  - 3.4
+  - 4.5
+  - 1.6
+  outputs: *id002
+- inputs:
+  - 6.7
+  - 3.1
+  - 4.7
+  - 1.5
+  outputs: *id002
+- inputs:
+  - 6.3
+  - 2.3
+  - 4.4
+  - 1.3
+  outputs: *id002
+- inputs:
+  - 5.6
+  - 3.0
+  - 4.1
+  - 1.3
+  outputs: *id002
+- inputs:
+  - 5.5
+  - 2.5
+  - 4.0
+  - 1.3
+  outputs: *id002
+- inputs:
+  - 5.5
+  - 2.6
+  - 4.4
+  - 1.2
+  outputs: *id002
+- inputs:
+  - 6.1
+  - 3.0
+  - 4.6
+  - 1.4
+  outputs: *id002
+- inputs:
+  - 5.8
+  - 2.6
+  - 4.0
+  - 1.2
+  outputs: *id002
+- inputs:
+  - 5.0
+  - 2.3
+  - 3.3
+  - 1.0
+  outputs: *id002
+- inputs:
+  - 5.6
+  - 2.7
+  - 4.2
+  - 1.3
+  outputs: *id002
+- inputs:
+  - 5.7
+  - 3.0
+  - 4.2
+  - 1.2
+  outputs: *id002
+- inputs:
+  - 5.7
+  - 2.9
+  - 4.2
+  - 1.3
+  outputs: *id002
+- inputs:
+  - 6.2
+  - 2.9
+  - 4.3
+  - 1.3
+  outputs: *id002
+- inputs:
+  - 5.1
+  - 2.5
+  - 3.0
+  - 1.1
+  outputs: *id002
+- inputs:
+  - 5.7
+  - 2.8
+  - 4.1
+  - 1.3
+  outputs: *id002
+- inputs:
+  - 6.3
+  - 3.3
+  - 6.0
+  - 2.5
+  outputs: &id003
+  - 1
+  - 0
+  - 0
+- inputs:
+  - 5.8
+  - 2.7
+  - 5.1
+  - 1.9
+  outputs: *id003
+- inputs:
+  - 7.1
+  - 3.0
+  - 5.9
+  - 2.1
+  outputs: *id003
+- inputs:
+  - 6.3
+  - 2.9
+  - 5.6
+  - 1.8
+  outputs: *id003
+- inputs:
+  - 6.5
+  - 3.0
+  - 5.8
+  - 2.2
+  outputs: *id003
+- inputs:
+  - 7.6
+  - 3.0
+  - 6.6
+  - 2.1
+  outputs: *id003
+- inputs:
+  - 4.9
+  - 2.5
+  - 4.5
+  - 1.7
+  outputs: *id003
+- inputs:
+  - 7.3
+  - 2.9
+  - 6.3
+  - 1.8
+  outputs: *id003
+- inputs:
+  - 6.7
+  - 2.5
+  - 5.8
+  - 1.8
+  outputs: *id003
+- inputs:
+  - 7.2
+  - 3.6
+  - 6.1
+  - 2.5
+  outputs: *id003
+- inputs:
+  - 6.5
+  - 3.2
+  - 5.1
+  - 2.0
+  outputs: *id003
+- inputs:
+  - 6.4
+  - 2.7
+  - 5.3
+  - 1.9
+  outputs: *id003
+- inputs:
+  - 6.8
+  - 3.0
+  - 5.5
+  - 2.1
+  outputs: *id003
+- inputs:
+  - 5.7
+  - 2.5
+  - 5.0
+  - 2.0
+  outputs: *id003
+- inputs:
+  - 5.8
+  - 2.8
+  - 5.1
+  - 2.4
+  outputs: *id003
+- inputs:
+  - 6.4
+  - 3.2
+  - 5.3
+  - 2.3
+  outputs: *id003
+- inputs:
+  - 6.5
+  - 3.0
+  - 5.5
+  - 1.8
+  outputs: *id003
+- inputs:
+  - 7.7
+  - 3.8
+  - 6.7
+  - 2.2
+  outputs: *id003
+- inputs:
+  - 7.7
+  - 2.6
+  - 6.9
+  - 2.3
+  outputs: *id003
+- inputs:
+  - 6.0
+  - 2.2
+  - 5.0
+  - 1.5
+  outputs: *id003
+- inputs:
+  - 6.9
+  - 3.2
+  - 5.7
+  - 2.3
+  outputs: *id003
+- inputs:
+  - 5.6
+  - 2.8
+  - 4.9
+  - 2.0
+  outputs: *id003
+- inputs:
+  - 7.7
+  - 2.8
+  - 6.7
+  - 2.0
+  outputs: *id003
+- inputs:
+  - 6.3
+  - 2.7
+  - 4.9
+  - 1.8
+  outputs: *id003
+- inputs:
+  - 6.7
+  - 3.3
+  - 5.7
+  - 2.1
+  outputs: *id003
+- inputs:
+  - 7.2
+  - 3.2
+  - 6.0
+  - 1.8
+  outputs: *id003
+- inputs:
+  - 6.2
+  - 2.8
+  - 4.8
+  - 1.8
+  outputs: *id003
+- inputs:
+  - 6.1
+  - 3.0
+  - 4.9
+  - 1.8
+  outputs: *id003
+- inputs:
+  - 6.4
+  - 2.8
+  - 5.6
+  - 2.1
+  outputs: *id003
+- inputs:
+  - 7.2
+  - 3.0
+  - 5.8
+  - 1.6
+  outputs: *id003
+- inputs:
+  - 7.4
+  - 2.8
+  - 6.1
+  - 1.9
+  outputs: *id003
+- inputs:
+  - 7.9
+  - 3.8
+  - 6.4
+  - 2.0
+  outputs: *id003
+- inputs:
+  - 6.4
+  - 2.8
+  - 5.6
+  - 2.2
+  outputs: *id003
+- inputs:
+  - 6.3
+  - 2.8
+  - 5.1
+  - 1.5
+  outputs: *id003
+- inputs:
+  - 6.1
+  - 2.6
+  - 5.6
+  - 1.4
+  outputs: *id003
+- inputs:
+  - 7.7
+  - 3.0
+  - 6.1
+  - 2.3
+  outputs: *id003
+- inputs:
+  - 6.3
+  - 3.4
+  - 5.6
+  - 2.4
+  outputs: *id003
+- inputs:
+  - 6.4
+  - 3.1
+  - 5.5
+  - 1.8
+  outputs: *id003
+- inputs:
+  - 6.0
+  - 3.0
+  - 4.8
+  - 1.8
+  outputs: *id003
+- inputs:
+  - 6.9
+  - 3.1
+  - 5.4
+  - 2.1
+  outputs: *id003
+- inputs:
+  - 6.7
+  - 3.1
+  - 5.6
+  - 2.4
+  outputs: *id003
+- inputs:
+  - 6.9
+  - 3.1
+  - 5.1
+  - 2.3
+  outputs: *id003
+- inputs:
+  - 5.8
+  - 2.7
+  - 5.1
+  - 1.9
+  outputs: *id003
+- inputs:
+  - 6.8
+  - 3.2
+  - 5.9
+  - 2.3
+  outputs: *id003
+- inputs:
+  - 6.7
+  - 3.3
+  - 5.7
+  - 2.5
+  outputs: *id003
+- inputs:
+  - 6.7
+  - 3.0
+  - 5.2
+  - 2.3
+  outputs: *id003
+- inputs:
+  - 6.3
+  - 2.5
+  - 5.0
+  - 1.9
+  outputs: *id003
+- inputs:
+  - 6.5
+  - 3.0
+  - 5.2
+  - 2.0
+  outputs: *id003
+- inputs:
+  - 6.2
+  - 3.4
+  - 5.4
+  - 2.3
+  outputs: *id003
+- inputs:
+  - 5.9
+  - 3.0
+  - 5.1
+  - 1.8
+  outputs: *id003
+layers:
+- !!python/object:layer.InputLayer
+  neurons:
+  - &id008 !!python/object:neuron.InputNeuron
+    delta: -5.274914847930964e-06
+    deltas: !!set {}
+    inputs: null
+    learning_factor: 0.1
+    name: input1
+    outputs:
+    - &id004 !!python/object:neuron.Connection
+      another: &id005 !!python/object:neuron.Neuron
+        delta: 0.011903525311607755
+        deltas: !!set {}
+        inputs:
+        - *id004
+        - &id006 !!python/object:neuron.Connection
+          another: *id005
+          one: &id013 !!python/object:neuron.InputNeuron
+            delta: -4.011056366739612e-06
+            deltas: !!set {}
+            inputs: null
+            learning_factor: 0.1
+            name: input3
+            outputs:
+            - *id006
+            - &id009 !!python/object:neuron.Connection
+              another: &id007 !!python/object:neuron.Neuron
+                delta: 0.0022378478674538174
+                deltas: !!set {}
+                inputs:
+                - &id059 !!python/object:neuron.Connection
+                  another: *id007
+                  one: *id008
+                  weight: 2.7276924617128495
+                - *id009
+                - &id011 !!python/object:neuron.Connection
+                  another: *id007
+                  one: &id010 !!python/object:neuron.InputNeuron
+                    delta: 6.591855054487844e-06
+                    deltas: !!set {}
+                    inputs: null
+                    learning_factor: 0.1
+                    name: input5
+                    outputs:
+                    - &id054 !!python/object:neuron.Connection
+                      another: *id005
+                      one: *id010
+                      weight: 0.12607647249694634
+                    - *id011
+                    - &id014 !!python/object:neuron.Connection
+                      another: &id012 !!python/object:neuron.Neuron
+                        delta: -0.030143231713286835
+                        deltas: !!set {}
+                        inputs:
+                        - &id060 !!python/object:neuron.Connection
+                          another: *id012
+                          one: *id008
+                          weight: 10.172722152014076
+                        - &id051 !!python/object:neuron.Connection
+                          another: *id012
+                          one: *id013
+                          weight: 8.942271694886477
+                        - *id014
+                        - &id016 !!python/object:neuron.Connection
+                          another: *id012
+                          one: &id015 !!python/object:neuron.InputNeuron
+                            delta: 7.491866100851057e-06
+                            deltas: !!set {}
+                            inputs: null
+                            learning_factor: 0.1
+                            name: input7
+                            outputs:
+                            - &id055 !!python/object:neuron.Connection
+                              another: *id005
+                              one: *id015
+                              weight: -1.7328118262167762
+                            - &id047 !!python/object:neuron.Connection
+                              another: *id007
+                              one: *id015
+                              weight: 3.0620019292257292
+                            - *id016
+                            - &id018 !!python/object:neuron.Connection
+                              another: &id017 !!python/object:neuron.Neuron
+                                delta: 0.0002782414619302443
+                                deltas: !!set {}
+                                inputs:
+                                - &id061 !!python/object:neuron.Connection
+                                  another: *id017
+                                  one: *id008
+                                  weight: -1.2013011082873382
+                                - &id052 !!python/object:neuron.Connection
+                                  another: *id017
+                                  one: *id013
+                                  weight: 5.636788253686078
+                                - &id045 !!python/object:neuron.Connection
+                                  another: *id017
+                                  one: *id010
+                                  weight: -4.303846698476547
+                                - *id018
+                                learning_factor: 0.1
+                                name: Luna11
+                                outputs:
+                                - &id020 !!python/object:neuron.Connection
+                                  another: &id019 !!python/object:neuron.Neuron
+                                    delta: -0.00014827027298247757
+                                    deltas: !!set {}
+                                    inputs:
+                                    - &id056 !!python/object:neuron.Connection
+                                      another: *id019
+                                      one: *id005
+                                      weight: -4.611582198513271
+                                    - &id048 !!python/object:neuron.Connection
+                                      another: *id019
+                                      one: *id007
+                                      weight: 4.0084255766016765
+                                    - &id042 !!python/object:neuron.Connection
+                                      another: *id019
+                                      one: *id012
+                                      weight: -0.10656559883880172
+                                    - *id020
+                                    - &id022 !!python/object:neuron.Connection
+                                      another: *id019
+                                      one: &id021 !!python/object:neuron.Neuron
+                                        delta: -0.000761966841961035
+                                        deltas: !!set {}
+                                        inputs:
+                                        - &id062 !!python/object:neuron.Connection
+                                          another: *id021
+                                          one: *id008
+                                          weight: -2.649739381164829
+                                        - &id053 !!python/object:neuron.Connection
+                                          another: *id021
+                                          one: *id013
+                                          weight: -4.2855168246387345
+                                        - &id046 !!python/object:neuron.Connection
+                                          another: *id021
+                                          one: *id010
+                                          weight: -3.019156311975396
+                                        - &id041 !!python/object:neuron.Connection
+                                          another: *id021
+                                          one: *id015
+                                          weight: -0.023726151802664283
+                                        learning_factor: 0.1
+                                        name: Mars12
+                                        outputs:
+                                        - *id022
+                                        - &id024 !!python/object:neuron.Connection
+                                          another: &id023 !!python/object:neuron.Neuron
+                                            delta: -0.007977740586990982
+                                            deltas: !!set {}
+                                            inputs:
+                                            - &id057 !!python/object:neuron.Connection
+                                              another: *id023
+                                              one: *id005
+                                              weight: 3.216425944780732
+                                            - &id049 !!python/object:neuron.Connection
+                                              another: *id023
+                                              one: *id007
+                                              weight: 1.0641888874428866
+                                            - &id043 !!python/object:neuron.Connection
+                                              another: *id023
+                                              one: *id012
+                                              weight: 1.9866104884239884
+                                            - &id039 !!python/object:neuron.Connection
+                                              another: *id023
+                                              one: *id017
+                                              weight: -6.82593113744423
+                                            - *id024
+                                            learning_factor: 0.1
+                                            name: Orion14
+                                            outputs:
+                                            - &id026 !!python/object:neuron.Connection
+                                              another: &id025 !!python/object:neuron.OutputNeuron
+                                                delta: 0.03462035554588949
+                                                deltas: !!set {}
+                                                desired: 1
+                                                inputs:
+                                                - &id036 !!python/object:neuron.Connection
+                                                  another: *id025
+                                                  one: *id019
+                                                  weight: -4.3921423992383195
+                                                - *id026
+                                                - &id028 !!python/object:neuron.Connection
+                                                  another: *id025
+                                                  one: &id027 !!python/object:neuron.Neuron
+                                                    delta: 0.018988699773852515
+                                                    deltas: !!set {}
+                                                    inputs:
+                                                    - &id058 !!python/object:neuron.Connection
+                                                      another: *id027
+                                                      one: *id005
+                                                      weight: 4.651988386818599
+                                                    - &id050 !!python/object:neuron.Connection
+                                                      another: *id027
+                                                      one: *id007
+                                                      weight: 1.0723279529543808
+                                                    - &id044 !!python/object:neuron.Connection
+                                                      another: *id027
+                                                      one: *id012
+                                                      weight: -7.514992414586884
+                                                    - &id040 !!python/object:neuron.Connection
+                                                      another: *id027
+                                                      one: *id017
+                                                      weight: -2.7987590931121367
+                                                    - &id035 !!python/object:neuron.Connection
+                                                      another: *id027
+                                                      one: *id021
+                                                      weight: -2.0342066136278842
+                                                    learning_factor: 0.1
+                                                    name: Pluto15
+                                                    outputs:
+                                                    - *id028
+                                                    - &id030 !!python/object:neuron.Connection
+                                                      another: &id029 !!python/object:neuron.OutputNeuron
+                                                        delta: -0.03518934633969162
+                                                        deltas: !!set {}
+                                                        desired: 0
+                                                        inputs:
+                                                        - &id037 !!python/object:neuron.Connection
+                                                          another: *id029
+                                                          one: *id019
+                                                          weight: -4.3167056158841905
+                                                        - &id033 !!python/object:neuron.Connection
+                                                          another: *id029
+                                                          one: *id023
+                                                          weight: 8.104615664329245
+                                                        - *id030
+                                                        learning_factor: 0.1
+                                                        name: output19
+                                                        outputs: null
+                                                        stimulations: !!set {}
+                                                        sum: 0
+                                                        value: 0.01576104843023699
+                                                      one: *id027
+                                                      weight: -6.841264098311992
+                                                    - &id032 !!python/object:neuron.Connection
+                                                      another: &id031 !!python/object:neuron.OutputNeuron
+                                                        delta: -0.007328281633663173
+                                                        deltas: !!set {}
+                                                        desired: 0
+                                                        inputs:
+                                                        - &id038 !!python/object:neuron.Connection
+                                                          another: *id031
+                                                          one: *id019
+                                                          weight: 4.186799971636971
+                                                        - &id034 !!python/object:neuron.Connection
+                                                          another: *id031
+                                                          one: *id023
+                                                          weight: -8.840142768683704
+                                                        - *id032
+                                                        learning_factor: 0.1
+                                                        name: output1
+                                                        outputs: null
+                                                        stimulations: !!set {}
+                                                        sum: 0
+                                                        value: 0.9817811469927222
+                                                      one: *id027
+                                                      weight: -3.2892814131026684
+                                                    stimulations: !!set {}
+                                                    sum: 0
+                                                    value: 9.724782256449351e-05
+                                                  weight: 9.195771923606978
+                                                learning_factor: 0.1
+                                                name: output17
+                                                outputs: null
+                                                stimulations: !!set {}
+                                                sum: 0
+                                                value: 0.012536139907663451
+                                              one: *id023
+                                              weight: 1.06640151706827
+                                            - *id033
+                                            - *id034
+                                            stimulations: !!set {}
+                                            sum: 0
+                                            value: 0.022496122253560583
+                                          one: *id021
+                                          weight: -4.32971181524574
+                                        - *id035
+                                        stimulations: !!set {}
+                                        sum: 0
+                                        value: 8.523924698390341e-16
+                                      weight: 4.585745047263922
+                                    learning_factor: 0.1
+                                    name: Nova13
+                                    outputs:
+                                    - *id036
+                                    - *id037
+                                    - *id038
+                                    stimulations: !!set {}
+                                    sum: 0
+                                    value: 0.9998328837711727
+                                  one: *id017
+                                  weight: 4.798538903706472
+                                - *id039
+                                - *id040
+                                stimulations: !!set {}
+                                sum: 0
+                                value: 0.9997526845523164
+                              one: *id015
+                              weight: 1.956390339101945
+                            - *id041
+                            stimulations: !!set {}
+                            sum: 0
+                            value: 0.2
+                          weight: -15.301899627274834
+                        learning_factor: 0.1
+                        name: Kang10
+                        outputs:
+                        - *id042
+                        - *id043
+                        - *id044
+                        stimulations: !!set {}
+                        sum: 0
+                        value: 1.0
+                      one: *id010
+                      weight: -13.788843277638321
+                    - *id045
+                    - *id046
+                    stimulations: !!set {}
+                    sum: 0
+                    value: 1.5
+                  weight: 4.544774182894082
+                - *id047
+                learning_factor: 0.1
+                name: Jupiter9
+                outputs:
+                - *id048
+                - *id049
+                - *id050
+                stimulations: !!set {}
+                sum: 0
+                value: 0.9999999995641444
+              one: *id013
+              weight: -0.16361914864283944
+            - *id051
+            - *id052
+            - *id053
+            stimulations: !!set {}
+            sum: 0
+            value: 3.7
+          weight: 1.2583146001869077
+        - *id054
+        - *id055
+        learning_factor: 0.1
+        name: Io8
+        outputs:
+        - *id056
+        - *id057
+        - *id058
+        stimulations: !!set {}
+        sum: 0
+        value: 0.0005547446365073108
+      one: *id008
+      weight: -2.221252616691402
+    - *id059
+    - *id060
+    - *id061
+    - *id062
+    stimulations: !!set {}
+    sum: 0
+    value: 5.4
+  - *id013
+  - *id010
+  - *id015
+- !!python/object:layer.Layer
+  neurons:
+  - *id005
+  - *id007
+  - *id012
+  - *id017
+  - *id021
+- !!python/object:layer.Layer
+  neurons:
+  - *id019
+  - *id023
+  - *id027
+- !!python/object:layer.OutputLayer
+  neurons:
+  - *id025
+  - *id029
+  - *id031

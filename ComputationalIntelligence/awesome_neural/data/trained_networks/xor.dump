@@ -1,0 +1,152 @@
+!!python/object:network.Network
+data:
+- inputs:
+  - 0
+  - 0
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 1
+  - 0
+  outputs:
+  - 1
+layers:
+- !!python/object:layer.InputLayer
+  neurons:
+  - &id005 !!python/object:neuron.InputNeuron
+    delta: -0.0004923878900199894
+    deltas: !!set {}
+    inputs: null
+    learning_factor: 0.3
+    name: input1
+    outputs:
+    - &id001 !!python/object:neuron.Connection
+      another: &id002 !!python/object:neuron.Neuron
+        delta: 0.001178174316720358
+        deltas: !!set {}
+        inputs:
+        - *id001
+        - &id003 !!python/object:neuron.Connection
+          another: *id002
+          one: &id014 !!python/object:neuron.InputNeuron
+            delta: -0.00048534000814475376
+            deltas: !!set {}
+            inputs: null
+            learning_factor: 0.3
+            name: input3
+            outputs:
+            - *id003
+            - &id006 !!python/object:neuron.Connection
+              another: &id004 !!python/object:neuron.Neuron
+                delta: -0.002356631465357605
+                deltas: !!set {}
+                inputs:
+                - &id017 !!python/object:neuron.Connection
+                  another: *id004
+                  one: *id005
+                  weight: 1.1572417427788937
+                - *id006
+                learning_factor: 0.3
+                name: Fulu5
+                outputs:
+                - &id008 !!python/object:neuron.Connection
+                  another: &id007 !!python/object:neuron.Neuron
+                    delta: -0.002786310909461081
+                    deltas: !!set {}
+                    inputs:
+                    - &id015 !!python/object:neuron.Connection
+                      another: *id007
+                      one: *id002
+                      weight: -2.786015368380655
+                    - *id008
+                    learning_factor: 0.3
+                    name: Galaxy6
+                    outputs:
+                    - &id009 !!python/object:neuron.Connection
+                      another: &id010 !!python/object:neuron.OutputNeuron
+                        delta: 0.018861244484867812
+                        deltas: !!set {}
+                        desired: 1
+                        inputs:
+                        - *id009
+                        - &id012 !!python/object:neuron.Connection
+                          another: *id010
+                          one: &id011 !!python/object:neuron.Neuron
+                            delta: 0.002133747589369204
+                            deltas: !!set {}
+                            inputs:
+                            - &id016 !!python/object:neuron.Connection
+                              another: *id011
+                              one: *id002
+                              weight: 4.348217343851279
+                            - &id013 !!python/object:neuron.Connection
+                              another: *id011
+                              one: *id004
+                              weight: 4.227413815949657
+                            learning_factor: 0.3
+                            name: Helvetios7
+                            outputs:
+                            - *id012
+                            stimulations: !!set {}
+                            sum: 0
+                            value: 0.9965538389043741
+                          weight: 6.113351069235042
+                        learning_factor: 0.3
+                        name: output9
+                        outputs: null
+                        stimulations: !!set {}
+                        sum: 0
+                        value: 0.9811781896651824
+                      one: *id007
+                      weight: -7.982840082241796
+                    stimulations: !!set {}
+                    sum: 0
+                    value: 0.17986741453207242
+                  one: *id004
+                  weight: 5.80251714425402
+                - *id013
+                stimulations: !!set {}
+                sum: 0
+                value: 0.5216623278359874
+              one: *id014
+              weight: 1.1745400155952839
+            stimulations: !!set {}
+            sum: 0
+            value: 0
+          weight: 4.137976937166098
+        learning_factor: 0.3
+        name: Eartha4
+        outputs:
+        - *id015
+        - *id016
+        stimulations: !!set {}
+        sum: 0
+        value: 0.9559399051448896
+      one: *id005
+      weight: 3.793071632547609
+    - *id017
+    stimulations: !!set {}
+    sum: 0
+    value: 1
+  - *id014
+- !!python/object:layer.Layer
+  neurons:
+  - *id002
+  - *id004
+- !!python/object:layer.Layer
+  neurons:
+  - *id007
+  - *id011
+- !!python/object:layer.OutputLayer
+  neurons:
+  - *id010
