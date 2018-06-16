@@ -1,7 +1,9 @@
 import csv
+from collections import Counter
 
-from layer import Layer, InputLayer, OutputLayer
-from network import Network
+from core.layer import Layer, InputLayer, OutputLayer
+from core.network import Network
+
 
 iris_map = {
     'Iris-setosa': [0, 0, 1],
@@ -28,10 +30,16 @@ network = Network([inputs, middle, middle2, output])
 network.connect()
 
 network.load_learning_data(learning_data)
+network.normalize_learning_data()
 print("------- learn -------")
 network.print_data()
 
-network.learn(times=1000)
+#network.learn(times=1000)
+folds = 4
+results = network.learn_kfolds(folds, times=1000)
+scores = [(n, [round(x) for x in out] == check) for n, out, check in results]
+stuff = Counter(scores)
+print("folds results: ", [stuff[(i, True)] / (stuff[(i,False)] + stuff[(i, True)]) * 100 for i in range(folds)])
 
 i = [
     [6.9, 3.1, 5.1, 2.3],  # Iris-virginica

@@ -1,6 +1,5 @@
-from neuron import Neuron, InputNeuron, OutputNeuron
-from layer import Layer, InputLayer, OutputLayer
-from network import Network
+from core.layer import Layer, InputLayer, OutputLayer
+from core.network import Network
 
 inputs = InputLayer([1, 1, 1])
 

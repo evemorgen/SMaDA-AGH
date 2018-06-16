@@ -1,22 +1,17 @@
 from math import exp
 from functools import lru_cache
 
-from utils import NamePicker, constants
+from core.utils import NamePicker, constants
 from math import tanh
 from random import uniform
 
 
-def activation(value):
-    beta = constants['beta']
-    return 1.0 / (1 + exp(-1 * beta * value))
-
-
-#def activation(value):
-#    beta = constants['beta']
-#    return 2.0 / (1.0 + exp(-1.0 * beta * value))
-
-#def activation(value):
-#    return tanh(constants['beta'] * value)
+activations = {
+    'sigmoid': lambda val: 1.0 / (1 + exp(-1 * constants['beta'] * val)),
+    'sigmoid2': lambda val: 2.0 / (1 + exp(-1 * constants['beta'] * val)),
+    'relu': lambda val: max(0, val),
+    'tanh': lambda val: tanh(constants['beta'] * val)
+}
 
 
 class Connection:
@@ -61,8 +56,8 @@ class Neuron:
 
     def connect(self, another, side):
         sides = {
-            'left': {'me': self.inputs, 'another': another.outputs },
-            'right': {'me': self.outputs, 'another': another.inputs }
+            'left': {'me': self.inputs, 'another': another.outputs},
+            'right': {'me': self.outputs, 'another': another.inputs}
         }
         for connection in sides[side]['me']:
             if connection.exist(self, another):
@@ -79,7 +74,7 @@ class Neuron:
         )
 
         if len(self.stimulations) == len(self.inputs):
-            self.value = activation(
+            self.value = activations[constants['activation']](
                 sum([weight * value for another, weight, value in self.stimulations])
             )
             self.stimulations = set()
@@ -158,3 +153,13 @@ class OutputNeuron(Neuron):
 
     def stimulate_delta(self, another, value=None, delta=None):
         self.delta = self.desired - self.value
+
+
+class BiasNeuron(Neuron):
+    def __init__(self, bias):
+        super().__init__()
+        self.value = bias
+
+    def set_bias(self, bias):
+        self.value = bias
+

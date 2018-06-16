@@ -1,7 +1,5 @@
-import yaml
-
-from layer import Layer, InputLayer, OutputLayer
-from network import Network
+from core.layer import Layer, InputLayer, OutputLayer
+from core.network import Network
 
 inputs = InputLayer([1, 1])
 middle = Layer(2)
@@ -19,6 +17,7 @@ learning_data = [
 ]
 
 network.load_learning_data(learning_data)
+network.normalize_learning_data()
 print("------- learn -------")
 network.print_data()
 

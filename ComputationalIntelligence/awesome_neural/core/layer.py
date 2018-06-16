@@ -1,4 +1,4 @@
-from neuron import Neuron, InputNeuron, OutputNeuron
+from core.neuron import Neuron, InputNeuron, OutputNeuron
 
 
 class Layer:
@@ -47,3 +47,13 @@ class OutputLayer(Layer):
     def set_output(self, output):
         for n, v in zip(self.neurons, output):
             n.set_desired(v)
+
+
+class BiasLayer(Layer):
+    def __init__(self, neurons):
+        super().__init__()
+        self.neurons = neurons
+
+    def pass_output(self, outputs):
+        for neuron, value in zip(self.neurons, outputs):
+            neuron.set_bias(value)

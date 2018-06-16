@@ -32,5 +32,5 @@ class NamePicker():
         return ("%s%s" % (self.names[self.i], self.i))
 
 
-with open("constants.yaml", 'r') as file:
+with open("../constants.yaml", 'r') as file:
     constants = yaml.load(file)

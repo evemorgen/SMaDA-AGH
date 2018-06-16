@@ -1,8 +1,8 @@
 import csv
-from pprint import pprint
+from collections import Counter
 
-from layer import Layer, InputLayer, OutputLayer
-from network import Network
+from core.layer import Layer, InputLayer, OutputLayer
+from core.network import Network
 
 learning_data = []
 
@@ -34,18 +34,23 @@ network = Network([
     inputs,
     middle,
     middle2,
-#    middle3,
-#    middle4,
+    middle3,
+    middle4,
     output
 ])
 
 network.connect()
 
 network.load_learning_data(learning_data)
+#network.normalize_learning_data()
 print("------- learn -------")
 network.print_data()
 
-network.learn(times=30)
+#network.learn(times=100)
+results = network.learn_kfolds(4, times=100)
+scores = [(n, [round(x) for x in out] == check) for n, out, check in results]
+stuff = Counter(scores)
+print([stuff[(i, True)] / (stuff[(i, False)] + stuff[(i, True)]) * 100 for i in range(4)])
 
 i = [
     [tic_tac_map[x] for x in ['x', 'x', 'x', 'o', 'b', 'x', 'b', 'o', 'o']],  # positive
