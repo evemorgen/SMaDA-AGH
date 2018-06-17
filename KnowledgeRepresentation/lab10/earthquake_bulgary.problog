@@ -1,0 +1,40 @@
+% maxwell is my neighbour
+neighbour(maxwell).
+% joan is also my neighbour
+neighbour(joan).
+
+% probability of a burglary in your neighborhood is rather high and equal 0.7.
+0.7::burglary.
+
+% heavy earthquakes are very rare, probability of such a earthquake equals 0.01.
+0.01::earthquake(heavy).
+% mild earthquakes are not uncommon, probability of a mild earthquake equals 0.19.
+0.19::earthquake(mild).
+% rest probability indicates that there will be no earthquake
+0.80::earthquake(nope).
+
+% there is 0.90 probability that alarm start when there both burglary and heavy earthquake occur at the same time
+0.90::alarm :-    burglary, earthquake(heavy).
+% 0.85 when there both burglary and mild earthquake occur at the same time
+0.85::alarm :-    burglary, earthquake(mild).
+% 0.80 during a burglary when there is no earthquake
+0.80::alarm :-    burglary, earthquake(nope).
+% 0.30 during a heavy earthquake without any burglars
+0.30::alarm :- \+ burglary, earthquake(heavy).
+% 0.10 during a mild eathhquake without any burglars
+0.10::alarm :- \+ burglary, earthquake(mild).
+
+% if there is an alarm going on, neighbor will call you with 0.8 probability
+0.80::calls_me(Neighbour) :-    alarm.
+% there is small probability (0.1) that neighbor calls you only to prank you
+0.10::calls_me(Neighbour) :- \+ alarm.
+
+% if you are called by Joan only
+evidence(calls_me(joan),    true).
+% and you didn't receive call from Maxwell
+evidence(calls_me(maxwell), false).
+
+% what is the probability of burglary
+query(burglary).
+% How much probable is that it was only an earthquake?
+query(earthquake(WILL_IT_BE)).

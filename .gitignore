@@ -1,5 +1,9 @@
 **/.idea
-**/__pycache__
 **/venv
 **/ENV
 **/*.sw[po]
+
+#python cache stuff
+**/*.pyc
+**/*.pyo
+**/__pycache__

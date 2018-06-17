@@ -1,0 +1,28 @@
+t(_)::visitedAsia.
+
+t(_)::tubercolosis:- visitedAsia.
+t(_)::tubercolosis:- \+ visitedAsia.
+
+t(_)::smoker.
+
+t(_)::lung_cancer:- smoker.
+t(_)::lung_cancer:- \+smoker.
+
+t(_)::bronchitis:- smoker.
+t(_)::bronchitis:- \+smoker.
+
+1.0::eitherTBorLungCancer:- lung_cancer,tubercolosis.
+1.0::eitherTBorLungCancer:- lung_cancer,\+tubercolosis.
+1.0::eitherTBorLungCancer:- tubercolosis,\+lung_cancer.
+0.0::eitherTBorLungCancer:- \+tubercolosis,\+lung_cancer.
+
+t(_)::dyspnea:- eitherTBorLungCancer,bronchitis.
+t(_)::dyspnea:- eitherTBorLungCancer,\+bronchitis.
+t(_)::dyspnea:- bronchitis,\+eitherTBorLungCancer.
+t(_)::dyspnea:- \+bronchitis,\+eitherTBorLungCancer.
+
+t(_)::xray_positive:- eitherTBorLungCancer.
+t(_)::xray_positive:- \+eitherTBorLungCancer.
+
+
+

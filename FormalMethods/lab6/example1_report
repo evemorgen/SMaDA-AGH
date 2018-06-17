@@ -1,0 +1,79 @@
+CPN Tools state space report for:
+/cygdrive/C/Users/evemorgen/1yearSMADA/FormalMethods/lab6/example1.cpn
+Report generated: Thu Apr 19 12:57:05 2018
+
+
+ Statistics
+------------------------------------------------------------------------
+
+  State Space
+     Nodes:  4
+     Arcs:   5
+     Secs:   0
+     Status: Full
+
+  Scc Graph
+     Nodes:  1
+     Arcs:   0
+     Secs:   0
+
+
+ Boundedness Properties
+------------------------------------------------------------------------
+
+  Best Integer Bounds
+                             Upper      Lower
+     New_Page'A 1            1          0
+     New_Page'B 1            1          0
+     New_Page'C 1            1          0
+     New_Page'D 1            1          0
+
+  Best Upper Multi-set Bounds
+     New_Page'A 1        1`()
+     New_Page'B 1        1`()
+     New_Page'C 1        1`()
+     New_Page'D 1        1`()
+
+  Best Lower Multi-set Bounds
+     New_Page'A 1        empty
+     New_Page'B 1        empty
+     New_Page'C 1        empty
+     New_Page'D 1        empty
+
+
+ Home Properties
+------------------------------------------------------------------------
+
+  Home Markings
+     All
+
+
+ Liveness Properties
+------------------------------------------------------------------------
+
+  Dead Markings
+     None
+
+  Dead Transition Instances
+     None
+
+  Live Transition Instances
+     All
+
+
+ Fairness Properties
+------------------------------------------------------------------------
+
+  Impartial Transition Instances
+     New_Page'p1 1
+     New_Page'p2 1
+     New_Page'p3 1
+
+  Fair Transition Instances
+     None
+
+  Just Transition Instances
+     None
+
+  Transition Instances with No Fairness
+     None

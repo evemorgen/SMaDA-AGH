@@ -1,0 +1,9 @@
+[submodule "ModelingOfPhysicalSystems/project"]
+	path = ModelingOfPhysicalSystems/project
+	url = https://github.com/evemorgen/physics_assignment
+[submodule "KnowledgeRepresentation/projects/test-assignment"]
+	path = KnowledgeRepresentation/projects/test-assignment
+	url = https://gitlab.com/evemorgen/test-assignment.git
+[submodule "KnowledgeRepresentation/projects/gangs-wars"]
+	path = KnowledgeRepresentation/projects/gangs-wars
+	url = https://gitlab.com/evemorgen/gangs-wars.git
