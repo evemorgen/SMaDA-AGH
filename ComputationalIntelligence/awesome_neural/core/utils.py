@@ -1,7 +1,6 @@
 from singleton_decorator import singleton
 import yaml
 
-
 @singleton
 class NamePicker():
     def __init__(self):

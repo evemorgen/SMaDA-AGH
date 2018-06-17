@@ -1,13 +1,17 @@
+from core.neuron import BiasNeuron
 from core.layer import Layer, InputLayer, OutputLayer
 from core.network import Network
 
+
+net_name = 'xor'
 inputs = InputLayer([1, 1])
 middle = Layer(2)
 middle2 = Layer(2)
 output = OutputLayer([1])
 
-network = Network([inputs, middle, middle2, output])
+network = Network([inputs, middle, middle2, output], net_name)
 network.connect()
+
 
 learning_data = [
     {"inputs": [0, 0], "outputs": [0]},
@@ -34,4 +38,10 @@ network.print_io(i, o)
 print("------ weights -----")
 network.print_weights()
 
-network.dump_network('data/trained_networks/xor-dump2.yaml', prompt=True)
+bias = BiasNeuron(0.1)
+bias.set_network_name(net_name)
+middle.neurons[0].connect(bias, 'right')
+
+network.dump_network('../data/trained_networks/xor-dump2.yaml', prompt=True)
+
+network.dump_cypher('../data/cypher/xor.cypher', additional_neurons=[bias])

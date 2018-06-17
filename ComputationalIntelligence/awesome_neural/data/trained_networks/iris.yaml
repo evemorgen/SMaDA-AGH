@@ -1,10 +1,11 @@
-!!python/object:network.Network
+!!python/object:core.network.Network
 constants:
   activation: sigmoid
-  beta: 1
-  learning_factor: 0.1
-  weight_from: -5
-  weight_to: 5
+  beta: 0.7
+  learning_factor: 0.3
+  normalised: true
+  weight_from: -2
+  weight_to: 2
 data:
 - inputs:
   - 0.22222222222222213
@@ -916,360 +917,392 @@ data:
   - 0.7083333333333334
   outputs: *id003
 layers:
-- !!python/object:layer.InputLayer
+- !!python/object:core.layer.InputLayer
+  name: InputLayer
+  network_name: iris
   neurons:
-  - &id008 !!python/object:neuron.InputNeuron
-    delta: -0.001214477729720849
+  - &id008 !!python/object:core.neuron.InputNeuron
+    delta: -0.0001214591182276905
     deltas: !!set {}
     inputs: null
-    learning_factor: 0.1
+    layer_name: InputLayer
+    learning_factor: 0.3
     name: input1
+    network_name: iris
     outputs:
-    - &id004 !!python/object:neuron.Connection
-      another: &id005 !!python/object:neuron.Neuron
-        delta: 0.009033812436690662
+    - &id004 !!python/object:core.neuron.Connection
+      another: &id005 !!python/object:core.neuron.Neuron
+        delta: 5.9871760264400564e-05
         deltas: !!set {}
         inputs:
         - *id004
-        - &id006 !!python/object:neuron.Connection
+        - &id006 !!python/object:core.neuron.Connection
           another: *id005
-          one: &id013 !!python/object:neuron.InputNeuron
-            delta: -0.00642428322367542
+          one: &id013 !!python/object:core.neuron.InputNeuron
+            delta: -9.465852921568152e-05
             deltas: !!set {}
             inputs: null
-            learning_factor: 0.1
+            layer_name: InputLayer
+            learning_factor: 0.3
             name: input3
+            network_name: iris
             outputs:
             - *id006
-            - &id009 !!python/object:neuron.Connection
-              another: &id007 !!python/object:neuron.Neuron
-                delta: -0.012287216768932532
+            - &id009 !!python/object:core.neuron.Connection
+              another: &id007 !!python/object:core.neuron.Neuron
+                delta: -0.001047837951643029
                 deltas: !!set {}
                 inputs:
-                - &id059 !!python/object:neuron.Connection
+                - &id059 !!python/object:core.neuron.Connection
                   another: *id007
                   one: *id008
-                  weight: 2.236503150854294
+                  weight: -4.410564407787704
                 - *id009
-                - &id011 !!python/object:neuron.Connection
+                - &id011 !!python/object:core.neuron.Connection
                   another: *id007
-                  one: &id010 !!python/object:neuron.InputNeuron
-                    delta: 0.007786555461594059
+                  one: &id010 !!python/object:core.neuron.InputNeuron
+                    delta: 0.00022236460097941347
                     deltas: !!set {}
                     inputs: null
-                    learning_factor: 0.1
+                    layer_name: InputLayer
+                    learning_factor: 0.3
                     name: input5
+                    network_name: iris
                     outputs:
-                    - &id054 !!python/object:neuron.Connection
+                    - &id054 !!python/object:core.neuron.Connection
                       another: *id005
                       one: *id010
-                      weight: -8.006296985867788
+                      weight: -0.9777852782966125
                     - *id011
-                    - &id014 !!python/object:neuron.Connection
-                      another: &id012 !!python/object:neuron.Neuron
-                        delta: 0.00187316743368074
+                    - &id014 !!python/object:core.neuron.Connection
+                      another: &id012 !!python/object:core.neuron.Neuron
+                        delta: -0.0010628784447660993
                         deltas: !!set {}
                         inputs:
-                        - &id060 !!python/object:neuron.Connection
+                        - &id060 !!python/object:core.neuron.Connection
                           another: *id012
                           one: *id008
-                          weight: -0.3798001793347914
-                        - &id051 !!python/object:neuron.Connection
+                          weight: 7.229740262736691
+                        - &id051 !!python/object:core.neuron.Connection
                           another: *id012
                           one: *id013
-                          weight: -2.1235324219777425
+                          weight: -5.286438747007909
                         - *id014
-                        - &id016 !!python/object:neuron.Connection
+                        - &id016 !!python/object:core.neuron.Connection
                           another: *id012
-                          one: &id015 !!python/object:neuron.InputNeuron
-                            delta: 0.00965395190431357
+                          one: &id015 !!python/object:core.neuron.InputNeuron
+                            delta: 0.0003155307971942225
                             deltas: !!set {}
                             inputs: null
-                            learning_factor: 0.1
+                            layer_name: InputLayer
+                            learning_factor: 0.3
                             name: input7
+                            network_name: iris
                             outputs:
-                            - &id055 !!python/object:neuron.Connection
+                            - &id055 !!python/object:core.neuron.Connection
                               another: *id005
                               one: *id015
-                              weight: -5.960881044964555
-                            - &id047 !!python/object:neuron.Connection
+                              weight: 2.9898080071328037
+                            - &id047 !!python/object:core.neuron.Connection
                               another: *id007
                               one: *id015
-                              weight: -3.0061991917845323
+                              weight: -8.486329710661398
                             - *id016
-                            - &id018 !!python/object:neuron.Connection
-                              another: &id017 !!python/object:neuron.Neuron
-                                delta: 0.009767290358500227
+                            - &id018 !!python/object:core.neuron.Connection
+                              another: &id017 !!python/object:core.neuron.Neuron
+                                delta: -0.0009753843807012502
                                 deltas: !!set {}
                                 inputs:
-                                - &id061 !!python/object:neuron.Connection
+                                - &id061 !!python/object:core.neuron.Connection
                                   another: *id017
                                   one: *id008
-                                  weight: 1.2358750088982584
-                                - &id052 !!python/object:neuron.Connection
+                                  weight: 3.101613644418654
+                                - &id052 !!python/object:core.neuron.Connection
                                   another: *id017
                                   one: *id013
-                                  weight: -0.04950619152240597
-                                - &id045 !!python/object:neuron.Connection
+                                  weight: -0.2450104668610459
+                                - &id045 !!python/object:core.neuron.Connection
                                   another: *id017
                                   one: *id010
-                                  weight: -0.031247110271978545
+                                  weight: -3.312030659379815
                                 - *id018
-                                learning_factor: 0.1
+                                layer_name: layer
+                                learning_factor: 0.3
                                 name: Luna11
+                                network_name: iris
                                 outputs:
-                                - &id020 !!python/object:neuron.Connection
-                                  another: &id019 !!python/object:neuron.Neuron
-                                    delta: -0.007453415317249152
+                                - &id020 !!python/object:core.neuron.Connection
+                                  another: &id019 !!python/object:core.neuron.Neuron
+                                    delta: -0.00025689615112989555
                                     deltas: !!set {}
                                     inputs:
-                                    - &id056 !!python/object:neuron.Connection
+                                    - &id056 !!python/object:core.neuron.Connection
                                       another: *id019
                                       one: *id005
-                                      weight: -10.689154981337442
-                                    - &id048 !!python/object:neuron.Connection
+                                      weight: -2.1346345398141064
+                                    - &id048 !!python/object:core.neuron.Connection
                                       another: *id019
                                       one: *id007
-                                      weight: 5.202961034910732
-                                    - &id042 !!python/object:neuron.Connection
+                                      weight: 30.09798431424917
+                                    - &id042 !!python/object:core.neuron.Connection
                                       another: *id019
                                       one: *id012
-                                      weight: -2.692536800960956
+                                      weight: 30.14335426111511
                                     - *id020
-                                    - &id022 !!python/object:neuron.Connection
+                                    - &id022 !!python/object:core.neuron.Connection
                                       another: *id019
-                                      one: &id021 !!python/object:neuron.Neuron
-                                        delta: -0.021993749375107806
+                                      one: &id021 !!python/object:core.neuron.Neuron
+                                        delta: 0.00014215049600228385
                                         deltas: !!set {}
                                         inputs:
-                                        - &id062 !!python/object:neuron.Connection
+                                        - &id062 !!python/object:core.neuron.Connection
                                           another: *id021
                                           one: *id008
-                                          weight: 0.46858485637604536
-                                        - &id053 !!python/object:neuron.Connection
+                                          weight: 0.035049103730074
+                                        - &id053 !!python/object:core.neuron.Connection
                                           another: *id021
                                           one: *id013
-                                          weight: 3.1701844528304193
-                                        - &id046 !!python/object:neuron.Connection
+                                          weight: -4.601177047304394
+                                        - &id046 !!python/object:core.neuron.Connection
                                           another: *id021
                                           one: *id010
-                                          weight: -2.7032257239860598
-                                        - &id041 !!python/object:neuron.Connection
+                                          weight: 3.518364165090561
+                                        - &id041 !!python/object:core.neuron.Connection
                                           another: *id021
                                           one: *id015
-                                          weight: -1.7909560963759776
-                                        learning_factor: 0.1
+                                          weight: 2.153081017398478
+                                        layer_name: layer
+                                        learning_factor: 0.3
                                         name: Mars12
+                                        network_name: iris
                                         outputs:
                                         - *id022
-                                        - &id024 !!python/object:neuron.Connection
-                                          another: &id023 !!python/object:neuron.Neuron
-                                            delta: 0.007653044577187741
+                                        - &id024 !!python/object:core.neuron.Connection
+                                          another: &id023 !!python/object:core.neuron.Neuron
+                                            delta: 0.00017130867653531348
                                             deltas: !!set {}
                                             inputs:
-                                            - &id057 !!python/object:neuron.Connection
+                                            - &id057 !!python/object:core.neuron.Connection
                                               another: *id023
                                               one: *id005
-                                              weight: -5.279083229297948
-                                            - &id049 !!python/object:neuron.Connection
+                                              weight: 0.33653628890929577
+                                            - &id049 !!python/object:core.neuron.Connection
                                               another: *id023
                                               one: *id007
-                                              weight: -4.163225670991985
-                                            - &id043 !!python/object:neuron.Connection
+                                              weight: -12.904624477545871
+                                            - &id043 !!python/object:core.neuron.Connection
                                               another: *id023
                                               one: *id012
-                                              weight: -1.7174831412766738
-                                            - &id039 !!python/object:neuron.Connection
+                                              weight: -13.462798312742361
+                                            - &id039 !!python/object:core.neuron.Connection
                                               another: *id023
                                               one: *id017
-                                              weight: 3.897962755327763
+                                              weight: -11.552341055793297
                                             - *id024
-                                            learning_factor: 0.1
+                                            layer_name: layer
+                                            learning_factor: 0.3
                                             name: Orion14
+                                            network_name: iris
                                             outputs:
-                                            - &id026 !!python/object:neuron.Connection
-                                              another: &id025 !!python/object:neuron.OutputNeuron
-                                                delta: 0.019468620426449812
+                                            - &id026 !!python/object:core.neuron.Connection
+                                              another: &id025 !!python/object:core.neuron.OutputNeuron
+                                                delta: 0.0013132507009330219
                                                 deltas: !!set {}
                                                 desired: 1
                                                 inputs:
-                                                - &id036 !!python/object:neuron.Connection
+                                                - &id036 !!python/object:core.neuron.Connection
                                                   another: *id025
                                                   one: *id019
-                                                  weight: -4.210392161596973
+                                                  weight: -22.58571313476688
                                                 - *id026
-                                                - &id028 !!python/object:neuron.Connection
+                                                - &id028 !!python/object:core.neuron.Connection
                                                   another: *id025
-                                                  one: &id027 !!python/object:neuron.Neuron
-                                                    delta: -0.0012280794333984308
+                                                  one: &id027 !!python/object:core.neuron.Neuron
+                                                    delta: 0.00028810043548018426
                                                     deltas: !!set {}
                                                     inputs:
-                                                    - &id058 !!python/object:neuron.Connection
+                                                    - &id058 !!python/object:core.neuron.Connection
                                                       another: *id027
                                                       one: *id005
-                                                      weight: 2.9495588771718415
-                                                    - &id050 !!python/object:neuron.Connection
+                                                      weight: -5.297636933972318
+                                                    - &id050 !!python/object:core.neuron.Connection
                                                       another: *id027
                                                       one: *id007
-                                                      weight: 2.028955349440188
-                                                    - &id044 !!python/object:neuron.Connection
+                                                      weight: 10.498972815661531
+                                                    - &id044 !!python/object:core.neuron.Connection
                                                       another: *id027
                                                       one: *id012
-                                                      weight: -1.8759924763934097
-                                                    - &id040 !!python/object:neuron.Connection
+                                                      weight: 5.94740623677801
+                                                    - &id040 !!python/object:core.neuron.Connection
                                                       another: *id027
                                                       one: *id017
-                                                      weight: 5.140815890678677
-                                                    - &id035 !!python/object:neuron.Connection
+                                                      weight: 6.50964206808364
+                                                    - &id035 !!python/object:core.neuron.Connection
                                                       another: *id027
                                                       one: *id021
-                                                      weight: -0.014155703916023806
-                                                    learning_factor: 0.1
+                                                      weight: -9.56361960538607
+                                                    layer_name: layer
+                                                    learning_factor: 0.3
                                                     name: Pluto15
+                                                    network_name: iris
                                                     outputs:
                                                     - *id028
-                                                    - &id030 !!python/object:neuron.Connection
-                                                      another: &id029 !!python/object:neuron.OutputNeuron
-                                                        delta: -0.020861503933900967
+                                                    - &id030 !!python/object:core.neuron.Connection
+                                                      another: &id029 !!python/object:core.neuron.OutputNeuron
+                                                        delta: -0.0033964734115439145
                                                         deltas: !!set {}
                                                         desired: 0
                                                         inputs:
-                                                        - &id037 !!python/object:neuron.Connection
+                                                        - &id037 !!python/object:core.neuron.Connection
                                                           another: *id029
                                                           one: *id019
-                                                          weight: 13.819058084833754
-                                                        - &id033 !!python/object:neuron.Connection
+                                                          weight: 19.17258054858645
+                                                        - &id033 !!python/object:core.neuron.Connection
                                                           another: *id029
                                                           one: *id023
-                                                          weight: -3.278120880957929
+                                                          weight: -12.271665253507951
                                                         - *id030
-                                                        learning_factor: 0.1
+                                                        layer_name: OutputLayer
+                                                        learning_factor: 0.3
                                                         name: output19
+                                                        network_name: iris
                                                         outputs: null
                                                         stimulations: !!set {}
                                                         sum: 0
-                                                        value: 0.008968081035397908
+                                                        value: 0.007602732652975051
                                                       one: *id027
-                                                      weight: -4.8118277832707745
-                                                    - &id032 !!python/object:neuron.Connection
-                                                      another: &id031 !!python/object:neuron.OutputNeuron
-                                                        delta: -1.4753816019698357e-05
+                                                      weight: -26.13204963942452
+                                                    - &id032 !!python/object:core.neuron.Connection
+                                                      another: &id031 !!python/object:core.neuron.OutputNeuron
+                                                        delta: -0.0006782285445961751
                                                         deltas: !!set {}
                                                         desired: 0
                                                         inputs:
-                                                        - &id038 !!python/object:neuron.Connection
+                                                        - &id038 !!python/object:core.neuron.Connection
                                                           another: *id031
                                                           one: *id019
-                                                          weight: -2.471695242131054
-                                                        - &id034 !!python/object:neuron.Connection
+                                                          weight: -5.283910326211698
+                                                        - &id034 !!python/object:core.neuron.Connection
                                                           another: *id031
                                                           one: *id023
-                                                          weight: -16.77934077884586
+                                                          weight: -11.940553025419717
                                                         - *id032
-                                                        learning_factor: 0.1
+                                                        layer_name: OutputLayer
+                                                        learning_factor: 0.3
                                                         name: output1
+                                                        network_name: iris
                                                         outputs: null
                                                         stimulations: !!set {}
                                                         sum: 0
-                                                        value: 0.9602683057371192
+                                                        value: 0.9941136669266334
                                                       one: *id027
-                                                      weight: 3.206342603558497
+                                                      weight: 12.611373757738523
                                                     stimulations: !!set {}
                                                     sum: 0
-                                                    value: 0.9997284998418101
-                                                  weight: -8.821463134121531
-                                                learning_factor: 0.1
+                                                    value: 0.9999993107724067
+                                                  weight: -3.796293228999866
+                                                layer_name: OutputLayer
+                                                learning_factor: 0.3
                                                 name: output17
+                                                network_name: iris
                                                 outputs: null
                                                 stimulations: !!set {}
                                                 sum: 0
-                                                value: 0.00014339218764095624
+                                                value: 9.543527770384937e-09
                                               one: *id023
-                                              weight: 16.833622801147555
+                                              weight: 14.360716865631264
                                             - *id033
                                             - *id034
                                             stimulations: !!set {}
                                             sum: 0
-                                            value: 8.915799575589241e-05
+                                            value: 3.4453481039251022e-12
                                           one: *id021
-                                          weight: -7.648761866595714
+                                          weight: 2.8216831665588824
                                         - *id035
                                         stimulations: !!set {}
                                         sum: 0
-                                        value: 0.9999470977029922
-                                      weight: 9.199779108783645
-                                    learning_factor: 0.1
+                                        value: 0.00041415781205387945
+                                      weight: -3.0136583613445658
+                                    layer_name: layer
+                                    learning_factor: 0.3
                                     name: Nova13
+                                    network_name: iris
                                     outputs:
                                     - *id036
                                     - *id037
                                     - *id038
                                     stimulations: !!set {}
                                     sum: 0
-                                    value: 0.007651651830375528
+                                    value: 1.0
                                   one: *id017
-                                  weight: -3.743186656311411
+                                  weight: 28.476587379350413
                                 - *id039
                                 - *id040
                                 stimulations: !!set {}
                                 sum: 0
-                                value: 0.9987262697111666
+                                value: 0.99887878039145
                               one: *id015
-                              weight: 1.1042471613728493
+                              weight: -5.854813379274471
                             - *id041
                             stimulations: !!set {}
                             sum: 0
                             value: 0.2
-                          weight: -4.182704369961924
-                        learning_factor: 0.1
+                          weight: -3.6646777337882965
+                        layer_name: layer
+                        learning_factor: 0.3
                         name: Kang10
+                        network_name: iris
                         outputs:
                         - *id042
                         - *id043
                         - *id044
                         stimulations: !!set {}
                         sum: 0
-                        value: 1.7149419454422722e-06
+                        value: 0.9978238737639455
                       one: *id010
-                      weight: -1.687731873541385
+                      weight: -6.662339537452146
                     - *id045
                     - *id046
                     stimulations: !!set {}
                     sum: 0
                     value: 1.5
-                  weight: 0.3306239595730409
+                  weight: -0.4536208228617363
                 - *id047
-                learning_factor: 0.1
+                layer_name: layer
+                learning_factor: 0.3
                 name: Jupiter9
+                network_name: iris
                 outputs:
                 - *id048
                 - *id049
                 - *id050
                 stimulations: !!set {}
                 sum: 0
-                value: 0.06979348910221599
+                value: 0.9998836081313175
               one: *id013
-              weight: -3.9355889204761576
+              weight: 10.577124698099428
             - *id051
             - *id052
             - *id053
             stimulations: !!set {}
             sum: 0
             value: 3.7
-          weight: 4.874533067642075
+          weight: -2.87735291748009
         - *id054
         - *id055
-        learning_factor: 0.1
+        layer_name: layer
+        learning_factor: 0.3
         name: Io8
+        network_name: iris
         outputs:
         - *id056
         - *id057
         - *id058
         stimulations: !!set {}
         sum: 0
-        value: 0.9999999468299686
+        value: 0.502575684503213
       one: *id008
-      weight: 2.2065963345318567
+      weight: 2.1351185996385733
     - *id059
     - *id060
     - *id061
@@ -1280,20 +1313,27 @@ layers:
   - *id013
   - *id010
   - *id015
-- !!python/object:layer.Layer
+- !!python/object:core.layer.Layer
+  name: layer
+  network_name: iris
   neurons:
   - *id005
   - *id007
   - *id012
   - *id017
   - *id021
-- !!python/object:layer.Layer
+- !!python/object:core.layer.Layer
+  name: layer
+  network_name: iris
   neurons:
   - *id019
   - *id023
   - *id027
-- !!python/object:layer.OutputLayer
+- !!python/object:core.layer.OutputLayer
+  name: OutputLayer
+  network_name: iris
   neurons:
   - *id025
   - *id029
   - *id031
+name: iris

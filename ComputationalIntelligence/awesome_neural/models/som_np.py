@@ -2,6 +2,7 @@ import numpy as np
 import csv
 import math
 import random
+import yaml
 import matplotlib.pyplot as plt
 from scipy.misc import toimage
 from itertools import product
@@ -9,6 +10,7 @@ from itertools import product
 from core.utils import constants
 
 # constants
+LOAD_MAP = True
 NUM_OF_FEATURES = 4
 WIDTH = 5
 HEIGHT = 5
@@ -42,6 +44,21 @@ def distance(map, x):
     return np.sqrt(np.sum(squared, 2))
 
 
+def best_match(map, pattern):
+    np_pattern = np.asarray(pattern, dtype=np.float32)
+    eucli_map = distance(map, np_pattern)
+
+    bmu_x = np.argmin(np.amin(eucli_map, 1), 0)
+    bmu_y = np.argmin(eucli_map, 1)[int(bmu_x)]
+
+    return list(map[bmu_x][bmu_y])
+
+
+def load_som(filename):
+    with open(filename, 'r') as stream:
+        return yaml.load(stream)
+
+
 def generate_result_map(pat, cls, map):
     result_map = np.zeros([HEIGHT, WIDTH, 3], dtype=np.float32)
     iris_map = {
@@ -67,72 +84,76 @@ def generate_result_map(pat, cls, map):
 py_patterns, classes = load_data('../data/training_data/iris.data')
 patterns = np.asarray(py_patterns, dtype=np.float32)
 
-map = np.random.uniform(size=(HEIGHT, WIDTH, NUM_OF_FEATURES))
-old_map = np.zeros(
-    (HEIGHT, WIDTH, NUM_OF_FEATURES)
-)
+if LOAD_MAP:
+    map = load_som("../data/trained_networks/som.yaml")
+else:
+    map = np.random.uniform(size=(HEIGHT, WIDTH, NUM_OF_FEATURES))
+    before = generate_result_map(patterns, classes, map)
+    toimage(before).save('map_before.jpg')
+    old_map = np.zeros(
+        (HEIGHT, WIDTH, NUM_OF_FEATURES)
+    )
 
-coords = np.zeros(
-    [HEIGHT, WIDTH, 2],
-    dtype=np.int32
-)
+    coords = np.zeros(
+        [HEIGHT, WIDTH, 2],
+        dtype=np.int32
+    )
 
-for i in range(HEIGHT):
-    for j in range(WIDTH):
-        coords[i][j] = [i, j]
+    for i in range(HEIGHT):
+        for j in range(WIDTH):
+            coords[i][j] = [i, j]
 
-max_iterations = max_iters * len(patterns)
-bmu = np.zeros([2], dtype=np.int32)
+    max_iterations = max_iters * len(patterns)
+    bmu = np.zeros([2], dtype=np.int32)
 
-time = 1
+    time = 1
 
-try:
-    for n in range(max_iters):
-        shuffle = random.sample(
-            range(len(patterns)),
-            len(patterns)
-        )
-
-        for i in range(len(patterns)):
-            current_change = np.sqrt(
-                np.sum(np.sum((old_map - map) ** 2, 2))
+    try:
+        for n in range(max_iters):
+            shuffle = random.sample(
+                range(len(patterns)),
+                len(patterns)
             )
 
-            if current_change <= minimal_change:
-                raise LemmeOut
-            else:
-                pattern = patterns[shuffle[i]]
-                eucli_map = distance(map, pattern)
+            for i in range(len(patterns)):
+                current_change = np.sqrt(
+                    np.sum(np.sum((old_map - map) ** 2, 2))
+                )
 
-                bmu[0] = np.argmin(np.amin(eucli_map, 1), 0)
-                bmu[1] = np.argmin(eucli_map, 1)[int(bmu[0])]
+                if current_change <= minimal_change:
+                    raise LemmeOut
+                else:
+                    pattern = patterns[shuffle[i]]
+                    eucli_map = distance(map, pattern)
 
-                eucli_bmu = distance(coords, bmu)
+                    bmu[0] = np.argmin(np.amin(eucli_map, 1), 0)
+                    bmu[1] = np.argmin(eucli_map, 1)[int(bmu[0])]
 
-                old_map = np.copy(map)
+                    eucli_bmu = distance(coords, bmu)
 
-                for i, j in product(range(HEIGHT), range(WIDTH)):
-                    dist = eucli_bmu[i][j]
-                    if dist <= radius:
-                        theta = math.exp(-(dist ** 2) / (2 * (radius ** 2)))
-                        map[i][j] = map[i][j] + theta * learning_rate * (pattern - map[i][j])
+                    old_map = np.copy(map)
 
-                learning_rate = constants['learning_factor'] * math.exp(-1.0 * time / (max_iters * len(patterns)))
-                radius = (WIDTH / 2.0) * math.exp(-1.0 * time / ((max_iters * len(patterns)) / math.log(radius)))
+                    for i, j in product(range(HEIGHT), range(WIDTH)):
+                        dist = eucli_bmu[i][j]
+                        if dist <= radius:
+                            theta = math.exp(-(dist ** 2) / (2 * (radius ** 2)))
+                            map[i][j] = map[i][j] + theta * learning_rate * (pattern - map[i][j])
 
-                time += 1
-        if n % (max_iters / 10) == 0:
-            print("done course no #{}".format(n))
-except LemmeOut:
-    pass
+                    learning_rate = constants['learning_factor'] * math.exp(-1.0 * time / (max_iters * len(patterns)))
+                    radius = (WIDTH / 2.0) * math.exp(-1.0 * time / ((max_iters * len(patterns)) / math.log(radius)))
 
+                    time += 1
+            if n % (max_iters / 10) == 0:
+                print("done course no #{}".format(n))
+    except LemmeOut:
+        pass
 
-output = generate_result_map(patterns, classes, map)
-#print(output)
-print(map)
+    after = generate_result_map(patterns, classes, map)
+    toimage(after).save('map_after.jpg')
+
 
 # Iris-Setosa - RED
 # Iris-Virginica - GREEN
 # Iris-Versicolor - BLUE
 
-toimage(output).save('map.jpg')
+
