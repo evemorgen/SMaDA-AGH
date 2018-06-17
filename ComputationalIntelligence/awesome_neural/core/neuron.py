@@ -126,6 +126,42 @@ class Neuron:
 
         }
 
+    def set_network_name(self, net_name):
+        self.network_name = net_name
+
+    def set_layer_name(self, layer):
+        self.layer_name = layer
+
+    def generate_cypher(self):
+        node = "(n%s:%s { name: '%s', value: %s, delta: %s, learning_factor: %s, network: '%s', layer: '%s'})" % (
+            round(uniform(0, 99999999999)),
+            self.__class__.__name__,
+            self.name,
+            self.value,
+            self.delta,
+            self.learning_factor,
+            self.network_name,
+            self.layer_name
+        )
+        connections = []
+        inputs = self.inputs or []
+        outputs = self.outputs or []
+        for conn in inputs + outputs:
+            connections.append("""
+                    match (a:%s), (b:%s)
+                    where a.name = '%s' and b.name = '%s'
+                    create (a)-[r:connected {weight: %s, network: '%s'}]->(b);
+                """ % (
+                    conn.one.__class__.__name__,
+                    conn.another.__class__.__name__,
+                    conn.one.name,
+                    conn.another.name,
+                    conn.weight,
+                    self.network_name
+                )
+            )
+        return (node, connections)
+
 
 class InputNeuron(Neuron):
     def __init__(self, value):

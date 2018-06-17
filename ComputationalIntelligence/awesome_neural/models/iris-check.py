@@ -9,17 +9,18 @@ iris_map = {
 }
 
 reverse_map = {
+    (): "wtf",
     (0, 0, 0): "wtf",
     (0, 0, 1): 'Iris-setosa',
     (0, 1, 0): 'Iris-versicolor',
     (1, 0, 0): 'Iris-virginica'
 }
 
-network = load_network('data/trained_networks/iris.yaml')
+network = load_network('../data/trained_networks/iris.yaml')
 
 i = []
 diagnosis = []
-with open('data/training_data/iris.data', newline='') as csvfile:
+with open('../data/training_data/iris.data', newline='') as csvfile:
     reader = csv.reader(csvfile)
     for n, row in enumerate(reader):
         i.append([float(x) for x in row[0:4]])
@@ -32,6 +33,7 @@ bad = 0
 for tup, out in zip(diagnosis, o):
     _, name = tup
     outtup = (round(x) for x in out)
+    print(tuple(outtup))
     if name == reverse_map[tuple(outtup)]:
         good += 1
     else:

@@ -56,7 +56,7 @@ if LOAD_MLP_1:
     n23_connector = connect_om(network2, network3)
     n34_connector = connect_om(network3, network4)
 
-    k = 4
+    k = 5
     i = 0
     while True:
         network1.learn_kfolds(k)
@@ -70,7 +70,7 @@ if LOAD_MLP_1:
         scores = [(n, [round(x) for x in out] == check) for n, out, check in results]
         stuff = Counter(scores)
         folds = [stuff[(i, True)] / (stuff[(i,False)] + stuff[(i, True)]) * 100 for i in range(k)]
-        print(folds)
+        print([round(fold, 2) for fold in folds])
         i = i + 1
         if i % 100 == 0:
             new_learning_rate = uniform(0.0, 1.0)

@@ -1,5 +1,5 @@
-weight_to: 5
-weight_from: -5
-learning_factor: 0.1
-beta: 0.9
+weight_to: 2
+weight_from: -2
+learning_factor: 0.3
+beta: 0.7
 activation: sigmoid

@@ -1,6 +1,7 @@
-#vim files
-**/*.swp
-**/*.swo
+**/.idea
+**/venv
+**/ENV
+**/*.sw[po]
 
 #python cache stuff
 **/*.pyc

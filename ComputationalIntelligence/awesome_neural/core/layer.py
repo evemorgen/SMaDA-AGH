@@ -2,8 +2,17 @@ from core.neuron import Neuron, InputNeuron, OutputNeuron
 
 
 class Layer:
-    def __init__(self, num_of_neurons=0):
+    def __init__(self, num_of_neurons=0, name='layer'):
         self.neurons = [Neuron() for _ in range(num_of_neurons)]
+        self.name = name
+        for n in self.neurons:
+            n.set_layer_name(self.name)
+
+    def set_network_name(self, net_name):
+        self.network_name = net_name
+        for n in self.neurons:
+            n.set_network_name(net_name)
+            n.set_layer_name(self.name)
 
     def connect_layer(self, another, side):
         for n in self.neurons:
@@ -22,12 +31,19 @@ class Layer:
         for n in self.neurons:
             n.calculate_weight()
 
+    def generate_cypher(self):
+        query = []
+        for n in self.neurons:
+            n.set_layer_name(self.name)
+            query.append(n.generate_cypher())
+        return query
+
     def __repr__(self):
         return str(self.neurons)
 
 class InputLayer(Layer):
-    def __init__(self, values):
-        super().__init__()
+    def __init__(self, values, name='InputLayer'):
+        super().__init__(name=name)
         self.neurons = [InputNeuron(value) for value in values]
 
     def set_input(self, input):
@@ -36,8 +52,8 @@ class InputLayer(Layer):
 
 
 class OutputLayer(Layer):
-    def __init__(self, values):
-        super().__init__()
+    def __init__(self, values, name='OutputLayer'):
+        super().__init__(name=name)
         self.neurons = [OutputNeuron(value) for value in values]
 
     def calculate_delta(self):
@@ -50,8 +66,8 @@ class OutputLayer(Layer):
 
 
 class BiasLayer(Layer):
-    def __init__(self, neurons):
-        super().__init__()
+    def __init__(self, neurons, name='BiasLayer'):
+        super().__init__(name=name)
         self.neurons = neurons
 
     def pass_output(self, outputs):
