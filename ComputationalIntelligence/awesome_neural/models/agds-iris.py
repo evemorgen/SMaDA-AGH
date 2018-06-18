@@ -112,8 +112,9 @@ params, irises = load_data('../data/training_data/iris-with-header.data')
 looking_for = irises[92]
 
 weights = calculate_weights(params, looking_for)
+pprint(weights)
 similar = sorted(get_similarities(weights, irises), key=lambda x: x[1])
 
-pprint(similar)
+#pprint(similar)
 
 

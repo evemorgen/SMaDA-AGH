@@ -1,0 +1,7289 @@
+!!python/object:core.network.Network
+constants:
+  activation: sigmoid
+  beta: 0.7
+  learning_factor: 0.3
+  weight_from: -2
+  weight_to: 2
+data:
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 0
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 1
+  - 1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 1
+  - 0
+  - -1
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 0
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 1
+- inputs:
+  - 1
+  - 0
+  - 0
+  - 0
+  outputs:
+  - 0
+layers:
+- !!python/object:core.layer.InputLayer
+  name: InputLayer
+  network_name: snek
+  neurons:
+  - &id005 !!python/object:core.neuron.InputNeuron
+    delta: -8.387821714151271e-05
+    deltas: !!set {}
+    inputs: null
+    layer_name: InputLayer
+    learning_factor: 0.3
+    name: input1
+    network_name: snek
+    outputs:
+    - &id001 !!python/object:core.neuron.Connection
+      another: &id002 !!python/object:core.neuron.Neuron
+        delta: 3.318178802937504e-06
+        deltas: !!set {}
+        inputs:
+        - *id001
+        - &id003 !!python/object:core.neuron.Connection
+          another: *id002
+          one: &id010 !!python/object:core.neuron.InputNeuron
+            delta: 6.124348186088107e-06
+            deltas: !!set {}
+            inputs: null
+            layer_name: InputLayer
+            learning_factor: 0.3
+            name: input3
+            network_name: snek
+            outputs:
+            - *id003
+            - &id006 !!python/object:core.neuron.Connection
+              another: &id004 !!python/object:core.neuron.Neuron
+                delta: -1.6308360980805167e-05
+                deltas: !!set {}
+                inputs:
+                - &id032 !!python/object:core.neuron.Connection
+                  another: *id004
+                  one: *id005
+                  weight: 4.961902547391814
+                - *id006
+                - &id008 !!python/object:core.neuron.Connection
+                  another: *id004
+                  one: &id007 !!python/object:core.neuron.InputNeuron
+                    delta: 7.2748948699445945e-06
+                    deltas: !!set {}
+                    inputs: null
+                    layer_name: InputLayer
+                    learning_factor: 0.3
+                    name: input5
+                    network_name: snek
+                    outputs:
+                    - &id029 !!python/object:core.neuron.Connection
+                      another: *id002
+                      one: *id007
+                      weight: -1.8094115974296112
+                    - *id008
+                    - &id011 !!python/object:core.neuron.Connection
+                      another: &id009 !!python/object:core.neuron.Neuron
+                        delta: 1.5326591592915957e-05
+                        deltas: !!set {}
+                        inputs:
+                        - &id033 !!python/object:core.neuron.Connection
+                          another: *id009
+                          one: *id005
+                          weight: -5.914991406684923
+                        - &id026 !!python/object:core.neuron.Connection
+                          another: *id009
+                          one: *id010
+                          weight: 0.403882882374553
+                        - *id011
+                        - &id013 !!python/object:core.neuron.Connection
+                          another: *id009
+                          one: &id012 !!python/object:core.neuron.InputNeuron
+                            delta: -7.115124204214612e-07
+                            deltas: !!set {}
+                            inputs: null
+                            layer_name: InputLayer
+                            learning_factor: 0.3
+                            name: input7
+                            network_name: snek
+                            outputs:
+                            - &id030 !!python/object:core.neuron.Connection
+                              another: *id002
+                              one: *id012
+                              weight: -0.6169788985261779
+                            - &id024 !!python/object:core.neuron.Connection
+                              another: *id004
+                              one: *id012
+                              weight: -0.13619404123657802
+                            - *id013
+                            - &id015 !!python/object:core.neuron.Connection
+                              another: &id014 !!python/object:core.neuron.Neuron
+                                delta: 1.6344010871017816e-05
+                                deltas: !!set {}
+                                inputs:
+                                - &id034 !!python/object:core.neuron.Connection
+                                  another: *id014
+                                  one: *id005
+                                  weight: -5.889794657680867
+                                - &id027 !!python/object:core.neuron.Connection
+                                  another: *id014
+                                  one: *id010
+                                  weight: 1.4509809690123543
+                                - &id022 !!python/object:core.neuron.Connection
+                                  another: *id014
+                                  one: *id007
+                                  weight: -0.033587961094180455
+                                - *id015
+                                layer_name: layer
+                                learning_factor: 0.3
+                                name: Luna11
+                                network_name: snek
+                                outputs:
+                                - &id017 !!python/object:core.neuron.Connection
+                                  another: &id016 !!python/object:core.neuron.OutputNeuron
+                                    delta: 0.0015189397002709493
+                                    deltas: !!set {}
+                                    desired: 1
+                                    inputs:
+                                    - &id031 !!python/object:core.neuron.Connection
+                                      another: *id016
+                                      one: *id002
+                                      weight: 1.4403864894735212
+                                    - &id025 !!python/object:core.neuron.Connection
+                                      another: *id016
+                                      one: *id004
+                                      weight: -7.079285034788343
+                                    - &id021 !!python/object:core.neuron.Connection
+                                      another: *id016
+                                      one: *id009
+                                      weight: 6.653110174364843
+                                    - *id017
+                                    - &id019 !!python/object:core.neuron.Connection
+                                      another: *id016
+                                      one: &id018 !!python/object:core.neuron.Neuron
+                                        delta: 1.394498658853445e-05
+                                        deltas: !!set {}
+                                        inputs:
+                                        - &id035 !!python/object:core.neuron.Connection
+                                          another: *id018
+                                          one: *id005
+                                          weight: -5.172106519637513
+                                        - &id028 !!python/object:core.neuron.Connection
+                                          another: *id018
+                                          one: *id010
+                                          weight: -0.9388364304044338
+                                        - &id023 !!python/object:core.neuron.Connection
+                                          another: *id018
+                                          one: *id007
+                                          weight: 1.1660682749375726
+                                        - &id020 !!python/object:core.neuron.Connection
+                                          another: *id018
+                                          one: *id012
+                                          weight: -0.8762816847836159
+                                        layer_name: layer
+                                        learning_factor: 0.3
+                                        name: Mars12
+                                        network_name: snek
+                                        outputs:
+                                        - *id019
+                                        stimulations: !!set {}
+                                        sum: 0
+                                        value: 0.026072022184137008
+                                      weight: 6.0533700981059155
+                                    layer_name: OutputLayer
+                                    learning_factor: 0.3
+                                    name: output14
+                                    network_name: snek
+                                    outputs: null
+                                    stimulations: !!set {}
+                                    sum: 0
+                                    value: 0.012292813558320053
+                                  one: *id014
+                                  weight: 7.094760995021463
+                                stimulations: !!set {}
+                                sum: 0
+                                value: 0.015939983326889565
+                              one: *id012
+                              weight: 0.8863639443860801
+                            - *id020
+                            stimulations: !!set {}
+                            sum: 0
+                            value: 0
+                          weight: -0.3613489525740858
+                        layer_name: layer
+                        learning_factor: 0.3
+                        name: Kang10
+                        network_name: snek
+                        outputs:
+                        - *id021
+                        stimulations: !!set {}
+                        sum: 0
+                        value: 0.015665668873218155
+                      one: *id007
+                      weight: 1.330488989926275
+                    - *id022
+                    - *id023
+                    stimulations: !!set {}
+                    sum: 0
+                    value: 0
+                  weight: 0.05632906024610265
+                - *id024
+                layer_name: layer
+                learning_factor: 0.3
+                name: Jupiter9
+                network_name: snek
+                outputs:
+                - *id025
+                stimulations: !!set {}
+                sum: 0
+                value: 0.9699193782233223
+              one: *id010
+              weight: -0.4258942467963774
+            - *id026
+            - *id027
+            - *id028
+            stimulations: !!set {}
+            sum: 0
+            value: 0
+          weight: 0.8177308194374179
+        - *id029
+        - *id030
+        layer_name: layer
+        learning_factor: 0.3
+        name: Io8
+        network_name: snek
+        outputs:
+        - *id031
+        stimulations: !!set {}
+        sum: 0
+        value: 0.15617434046305181
+      one: *id005
+      weight: -2.4099613691738666
+    - *id032
+    - *id033
+    - *id034
+    - *id035
+    stimulations: !!set {}
+    sum: 0
+    value: 1
+  - *id010
+  - *id007
+  - *id012
+- !!python/object:core.layer.Layer
+  name: layer
+  network_name: snek
+  neurons:
+  - *id002
+  - *id004
+  - *id009
+  - *id014
+  - *id018
+- !!python/object:core.layer.OutputLayer
+  name: OutputLayer
+  network_name: snek
+  neurons:
+  - *id016
+name: snek
