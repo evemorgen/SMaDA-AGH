@@ -1,0 +1,6 @@
+﻿(define (problem hanoi1)
+  (:domain hanoi)
+  (:objects a - isBlock b - isBlock c - isBlock left - place middle - place right - place)
+  (:init (ontable a left) (ontable b middle) (ontable c right) (clear a) (clear b) (clear c) (smaller a b) (smaller b c) (handempty))
+  (:goal (and (on b c) (on a b)))
+)

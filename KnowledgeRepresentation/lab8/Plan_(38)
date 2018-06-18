@@ -1,0 +1,1 @@
+﻿Found Plan (output)(pick-up b)(put-a-on-b b c)(pick-up a)(put-a-on-b a b)  (:action pick-up    :parameters (b)    :precondition      (and        (clear b)        (ontable b)        (handempty)      )    :effect      (and        (not          (ontable b)        )        (not          (clear b)        )        (not          (handempty)        )        (holding b)      )  )

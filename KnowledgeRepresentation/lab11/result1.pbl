@@ -1,0 +1,22 @@
+0.0102::visitedAsia.
+0.0392156862745::tubercolosis :- visitedAsia.
+0.0104061426551::tubercolosis :- \+visitedAsia.
+0.5974::smoker.
+0.0924004017409::lung_cancer :- smoker.
+0.0106805762543::lung_cancer :- \+smoker.
+0.674416796413::bronchitis :- smoker.
+0.842166364553::bronchitis :- \+smoker.
+1.0::eitherTBorLungCancer :- lung_cancer, tubercolosis.
+1.0::eitherTBorLungCancer :- lung_cancer, \+tubercolosis.
+1.0::eitherTBorLungCancer :- tubercolosis, \+lung_cancer.
+0.0::eitherTBorLungCancer :- \+tubercolosis, \+lung_cancer.
+0.712771648984::dyspnea :- eitherTBorLungCancer, bronchitis.
+0.736097501031::dyspnea :- eitherTBorLungCancer, \+bronchitis.
+0.0177842950814::dyspnea :- bronchitis, \+eitherTBorLungCancer.
+0.920577030149::dyspnea :- \+bronchitis, \+eitherTBorLungCancer.
+0.984195402299::xray_positive :- eitherTBorLungCancer.
+0.0::xray_positive :- \+eitherTBorLungCancer.
+
+evidence(smoker).
+evidence(xray_positive).
+query(lung_cancer).

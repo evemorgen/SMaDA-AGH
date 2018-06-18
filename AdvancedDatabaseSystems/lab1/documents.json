@@ -1,0 +1,35 @@
+'{
+  "date": "2018-03-14",
+  "subject": "We all gonna die like Hawking did today."
+}'
+
+'{
+  "date": "2018-03-15",
+  "subject": "Maybe not today"
+}'
+
+'{
+  "name": "Awesome item",
+  "description": "This item has property of liquid awsomeness",
+  "price": 399
+}'
+
+'{
+  "name": "Less awesome item",
+  "description": "This thing is less awesome but still awesome",
+  "price": 199
+}'
+
+'{
+  "body": "Hello darkness my old friend",
+  "sender": "Steaven H",
+  "recipient": "Anyone",
+  "date": "2018-03-14"
+}'
+
+'{
+  "body": "Please stop telling everyone that earth is flat",
+  "sender": "Neil Degree Tyson",
+  "recipient": "All flat earthers",
+  "date": "2018-03-13"
+}'
