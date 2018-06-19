@@ -33,7 +33,7 @@ function(doc) {
 }
 ```
 to submit such function the following curl will be needed:
-```
+```javascript
 curl -X PUT -d @foo.js -H'Content-Type: application/json' localhost:5984/lab_db/_design/date
 
 foo.js
@@ -47,7 +47,7 @@ foo.js
 ```
 
 To obtain results of this view, we will curl for:
-```
+```javascript
 curl -s -X GET -H'Content-Type: application/json' localhost:5984/lab_db/_design/date/_view/by_date | python -m json.tool
 {
     "offset": 0,
