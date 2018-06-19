@@ -32,6 +32,50 @@ function(doc) {
   }
 }
 ```
+to submit such function the following curl will be needed:
+```
+curl -X PUT -d @foo.js -H'Content-Type: application/json' localhost:5984/lab_db/_design/date
+
+foo.js
+{
+  "views": {
+    "by_date": {
+      "map": "function(doc) {\n  if(doc.subject) {\n    emit(doc.date, doc);\n  }\n}"
+    }
+  }
+}
+```
+
+To obtain results of this view, we will curl for:
+```
+curl -s -X GET -H'Content-Type: application/json' localhost:5984/lab_db/_design/date/_view/by_date | python -m json.tool
+{
+    "offset": 0,
+    "rows": [
+        {
+            "id": "63cb5feb340f426ce0e1affe8d0000fd",
+            "key": "2018-03-14",
+            "value": {
+                "_id": "63cb5feb340f426ce0e1affe8d0000fd",
+                "_rev": "1-17d371629c27b614ec0331988e2bcf8d",
+                "date": "2018-03-14",
+                "subject": "We all gonna die like Hawking did today."
+            }
+        },
+        {
+            "id": "63cb5feb340f426ce0e1affe8d00023f",
+            "key": "2018-06-19",
+            "value": {
+                "_id": "63cb5feb340f426ce0e1affe8d00023f",
+                "_rev": "1-b53c7e38bb16e55f36ec92006d316a1e",
+                "date": "2018-06-19",
+                "subject": "STILL ALIVE"
+            }
+        }
+    ],
+    "total_rows": 2
+}
+```
 
 ## Exc 4
 Creating view that sums numer of letter occurances in all objects properties is relativly simple. Implement map that emits value "1" for every letter of its property (name of property and its value), then sum all these 1's in reduce.  
