@@ -7,3 +7,6 @@
 [submodule "KnowledgeRepresentation/projects/gangs-wars"]
 	path = KnowledgeRepresentation/projects/gangs-wars
 	url = https://gitlab.com/evemorgen/gangs-wars.git
+[submodule "AdvancedDatabaseSystems/project"]
+	path = AdvancedDatabaseSystems/project
+	url = https://github.com/evemorgen/ads_project.git
