@@ -1,6 +1,8 @@
 # Computional Intelligence
 
 TOC:
+  - presentation:
+      - (`presentation/*`)[presentation/]
   - labs:
       - network implementation:
           - `awesome_neural/core/*`
