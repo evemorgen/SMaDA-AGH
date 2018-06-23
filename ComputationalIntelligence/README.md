@@ -2,7 +2,7 @@
 
 TOC:
   - presentation:
-      - (`presentation/*`)[presentation/]
+      - [`presentation/*`](presentation/)
   - labs:
       - network implementation:
           - `awesome_neural/core/*`
