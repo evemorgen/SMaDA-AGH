@@ -9,4 +9,4 @@
 	url = https://gitlab.com/evemorgen/gangs-wars.git
 [submodule "AdvancedDatabaseSystems/project"]
 	path = AdvancedDatabaseSystems/project
-	url = https://github.com/evemorgen/ads_project.git
+	url = https://gitlab.com/kis-agh/ads18-osm-neo4j.git
