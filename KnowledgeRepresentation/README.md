@@ -10,3 +10,6 @@ TOC:
   - [Lab 7: The test](lab7/README.md)
   - [Lab 8: Strips and PDDL](lab8/README.md)
   - [Lab 9: Automated Planning: Fluents](lab9/README.md)
+  - [Lab 10: Probabilistic Programming: 101](lab10/README.md)
+  - [Lab 11: Probabilistic Programming: Diagnosis and Prediction](lab11/README.md)
+  - [Lab 12: Probabilistic Programming: Probabilistic Graphs and Decision Theory](lab12/README.md)

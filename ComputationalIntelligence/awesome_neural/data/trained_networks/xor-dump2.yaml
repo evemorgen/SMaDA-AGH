@@ -1,0 +1,186 @@
+!!python/object:core.network.Network
+constants:
+  activation: sigmoid
+  beta: 0.7
+  learning_factor: 0.3
+  normalised: true
+  weight_from: -2
+  weight_to: 2
+data:
+- inputs:
+  - 0.0
+  - 0.0
+  outputs:
+  - 0
+- inputs:
+  - 0.0
+  - 1.0
+  outputs:
+  - 1
+- inputs:
+  - 1.0
+  - 1.0
+  outputs:
+  - 0
+- inputs:
+  - 1.0
+  - 0.0
+  outputs:
+  - 1
+layers:
+- !!python/object:core.layer.InputLayer
+  network_name: xor
+  neurons:
+  - &id005 !!python/object:core.neuron.InputNeuron
+    delta: -0.06134907502497106
+    deltas: !!set {}
+    inputs: null
+    learning_factor: 0.3
+    name: input1
+    network_name: xor
+    outputs:
+    - &id001 !!python/object:core.neuron.Connection
+      another: &id002 !!python/object:core.neuron.Neuron
+        delta: 0.19809358937246652
+        deltas: !!set {}
+        inputs:
+        - *id001
+        - &id003 !!python/object:core.neuron.Connection
+          another: *id002
+          one: &id014 !!python/object:core.neuron.InputNeuron
+            delta: -0.061351694306394776
+            deltas: !!set {}
+            inputs: null
+            learning_factor: 0.3
+            name: input3
+            network_name: xor
+            outputs:
+            - *id003
+            - &id006 !!python/object:core.neuron.Connection
+              another: &id004 !!python/object:core.neuron.Neuron
+                delta: -0.1945767338962776
+                deltas: !!set {}
+                inputs:
+                - &id018 !!python/object:core.neuron.Connection
+                  another: *id004
+                  one: *id005
+                  weight: -9.82177333609712
+                - *id006
+                learning_factor: 0.3
+                name: Fulu5
+                network_name: xor
+                outputs:
+                - &id008 !!python/object:core.neuron.Connection
+                  another: &id007 !!python/object:core.neuron.Neuron
+                    delta: -0.07306248507564907
+                    deltas: !!set {}
+                    inputs:
+                    - &id015 !!python/object:core.neuron.Connection
+                      another: *id007
+                      one: *id002
+                      weight: -13.139581891140187
+                    - *id008
+                    learning_factor: 0.3
+                    name: Galaxy6
+                    network_name: xor
+                    outputs:
+                    - &id009 !!python/object:core.neuron.Connection
+                      another: &id010 !!python/object:core.neuron.OutputNeuron
+                        delta: 0.05886705896737321
+                        deltas: !!set {}
+                        desired: 1
+                        inputs:
+                        - *id009
+                        - &id012 !!python/object:core.neuron.Connection
+                          another: *id010
+                          one: &id011 !!python/object:core.neuron.Neuron
+                            delta: 0.03292152537776485
+                            deltas: !!set {}
+                            inputs:
+                            - &id016 !!python/object:core.neuron.Connection
+                              another: *id011
+                              one: *id002
+                              weight: 10.589610879809275
+                            - &id013 !!python/object:core.neuron.Connection
+                              another: *id011
+                              one: *id004
+                              weight: -9.883578984623433
+                            learning_factor: 0.3
+                            name: Helvetios7
+                            network_name: xor
+                            outputs:
+                            - *id012
+                            stimulations: !!set {}
+                            sum: 0
+                            value: 0.7794111845867354
+                          weight: 10.095249560038898
+                        learning_factor: 0.3
+                        name: output9
+                        network_name: xor
+                        outputs: null
+                        stimulations: !!set {}
+                        sum: 0
+                        value: 0.9425223272781305
+                      one: *id007
+                      weight: -22.402448522806008
+                    stimulations: !!set {}
+                    sum: 0
+                    value: 0.17285624914023584
+                  one: *id004
+                  weight: 13.18586651312593
+                - *id013
+                stimulations: !!set {}
+                sum: 0
+                value: 0.0010319822101084355
+              one: *id014
+              weight: -9.74434251580493
+            stimulations: !!set {}
+            sum: 0
+            value: 0
+          weight: -2.260573558846505
+        learning_factor: 0.3
+        name: Eartha4
+        network_name: xor
+        outputs:
+        - *id015
+        - *id016
+        - &id017 !!python/object:core.neuron.Connection
+          another: !!python/object:core.neuron.BiasNeuron
+            delta: 0
+            deltas: !!set {}
+            inputs:
+            - *id017
+            learning_factor: 0.3
+            name: Kang10
+            network_name: xor
+            outputs: []
+            stimulations: !!set {}
+            sum: 0
+            value: 0.1
+          one: *id002
+          weight: -0.40627101791055287
+        stimulations: !!set {}
+        sum: 0
+        value: 0.17124305362817088
+      one: *id005
+      weight: -2.2526328709232932
+    - *id018
+    stimulations: !!set {}
+    sum: 0
+    value: 1
+  - *id014
+- !!python/object:core.layer.Layer
+  network_name: xor
+  neurons:
+  - *id002
+  - *id004
+- !!python/object:core.layer.Layer
+  network_name: xor
+  neurons:
+  - *id007
+  - *id011
+- !!python/object:core.layer.OutputLayer
+  network_name: xor
+  neurons:
+  - *id010
+name: xor
