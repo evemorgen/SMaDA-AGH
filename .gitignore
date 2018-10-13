@@ -2,6 +2,7 @@
 **/venv
 **/ENV
 **/*.sw[po]
+**/.mypy_cache
 
 #python cache stuff
 **/*.pyc
