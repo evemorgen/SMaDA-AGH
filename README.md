@@ -14,3 +14,4 @@ TOC:
 9. [Philosophy & New Media](PhilosophyAndNewMedia/README.md)
 ---
 10. [Agent Based Modelling](AgentBasedModelling/README.md)
+11. [Advanced Algorithms and Data Structures](AdvancedAlgorithmsAndDataStructures/README.md)
