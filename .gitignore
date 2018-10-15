@@ -8,3 +8,8 @@
 **/*.pyc
 **/*.pyo
 **/__pycache__
+
+# java stuff
+**/*.classpath
+**/*.project
+**/*.prefs
