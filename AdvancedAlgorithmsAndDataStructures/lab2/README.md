@@ -22,4 +22,4 @@ Ford–Fulkerson(G=(V,E,c),s,t)
 
 [Exercise 2: Calculate maximum flow between vertices 10 and  60 of the](exc2/) [test graph](graf1.txt)  
 [Exercise 3: For the same test graph  find a target vertex  for which the maximum flow from the source s=10
- is reached.](exc3)
+ is reached.](exc3/)
