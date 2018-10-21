@@ -5,7 +5,7 @@ If u and v are not connected  or transfer from  u to v is not possible then c(u,
 
 Now we ask the question: what is the maximum flow possible between a source (s) and a target (t). For water flow, for instance, it may be asked: how much liters of water can be pumped between s and t in one second? To answer this one has to launch the Ford-Fulkerson algorithm which pseudocode is given below.
 
-[Exercise 1: Implement the following F-F algorithm pseudocode](exc1/):
+[Exercise 1: Implement the following F-F algorithm pseudocode](ff.py):
   - FFA INPUT:
     - G=(V,E,c) - network graph
     - c:V×V→ℝ - network capacity matrix
@@ -20,6 +20,21 @@ Now we ask the question: what is the maximum flow possible between a source (s) 
 Ford–Fulkerson(G=(V,E,c),s,t)
 ![](alg1.png)
 
-[Exercise 2: Calculate maximum flow between vertices 10 and  60 of the](exc2/) [test graph](graf1.txt)  
+[Exercise 2: Calculate maximum flow between vertices 10 and  60 of the](ff.py) [test graph](graf1.txt)
+```
+? python exc1/ff.py graf1.txt 10 60                                                                     130 ↵
+964.2467718120002:10:60
+```
 [Exercise 3: For the same test graph  find a target vertex  for which the maximum flow from the source s=10
- is reached.](exc3/)
+ is reached.](which.sh)
+```
+15:18:00 evemorgenu16.pgalczynski.cde.dev.onet lab2 feature/aaads/lab2 ? cat which.sh
+for node in $(cat graf1.txt | tr '\t' '\n' | grep -v '\.' | grep -v ' ' | grep -v 10 | sort | uniq); do
+    ./ENV/bin/python ff.py graf1.txt 10 $node
+done
+15:18:16 evemorgenu16.pgalczynski.cde.dev.onet lab2 feature/aaads/lab2 ? ./which.sh > flows.txt
+15:19:21 evemorgenu16.pgalczynski.cde.dev.onet lab2 feature/aaads/lab2 ? cat flows.txt| sort -n | tail -n 3
+964.2467718120005:10:57
+964.2467718120006:10:19
+964.2467718120007:10:62
+```
