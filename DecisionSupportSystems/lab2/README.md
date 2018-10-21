@@ -8,3 +8,7 @@ File containing worklog is [repairexample.xes](repairexample.xes)
   
 Result should be as follows:
 ![](simple_heuristic_net.png)
+
+Just for fun, there is a gif version of these created with [script_anim.py](script_anim.py):
+![](lol.gif)
+![](dfv.gif)
