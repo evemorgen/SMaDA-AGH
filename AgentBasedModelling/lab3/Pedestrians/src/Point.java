@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class Point {
 
@@ -9,6 +10,7 @@ public class Point {
     public int type;
     public int staticField;
     public boolean isPedestrian;
+    public boolean blocked;
 
     public Point() {
         type=0;
@@ -22,15 +24,28 @@ public class Point {
     }
 
     public boolean calcStaticField() {
-        int min_value = Collections.min(neighbors, Comparator.comparing(s -> s.staticField)).staticField + 1;
-        if(staticField > min_value) {
-            staticField = min_value;
-            return true;
-        }
-        return false;
+       return neighbors.stream()
+            .map(p -> p.staticField)
+            .min(Comparator.naturalOrder())
+            .map(x -> x + 1)
+            .filter(min -> min < staticField)
+            .map(val -> staticField = val)
+            .isPresent();
     }
     
     public void move(){
+        if(isPedestrian && !blocked) {
+            neighbors.stream()
+                .filter(p -> p.type == 0)
+                .min(Comparator.comparing(p -> p.staticField))
+                .ifPresent(p -> {
+                    if(p.type == 0) {
+                        p.isPedestrian = true;
+                        p.blocked = true;
+                    }
+                    this.isPedestrian = false;
+                });
+        }
     }
 
     public void addNeighbor(Point nei) {

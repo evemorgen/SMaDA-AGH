@@ -5,6 +5,7 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import javax.swing.JComponent;
 import javax.swing.event.MouseInputListener;
@@ -26,15 +27,19 @@ public class Board extends JComponent implements MouseInputListener, ComponentLi
     public void iteration() {
         for (int x = 1; x < points.length - 1; ++x)
             for (int y = 1; y < points[x].length - 1; ++y)
+                points[x][y].blocked = false;
+
+        for (int x = 1; x < points.length - 1; ++x)
+            for (int y = 1; y < points[x].length - 1; ++y)
                 points[x][y].move();
+ 
         this.repaint();
     }
 
     public void clear() {
-        for (int x = 0; x < points.length; ++x)
-            for (int y = 0; y < points[x].length; ++y) {
-                points[x][y].clear();
-            }
+        Arrays.stream(points)
+            .flatMap(pa -> Arrays.stream(pa))
+            .peek(p -> p.clear());
         calculateField();
         this.repaint();
     }
@@ -68,10 +73,10 @@ public class Board extends JComponent implements MouseInputListener, ComponentLi
         }
 
         while(!toCheck.isEmpty()) {
-            if(toCheck.get(0).calcStaticField()) {
-                toCheck.addAll(toCheck.get(0).neighbors);
+            Point p = toCheck.remove(0);
+            if(p.calcStaticField()) {
+                toCheck.addAll(p.neighbors);
             }
-            toCheck.remove(0);
         }
     }
 
