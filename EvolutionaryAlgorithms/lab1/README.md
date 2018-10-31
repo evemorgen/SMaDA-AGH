@@ -11,3 +11,7 @@
   - to select only valuable output use this fancy oneliner:   
     `cat jclec4-base/Rastrigin-report.txt | grep Best | grep -o 'value=\d\+\.\d\+' | sed -e 's/value=//g'`
   - some charts are comming soon
+
+## Results
+  - Best score population achieved in time: ![](best-value.png)
+  - Average fitness value at each generation: ![](average-fitness.png)
