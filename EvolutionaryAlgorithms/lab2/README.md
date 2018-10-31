@@ -1,5 +1,9 @@
 # EA - lab 2 - Selection methods
 
+Change number of dimentions to 30.
+Change the seed in AbstractRandGenFactory -> configure method (change to system time or sth).
+
+
 1. prepare your environment and run as in the first laboratory class, optimization of Rastrigin function
 2. prepare the logging in order to easily retrieve the values of the fitness function depending on the generation
 3. look into the contents of the net.sf.jclec.selector package
