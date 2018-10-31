@@ -16,3 +16,4 @@ TOC:
 10. [Agent Based Modelling](AgentBasedModelling/README.md)
 11. [Advanced Algorithms and Data Structures](AdvancedAlgorithmsAndDataStructures/README.md)
 13. [Decision Support Systems](DecisionSupportSystems/README.md)
+14. [Evolutionary Algorithms](EvolutionaryAlgorithms/README.md)
