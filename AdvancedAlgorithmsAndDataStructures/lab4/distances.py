@@ -1,5 +1,6 @@
 import re
 from typing import List
+from multimethod import multimethod
 
 
 class Point:
@@ -24,6 +25,10 @@ class Face:
         return f"Face({self.p1}, {self.p2}, {self.p3}),"
 
 
+class Edge:
+    pass
+
+
 class Solid:
     def __init__(self, faces: List[Face]):
         self.faces = faces
@@ -45,5 +50,42 @@ def import_data(filename):
     ]
 
 
+@multimethod  # noqa: F811
+def distance(a: Point, b: Point) -> float:
+    print("POINTS")
+
+
+@multimethod  # noqa: F811
+def distance(a: Face, b: Face) -> float:
+    print("FACES")
+
+
+@multimethod  # noqa: F811
+def distance(a: Face, b: Point) -> float:
+    print("FACE-POINT")
+
+
+@multimethod  # noqa: F811
+def distance(a: Solid, b: Solid) -> float:
+    print("SOLIDS")
+
+
+@multimethod  # noqa: F811
+def distance(a: Edge, b: Point) -> float:
+    print("EDGE-POINT")
+
+
+@multimethod  # noqa: F811
+def distance(a: Edge, b: Edge) -> float:
+    print("EDGES")
+
+
+@multimethod  # noqa: F811
+def distance(a: Edge, b: Face) -> float:
+    print("EDGE-FACE")
+
+
 solids = import_data('solid_data.txt')
-print(solids)
+
+distance(solids[0], solids[1])
+distance(solids[0].faces[0], solids[0].faces[1])
