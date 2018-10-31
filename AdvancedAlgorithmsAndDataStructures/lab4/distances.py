@@ -15,13 +15,13 @@ class Point:
 class Face:
     def __init__(self, p1: Point, p2: Point, p3: Point):
         self.p1, self.p2, self.p3 = (p1, p2, p3)
-        self.edges
+        self.edges = []
 
     def get_edges():
         pass
 
     def __repr__(self):
-        return f"Face({self.p1}, {self.p2}, {self.p3})"
+        return f"Face({self.p1}, {self.p2}, {self.p3}),"
 
 
 class Solid:
@@ -29,7 +29,7 @@ class Solid:
         self.faces = faces
 
     def __repr__(self):
-        return f"Solid({self.faces})"
+        return f"Solid(\n" + "".join([f"    {face}\n" for face in self.faces]) + ")"
 
 
 def import_data(filename):
@@ -46,3 +46,4 @@ def import_data(filename):
 
 
 solids = import_data('solid_data.txt')
+print(solids)
