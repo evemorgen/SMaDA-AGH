@@ -48,19 +48,14 @@ def distance(a: Face, b: Face) -> float:
         distance(ae3, be2),
         distance(ae3, be3)
     ]
-    print(distances[:6])
     return min(distances)
 
-
-def triangle_area(a, b, c):
-    return sqrt((a + b + c) * (a + b - c) * (a - b + c) * (-a + b + c)) / 4.0
 
 @multimethod  # noqa: F811
 def distance(f: Face, p: Point) -> float:
     # http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.104.4264&rep=rep1&type=pdf
     # p point projection to plane which face f lays in
     # normal Np of P1P2P3
-    """
     np = cross(Vector(f.p1, f.p2), Vector(f.p1, f.p3))
 
     # the angle a between normal Np and P1P0
@@ -88,30 +83,11 @@ def distance(f: Face, p: Point) -> float:
         e2 = Edge(f.p2, f.p3)
         e3 = Edge(f.p1, f.p3)
 
-        return min(distance(e1, p0p), distance(e2, p0p), distance(e3, p0p))
-    """
-    print("===FACE-POINT")
-    e1 = Edge(f.p1, f.p2)
-    e2 = Edge(f.p2, f.p3)
-    e3 = Edge(f.p1, f.p3)
-
-    return min(distance(e1, p), distance(e2, p), distance(e3, p), distance(f.p1, p), distance(f.p2, p), distance(f.p3, p))
-
-def contains(f: Face, p: Point):
-    d01 = distance(f.p1, f.p2)
-    d02 = distance(f.p1, f.p3)
-    d12 = distance(f.p2, f.p3)
-    dp0 = distance(p, f.p1)
-    dp1 = distance(p, f.p2)
-    dp3 = distance(p, f.p3)
-    triangleField = triangle_area(d01, d02, d12)
-    testField     = sum [triangle_area(dp0,dp1,d01), triangle_area(dp0,dp2,d02), triangle_area(dp1,dp2,d12)]
-    return abs (triangleField - testField) < 1e-7
+        return min(distance(e1, p), distance(e2, p), distance(e3, p), distance(f.p1, p), distance(f.p2, p), distance(f.p3, p))
 
 
 @multimethod  # noqa: F811
 def distance(a: Solid, b: Solid) -> float:
-    print("SOLIDS")
     distances = [distance(f1, f2) for f1, f2 in itertools.product(a.faces, b.faces)]
     return min(distances)
 
@@ -140,16 +116,12 @@ def distance(e: Edge, p: Point) -> float:
 @multimethod  # noqa: F811
 def distance(e1: Edge, e2: Edge) -> float:
     # http://geomalgorithms.com/a07-_distance.html#dist3D_Segment_to_Segment()
-    print("+++EDGE-EDGE")
     SMALL_NUM = 0.00000001
-    #u, v, w = Vector(e1.p2, e1.p1), Vector(e2.p2, e2.p1), Vector(e1.p1, e2.p1)
     u, v, w = Vector(e1.p1, e1.p2), Vector(e2.p1, e2.p2), Vector(e2.p1, e1.p1)
     a, b, c, d, e = dot(u, u), dot(u, v), dot(v, v), dot(u, w), dot(v, w)
     D = a * c - b * b
     sc, sN, sD = D, D, D
     tc, tN, tD = D, D, D
-    #sN = b * e - c * d
-    #tN = a * e - b * d
 
     if D < SMALL_NUM:
         sN, sD = 0.0, 1.0
@@ -177,15 +149,14 @@ def distance(e1: Edge, e2: Edge) -> float:
         else:
             sN, sD = (-d + b), a
 
-    sc = sN / sD  # 0.0 if abs(sN) < SMALL_NUM else sN / sD
-    tc = tN / tD  # 0.0 if abs(tN) < SMALL_NUM else tN / tD
+    sc = sN / sD
+    tc = tN / tD
     dP = w + (u * sc) - (v * tc)
     return dP.length()
 
 
 @multimethod  # noqa: F811
 def distance(a: Edge, b: Face) -> float:
-    print("EDGE-FACE")
     eb1, eb2, eb3 = b.edges
     return min(
         distance(a, eb1),
@@ -200,6 +171,11 @@ def distance(a: Edge, b: Face) -> float:
 if __name__ == '__main__':
     solids = import_data('solid_data.txt')
     print("solids :", distance(solids[0], solids[1]))
+    print("face (1, 0, 0), (0, 1, 0), (0, 0, 0) to face (100, 0, 0.13), (0, 100, 0.13), (-100, -100, 0.13)", distance(
+        Face(Point(1, 0, 0), Point(0, 1, 0), Point(0, 0, 0)),
+        Face(Point(100, 0, 0.13), Point(0, 100, 0.13), Point(-100, -100, 0.13))
+    ))
+    """
     print("points: 0, 0, 0 to 10, 10, 10: ", distance(
         Point(0, 0, 0),
         Point(10, 10, 10)
@@ -220,23 +196,8 @@ if __name__ == '__main__':
         Edge(Point(1, 2, 3), Point(2, 4, 6)),
         Face(Point(0, 0, 0), Point(10, 10, 10), Point(100, 0, 0.13))
     ))
-    print("face (1, 0, 0), (0, 1, 0), (0, 0, 0) to face (100, 0, 0.13), (0, 100, 0.13), (-100, -100, 0.13)", distance(
-        Face(Point(1, 0, 0), Point(0, 1, 0), Point(0, 0, 0)),
-        Face(Point(100, 0, 0.13), Point(0, 100, 0.13), Point(-100, -100, 0.13))
-    ))
-    print("face (1, 0, 0), (0, 1, 0), (0, 0, 0) to face (100, 0, 0.13), (0, 100, 0.13), (-100, -100, 0.13)", distance(
+   print("face (1.0, 0.0, 0), (0, 1, 0), (0, 0, 0) to face (100, 0, 0.13), (0, 100, 0.13), (-100, -100, 0.13)", distance(
         Face(Point(3, 3, 2), Point(0, 3, 2), Point(3, 0, 2)),
         Face(Point(4, 4, -2), Point(15, 18, -3), Point(22, -3, -2.5))
     ))
-
-
-"""
-    print("faces: ", distance(
-        Face(Point(1, 0, 0), Point(0, 1, 0), Point(0, 0, 0)),
-        Face(Point(100, 0, 0.13), Point(0, 100, 0.13), Point(-100, -100, 0.13))
-    ))
-    print(distance(
-        Edge(Point(1, 2, 3), Point(2, 4, 6)),
-        Edge(Point(4, 4, 4), Point(5, 6, 7))
-    ))
-"""
+    """
