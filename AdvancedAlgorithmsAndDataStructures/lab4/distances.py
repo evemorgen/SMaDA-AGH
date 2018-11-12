@@ -1,4 +1,5 @@
 import re
+import itertools
 from math import sqrt
 from multimethod import multimethod
 
@@ -21,17 +22,15 @@ def import_data(filename):
 
 @multimethod  # noqa: F811
 def distance(a: Point, b: Point) -> float:
-    print("POINTS")
     # https://math.stackexchange.com/questions/42640/calculate-distance-in-3d-space
     return sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2 + (a.z - b.z) ** 2)
 
 
 @multimethod  # noqa: F811
 def distance(a: Face, b: Face) -> float:
-    print("FACES")
     # http://www.ikonstantinos.com/Konstantinos_Krestenitis_ACME2015.pdf
     ae1, ae2, ae3 = a.edges
-    be1, be2, be3 = a.edges
+    be1, be2, be3 = b.edges
     distances = [
         distance(a, b.p1),
         distance(a, b.p2),
@@ -49,16 +48,19 @@ def distance(a: Face, b: Face) -> float:
         distance(ae3, be2),
         distance(ae3, be3)
     ]
-    print(distances)
+    print(distances[:6])
     return min(distances)
 
 
+def triangle_area(a, b, c):
+    return sqrt((a + b + c) * (a + b - c) * (a - b + c) * (-a + b + c)) / 4.0
+
 @multimethod  # noqa: F811
 def distance(f: Face, p: Point) -> float:
-    print("FACE-POINT")
     # http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.104.4264&rep=rep1&type=pdf
     # p point projection to plane which face f lays in
     # normal Np of P1P2P3
+    """
     np = cross(Vector(f.p1, f.p2), Vector(f.p1, f.p3))
 
     # the angle a between normal Np and P1P0
@@ -78,29 +80,44 @@ def distance(f: Face, p: Point) -> float:
     a = cross(Vector(p0p, f.p2), Vector(p0p, f.p3)).length() / (2 * area)
     b = cross(Vector(p0p, f.p3), Vector(p0p, f.p1)).length() / (2 * area)
     c = 1 - a - b
-    print("area, a, b, c: ", area, a, b, c)
 
     if 0 <= a <= 1 and 0 <= b <= 1 and 0 <= c <= 1:
-        return p0p0l
+        return sqrt(dot(p0p0p, p0p0p))
     else:
         e1 = Edge(f.p1, f.p2)
         e2 = Edge(f.p2, f.p3)
         e3 = Edge(f.p1, f.p3)
 
         return min(distance(e1, p0p), distance(e2, p0p), distance(e3, p0p))
+    """
+    print("===FACE-POINT")
+    e1 = Edge(f.p1, f.p2)
+    e2 = Edge(f.p2, f.p3)
+    e3 = Edge(f.p1, f.p3)
+
+    return min(distance(e1, p), distance(e2, p), distance(e3, p), distance(f.p1, p), distance(f.p2, p), distance(f.p3, p))
+
+def contains(f: Face, p: Point):
+    d01 = distance(f.p1, f.p2)
+    d02 = distance(f.p1, f.p3)
+    d12 = distance(f.p2, f.p3)
+    dp0 = distance(p, f.p1)
+    dp1 = distance(p, f.p2)
+    dp3 = distance(p, f.p3)
+    triangleField = triangle_area(d01, d02, d12)
+    testField     = sum [triangle_area(dp0,dp1,d01), triangle_area(dp0,dp2,d02), triangle_area(dp1,dp2,d12)]
+    return abs (triangleField - testField) < 1e-7
 
 
 @multimethod  # noqa: F811
 def distance(a: Solid, b: Solid) -> float:
     print("SOLIDS")
-    distances = [distance(f1, f2) for f1, f2 in zip(a.faces, b.faces)]
-    print(distances)
+    distances = [distance(f1, f2) for f1, f2 in itertools.product(a.faces, b.faces)]
     return min(distances)
 
 
 @multimethod  # noqa: F811
 def distance(e: Edge, p: Point) -> float:
-    print("EDGE-POINT")
     # http://geomalgorithms.com/a02-_lines.html#Distance-to-Ray-or-Segment
     v = Vector(e.p1, e.p2)
     w = Vector(e.p1, p)
@@ -122,8 +139,8 @@ def distance(e: Edge, p: Point) -> float:
 
 @multimethod  # noqa: F811
 def distance(e1: Edge, e2: Edge) -> float:
-    print("EDGES")
     # http://geomalgorithms.com/a07-_distance.html#dist3D_Segment_to_Segment()
+    print("+++EDGE-EDGE")
     SMALL_NUM = 0.00000001
     #u, v, w = Vector(e1.p2, e1.p1), Vector(e2.p2, e2.p1), Vector(e1.p1, e2.p1)
     u, v, w = Vector(e1.p1, e1.p2), Vector(e2.p1, e2.p2), Vector(e2.p1, e1.p1)
@@ -140,7 +157,7 @@ def distance(e1: Edge, e2: Edge) -> float:
     else:
         sN, tN = (b * e - c * d), (a * e - b * d)
         if sN < 0.0:
-            sN, tN, tD = z0.0, e, c
+            sN, tN, tD = 0.0, e, c
         elif sN > sD:
             sN, tN, tD = sD, e + b, c
     if tN < 0.0:
@@ -182,9 +199,37 @@ def distance(a: Edge, b: Face) -> float:
 
 if __name__ == '__main__':
     solids = import_data('solid_data.txt')
-    print()
-#    print(solids[0], solids[1])
-#    print(distance(solids[0], solids[1]))
+    print("solids :", distance(solids[0], solids[1]))
+    print("points: 0, 0, 0 to 10, 10, 10: ", distance(
+        Point(0, 0, 0),
+        Point(10, 10, 10)
+    ))
+    print("edge (1, 2, 3), (2, 4, 6) to point (10, 10, 10): ", distance(
+        Edge(Point(1, 2, 3), Point(2, 4, 6)),
+        Point(10, 10, 10)
+    ))
+    print("edge (1, 2, 3), (2, 4, 6) to edge (4, 4, 4), (5, 6, 7): ", distance(
+        Edge(Point(1, 2, 3), Point(2, 4, 6)),
+        Edge(Point(4, 4, 4), Point(5, 6, 7))
+    ))
+    print("face (0, 0, 0), (10, 10, 10), (100, 0, 0.13) to point (0, 100, 0.13): ", distance(
+        Face(Point(0, 0, 0), Point(10, 10, 10), Point(100, 0, 0.13)),
+        Point(0, 100, 0.13)
+    ))
+    print("edge (1, 2, 3), (2, 4, 6) to face (0, 0, 0), (10, 10, 10), (100, 0, 0.13): ", distance(
+        Edge(Point(1, 2, 3), Point(2, 4, 6)),
+        Face(Point(0, 0, 0), Point(10, 10, 10), Point(100, 0, 0.13))
+    ))
+    print("face (1, 0, 0), (0, 1, 0), (0, 0, 0) to face (100, 0, 0.13), (0, 100, 0.13), (-100, -100, 0.13)", distance(
+        Face(Point(1, 0, 0), Point(0, 1, 0), Point(0, 0, 0)),
+        Face(Point(100, 0, 0.13), Point(0, 100, 0.13), Point(-100, -100, 0.13))
+    ))
+    print("face (1, 0, 0), (0, 1, 0), (0, 0, 0) to face (100, 0, 0.13), (0, 100, 0.13), (-100, -100, 0.13)", distance(
+        Face(Point(3, 3, 2), Point(0, 3, 2), Point(3, 0, 2)),
+        Face(Point(4, 4, -2), Point(15, 18, -3), Point(22, -3, -2.5))
+    ))
+
+
 """
     print("faces: ", distance(
         Face(Point(1, 0, 0), Point(0, 1, 0), Point(0, 0, 0)),
