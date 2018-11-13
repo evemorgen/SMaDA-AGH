@@ -1,4 +1,4 @@
-LAB 5. Parallel Algorithms
+# LAB 5. Parallel Algorithms
 
 Implement the algorithm which computes in parallel a matrix product of N  matrices:  
 ![](pic1.png)  
