@@ -196,7 +196,7 @@ if __name__ == '__main__':
         Edge(Point(1, 2, 3), Point(2, 4, 6)),
         Face(Point(0, 0, 0), Point(10, 10, 10), Point(100, 0, 0.13))
     ))
-   print("face (1.0, 0.0, 0), (0, 1, 0), (0, 0, 0) to face (100, 0, 0.13), (0, 100, 0.13), (-100, -100, 0.13)", distance(
+    print("face (1.0, 0.0, 0), (0, 1, 0), (0, 0, 0) to face (100, 0, 0.13), (0, 100, 0.13), (-100, -100, 0.13)", distance(
         Face(Point(3, 3, 2), Point(0, 3, 2), Point(3, 0, 2)),
         Face(Point(4, 4, -2), Point(15, 18, -3), Point(22, -3, -2.5))
     ))

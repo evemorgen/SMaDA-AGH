@@ -48,13 +48,17 @@ def mul_st(tup: Tuple[matrix, matrix]):
 
 
 @timeit
-def mul_all_p(m_list: List[matrix]) -> matrix:
-    pool = multiprocessing.Pool(multiprocessing.cpu_count())
+def after_pool(m_list, pool):
     tasks = generate_tasks(m_list)
     while len(tasks) != 1:
         result = pool.map(mul_st, tasks)
         tasks = generate_tasks(result)
     return mul_st(result)
+
+
+def mul_all_p(m_list: List[matrix]) -> matrix:
+    pool = multiprocessing.Pool(multiprocessing.cpu_count())
+    return after_pool(m_list, pool)
 
 
 def flatten_matrix(m_list: List[matrix]) -> List[float]:
