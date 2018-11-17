@@ -2,6 +2,7 @@ import json
 import time
 import math
 import multiprocessing
+from pandas import DataFrame
 
 from typing import List, Tuple
 from functools import reduce
@@ -66,14 +67,12 @@ def flatten_matrix(m_list: List[matrix]) -> List[float]:
 
 
 x = [[12, 7, 3], [4, 5, 6], [7, 8, 9]]
-
 y = [[5, 8, 1, 2], [6, 7, 3, 0], [4, 5, 9, 1]]
-
 z = [[1, 2], [3, 4], [5, 6], [7, 8]]
-
 
 matrices = json.load(open('matrix.json', 'r'))
 s1, p1 = mul_all([x, y, z]), mul_all_p([x, y, z])
 assert s1 == p1
 s2, p2 = mul_all(matrices), mul_all_p(matrices)
 assert all([math.isclose(s, p) for s, p in zip(flatten_matrix(s2), flatten_matrix(p2))])
+print(DataFrame(s2))
