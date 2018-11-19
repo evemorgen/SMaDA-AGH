@@ -2,6 +2,7 @@ package kis.sspd.jade.farm;
 
 import java.util.ArrayList;
 
+import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.lang.acl.ACLMessage;
@@ -10,9 +11,9 @@ import jade.wrapper.StaleProxyException;
 
 @SuppressWarnings("serial")
 public class Breeder extends Agent {
-	final static String studentsMail = ""; /// Preferred AGH's mail
-	final static String studentsName = "";
-	final static String studentsId = "";
+	final static String studentsMail = "galczynski.patryk@gmail.com"; // I don't read AGH mail like ever
+	final static String studentsName = "Patryk Galczynski";
+	final static String studentsId = "275719";
 	
 	private ArrayList<AgentController> rabbits = new ArrayList<AgentController>();
 	Integer nextRabbitNumber = 0;
@@ -84,13 +85,19 @@ public class Breeder extends Agent {
 	public void removeRabbit(ACLMessage message) {
 		try {
 			String rabbitName = message.getContent();
+			System.out.println("Rabbit " + rabbitName + " gonna die!");
 			AgentController rabbit2Remove = null;
 			for (AgentController rabbit : rabbits) {
 				if (rabbit.getName().equals(rabbitName)){
 					rabbit2Remove = rabbit;
 				}
 			}
+			ACLMessage reply = new ACLMessage(ACLMessage.INFORM);
+			reply.setContent("time to die!");
+			reply.addReceiver(message.getSender());
+			send(message);
 			rabbits.remove(rabbit2Remove);
+
 		} catch (StaleProxyException e) {
 			e.printStackTrace();
 		}
@@ -109,10 +116,11 @@ public class Breeder extends Agent {
 
 	private void breedMale() {
 		try {
+			AID[] myaid = new AID[]{getAID()};
 			String rabbitName = nextRabbitNumber.toString();
 			nextRabbitNumber++;
 			AgentController rabit = getContainerController().createNewAgent(
-					rabbitName, "kis.sspd.jade.farm.RabbitMale", null);
+					rabbitName, "kis.sspd.jade.farm.RabbitMale", myaid);
 			rabit.start();
 			rabbits.add(rabit);
 		} catch (StaleProxyException e) {
@@ -122,10 +130,11 @@ public class Breeder extends Agent {
 
 	private void breedFemale() {
 		try {
+			AID[] myaid = new AID[]{getAID()};
 			String rabbitName = nextRabbitNumber.toString();
 			nextRabbitNumber++;
 			AgentController rabit = getContainerController().createNewAgent(
-					rabbitName, "kis.sspd.jade.farm.RabbitFemale", null);
+					rabbitName, "kis.sspd.jade.farm.RabbitFemale", myaid);
 			rabit.start();
 			rabbits.add(rabit);
 		} catch (StaleProxyException e) {
@@ -135,10 +144,11 @@ public class Breeder extends Agent {
 
 	private void enticeWolf() {
 		try {
+			AID[] myaid = new AID[]{getAID()};
 			String wolfName = nextWolfNumber.toString();
 			nextWolfNumber++;
 			AgentController wolf = getContainerController().createNewAgent(
-					wolfName, "kis.sspd.jade.farm.Wolf", null);
+					wolfName, "kis.sspd.jade.farm.Wolf", myaid);
 			wolf.start();
 			wolfs.add(wolf);
 		} catch (StaleProxyException e) {
