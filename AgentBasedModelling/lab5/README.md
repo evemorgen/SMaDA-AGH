@@ -6,4 +6,4 @@
 ## Content
 Exercises: [TutorialJADE_ang_lab2.pdf](TutorialJADE_ang_lab2.pdf)
 Solutions:
-  - [farm java files](JADE_-_exercise_students_2/src/kis/sspd/jade/farm)
+  - [farm java files](JADE%20-%20exercise_students_2/src/kis/sspd/jade/farm)
