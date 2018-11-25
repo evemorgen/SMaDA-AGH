@@ -4,6 +4,7 @@ import jade.core.AID;
 import jade.core.Agent;
 import jade.core.behaviours.CyclicBehaviour;
 import jade.core.behaviours.OneShotBehaviour;
+import jade.core.behaviours.TickerBehaviour;
 import jade.lang.acl.ACLMessage;
 
 @SuppressWarnings("serial")
@@ -12,11 +13,19 @@ public class RabbitFemale extends Agent {
 	protected AID parentAID;
 	static int lifetime = 10;
 	static int adultAge = 2;
+	protected String reason;
+
+	public boolean isAdult() {
+		return age >= adultAge;
+	}
+
+
 	
 	protected void setup(){
 		System.out.println("Female " + getLocalName() + " appeared on the farm.");
 		addBehaviour(new Live());
-		addBehaviour(new Listen());
+		addBehaviour(new Listen(this, 1000));
+
 		parentAID = (AID) getArguments()[0];
 	}
 	
@@ -25,25 +34,47 @@ public class RabbitFemale extends Agent {
 		public void action() {
 			block(1000);
 			age += 1;
-			System.out.println("Tick! " + getLocalName());
 			if (age == adultAge) {
 				System.out.println("Hey look, I'm adult female now! #" + getLocalName());
 			}
 			if (age == lifetime + 1) {
 				ACLMessage message = new ACLMessage(ACLMessage.INFORM);
+				message.setContent(getName());
 				message.addReceiver(parentAID);
 				send(message);
 			}
 			//TODO
 		}
 	}
-	
-	private class Listen extends CyclicBehaviour {
-		public void action() {
-			ACLMessage message = myAgent.blockingReceive();
-			System.out.println(getLocalName() + " received message " + message.toString());
-			if(message.getPerformative() ==  ACLMessage.INFORM && message.getContent().equals("time to die!")) {
-				myAgent.doDelete();
+
+	private class Listen extends TickerBehaviour {
+
+		public Listen(Agent a, long period) {
+			super(a, period);
+		}
+
+		@Override
+		protected void onTick() {
+			ACLMessage message = myAgent.receive();
+			if(message != null) {
+				switch (message.getPerformative()) {
+					case ACLMessage.INFORM:
+						if (message.getContent().equals("Lets make sum love Gurl")) {
+							myAgent.addBehaviour(new BreedNewRabbits());
+						} else {
+							myAgent.doDelete();
+						}
+						break;
+					case ACLMessage.REQUEST:
+						if(message.getContent().equals("Are you a female?")) {
+							ACLMessage reply = message.createReply();
+							reply.setPerformative(ACLMessage.INFORM);
+							reply.setContent("HECK YEAH.");
+							if(isAdult()) {
+								send(reply);
+							}
+						}
+				}
 			}
 		}
 	}
@@ -51,7 +82,11 @@ public class RabbitFemale extends Agent {
 	@SuppressWarnings("unused")
 	private class BreedNewRabbits extends OneShotBehaviour {
 		public void action() {
-			//TODO
+			System.out.println("Making littie rabbits #" + getLocalName());
+			ACLMessage breedMessage = new ACLMessage(ACLMessage.REQUEST);
+			breedMessage.setContent("breedRabits");
+			breedMessage.addReceiver(parentAID);
+			send(breedMessage);
 		}
 	}
 	

@@ -18,7 +18,7 @@ public class Breeder extends Agent {
 	private ArrayList<AgentController> rabbits = new ArrayList<AgentController>();
 	Integer nextRabbitNumber = 0;
 	private ArrayList<AgentController> wolfs = new ArrayList<AgentController>();
-	Integer nextWolfNumber = 0;
+	Integer nextWolfNumber = 1911;
 
 	protected void setup() {
 		if (studentsMail.isEmpty() || studentsName.isEmpty() || studentsId.isEmpty()) {
@@ -85,18 +85,19 @@ public class Breeder extends Agent {
 	public void removeRabbit(ACLMessage message) {
 		try {
 			String rabbitName = message.getContent();
-			System.out.println("Rabbit " + rabbitName + " gonna die!");
 			AgentController rabbit2Remove = null;
 			for (AgentController rabbit : rabbits) {
 				if (rabbit.getName().equals(rabbitName)){
 					rabbit2Remove = rabbit;
 				}
 			}
-			ACLMessage reply = new ACLMessage(ACLMessage.INFORM);
-			reply.setContent("time to die!");
-			reply.addReceiver(message.getSender());
-			send(message);
-			rabbits.remove(rabbit2Remove);
+			if(rabbit2Remove != null) {
+				ACLMessage reply = new ACLMessage(ACLMessage.INFORM);
+
+				reply.addReceiver(message.getSender());
+				send(reply);
+				rabbits.remove(rabbit2Remove);
+			}
 
 		} catch (StaleProxyException e) {
 			e.printStackTrace();
@@ -112,6 +113,7 @@ public class Breeder extends Agent {
 			else
 				breedFemale();
 		}
+		//breedMale();
 	}
 
 	private void breedMale() {
