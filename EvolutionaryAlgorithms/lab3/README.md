@@ -9,7 +9,7 @@
 4. [Compare the efficiency](data.xlsx) of the following crossovers, for Rastrigin (dimension 30):
   - `Arithmetic crossover`,
   - `Discrete crossover`, 
-  - `Flat Crossover`.
+  - `Flat Crossover`.  
 ![](fvog.png)  
 5. [Implement Discrete Crossover](MyDiscreteCrossover.java) in a more popular manner: The parent is randomly chosen for each of the loci, the probability is 0.5 (Modify Discrete Crossover). Compare with the previous ones. 
 6. Implement OnePointCrossover for the Real Value Problems. Compare with the previous ones. **TODO**
