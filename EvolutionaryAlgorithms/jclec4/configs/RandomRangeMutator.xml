@@ -39,10 +39,10 @@
 		</species>
 		<evaluator type="helloworldpackage.Rastrigin" />
 		<provider type="net.sf.jclec.realarray.RealArrayCreator"/>
-		<parents-selector type="net.sf.jclec.selector.RandomSelector">
-			<!-- <tournament-size>2</tournament-size> -->
+		<parents-selector type="net.sf.jclec.selector.TournamentSelector">
+			<tournament-size>2</tournament-size>
 		</parents-selector>
-		<mutator type="net.sf.jclec.realarray.mut.NonUniformMutator" mut-prob="0.2" />
+		<mutator type="net.sf.jclec.realarray.mut.UniformMutation" mut-prob="0.2" />
 		<recombinator type="net.sf.jclec.realarray.rec.BLXAlphaCrossover" rec-prob="0.9" alpha="0.3"/>
 		<listener type="net.sf.jclec.listener.PopulationReporter">
 			<report-frequency>10</report-frequency>
