@@ -56,6 +56,38 @@ class Car(pygame.sprite.Sprite):
             self.next_waypoint()
 
 
+class Grid:
+    def __init__(self, config):
+        self.squares = config["num_of_squares"]
+        self.x_lines = int(sqrt(self.squares)) - 1
+        self.y_lines = int(sqrt(self.squares)) - 1
+        self.start_x, self.start_y = config["start"]
+        self.end_x, self.end_y = config["end"]
+        self.color = config["color"]
+
+    def draw_grid(self, screen):
+        pygame.draw.line(screen, self.color, (self.start_x, self.start_y), (self.end_x, self.start_y))
+        pygame.draw.line(screen, self.color, (self.start_x, self.end_y), (self.end_x, self.end_y))
+        spacing_y = (self.end_y - self.start_y) / (self.y_lines + 1)
+        for y_line in range(self.y_lines + 1):
+            pygame.draw.line(
+                screen,
+                self.color,
+                (self.start_x, self.start_y + spacing_y * y_line),
+                (self.end_x, self.start_y + spacing_y * y_line)
+            )
+        pygame.draw.line(screen, self.color, (self.start_x, self.start_y), (self.start_x, self.end_y))
+        pygame.draw.line(screen, self.color, (self.end_x, self.start_y), (self.end_x, self.end_y))
+        spacing_x = (self.end_x - self.start_x) / (self.x_lines + 1)
+        for x_line in range(self.x_lines + 1):
+            pygame.draw.line(
+                screen,
+                self.color,
+                (self.start_x + spacing_x * x_line, self.start_y),
+                (self.start_x + spacing_x * x_line, self.end_y)
+            )
+
+
 pygame.init()
 config = load_config("simple.yaml")
 background_image = pygame.image.load(config["background"])
@@ -64,6 +96,7 @@ clock = pygame.time.Clock()
 screen.blit(background_image, [0, 0])
 all_sprites = pygame.sprite.Group()
 car = Car(config, dir=-90)
+grid = Grid(config["intersection"])
 all_sprites.add(car)
 n = 1
 
@@ -78,6 +111,7 @@ while True:
 
     all_sprites.draw(screen)
     pygame.draw.rect(screen, (255, 0, 0), car.rect, 5)
+    grid.draw_grid(screen)
     for w in car.waypoints:
         pygame.draw.rect(screen, (255, 0, 0), w + [5, 5], 2)
     pygame.display.flip()
