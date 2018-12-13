@@ -13,3 +13,9 @@
 [submodule "ModelingOfPhysicalSystems/project"]
 	path = ModelingOfPhysicalSystems/project
 	url = https://github.com/evemorgen/physics_assignment.git
+[submodule "EvolutionaryAlgorithms/lab5/pyage-elect"]
+	path = EvolutionaryAlgorithms/lab5/pyage-elect
+	url = https://github.com/droodev/pyage-elect
+[submodule "EvolutionaryAlgorithms/lab5/pyage"]
+	path = EvolutionaryAlgorithms/lab5/pyage
+	url = https://github.com/macwozni/pyage.git
