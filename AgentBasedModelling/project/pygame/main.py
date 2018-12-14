@@ -67,12 +67,13 @@ class Cell:
 
     def draw_cell(self, screen, color, filled=False):
         if filled:
-            pygame.draw.rect(screen, (color[0], color[1], color[2], 128), (self.rect.x, self.rect.y, self.rect.w, self.rect.h), 0)  
+            pygame.draw.rect(screen, (color[0], color[1], color[2], 128), self.rect, 0)  
         else:
-            pygame.draw.rect(screen, color, (self.rect.x, self.rect.y, self.rect.w, self.rect.h), 1)  
+            pygame.draw.rect(screen, color, self.rect, 1)  
 
 class Grid:
-    def __init__(self, config):
+    def __init__(self, config, cars):
+        self.cars = cars
         self.squares = config["num_of_squares"]
         self.x_lines = int(sqrt(self.squares)) - 1
         self.y_lines = int(sqrt(self.squares)) - 1
@@ -85,8 +86,10 @@ class Grid:
 
     def draw_grid(self, screen):
         for cell in self.g:
-            # if 
-            cell.draw_cell(screen, (255, 255, 255), False)
+            if pygame.sprite.spritecollideany(cell, self.cars) is None:
+                cell.draw_cell(screen, (255, 255, 255), False)
+            else:
+                cell.draw_cell(screen, (255, 255, 255), True)
         """
         pygame.draw.line(screen, self.color, (self.start_x, self.start_y), (self.end_x, self.start_y))
         pygame.draw.line(screen, self.color, (self.start_x, self.end_y), (self.end_x, self.end_y))
@@ -118,7 +121,7 @@ screen = pygame.display.set_mode(background_image.get_rect()[2:])
 clock = pygame.time.Clock()
 screen.blit(background_image, [0, 0])
 all_sprites = pygame.sprite.Group()
-grid = Grid(config["intersection"])
+grid = Grid(config["intersection"], all_sprites)    
 car = Car(config, dir=-90)
 all_sprites.add(car)
 n = 1
@@ -139,10 +142,10 @@ while not dead:
 
     screen.blit(background_image, [0, 0])
     all_sprites.update()
-
+    grid.draw_grid(screen)  
     all_sprites.draw(screen)
     # pygame.draw.rect(screen, (255, 0, 0), car.rect, 5)
-    grid.draw_grid(screen)
+
     # for w in car.waypoints:
     #     pygame.draw.rect(screen, (255, 0, 0), w + [5, 5], 2)
     pygame.display.flip()
