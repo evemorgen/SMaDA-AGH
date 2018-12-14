@@ -63,16 +63,13 @@ class Car(pygame.sprite.Sprite):
 
 @dataclass
 class Cell:
-    x: int
-    y: int
-    w: int
-    h: int
+    rect: pygame.Rect
 
     def draw_cell(self, screen, color, filled=False):
         if filled:
-            pygame.draw.rect(screen, (color[0], color[1], color[2], 128), (self.x, self.y, self.w, self.h), 0)  
+            pygame.draw.rect(screen, (color[0], color[1], color[2], 128), (self.rect.x, self.rect.y, self.rect.w, self.rect.h), 0)  
         else:
-            pygame.draw.rect(screen, color, (self.x, self.y, self.w, self.h), 1)  
+            pygame.draw.rect(screen, color, (self.rect.x, self.rect.y, self.rect.w, self.rect.h), 1)  
 
 class Grid:
     def __init__(self, config):
@@ -84,7 +81,7 @@ class Grid:
         self.color = config["color"]
         spacing_y = (self.end_y - self.start_y) / (self.y_lines + 1)
         spacing_x = (self.end_x - self.start_x) / (self.x_lines + 1)
-        self.g = [Cell(self.start_x + spacing_x * x, self.start_y + spacing_y * y, spacing_x, spacing_y) for x, y in product(range(0, self.x_lines + 1), range(0, self.y_lines + 1))]
+        self.g = [Cell(pygame.Rect(self.start_x + spacing_x * x, self.start_y + spacing_y * y, spacing_x, spacing_y)) for x, y in product(range(0, self.x_lines + 1), range(0, self.y_lines + 1))]
 
     def draw_grid(self, screen):
         for cell in self.g:
@@ -126,7 +123,7 @@ car = Car(config, dir=-90)
 all_sprites.add(car)
 n = 1
 rolling_counter = 0
-framerate = 60
+framerate = 120
 
 dead = False
 while not dead:
@@ -135,7 +132,7 @@ while not dead:
             dead = True
 
     rolling_counter += 1
-    if rolling_counter >= (framerate / 2):
+    if rolling_counter >= (framerate / 10):
         rolling_counter = 0
         car = Car(config, dir=-90)
         all_sprites.add(car)
