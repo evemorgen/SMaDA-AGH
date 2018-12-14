@@ -30,13 +30,16 @@ class Car(pygame.sprite.Sprite):
 
     def next_waypoint(self):
         self.waypoint_idx += 1
-        self.current_waypoint = self.waypoints[self.waypoint_idx]
+        try:
+            self.current_waypoint = self.waypoints[self.waypoint_idx]
+        except:
+            self.kill()
 
     def turn(self, amount):
         "turn some amount"
         oldCenter = self.rect.center
         self.dir += amount
-        self.image = pygame.transform.rotate(self.oryginal, self.dir)
+        self.image = pygame.transform.rotate(self.oryginal, 270 - self.dir)
         self.rect = self.image.get_rect()
         self.rect.center = oldCenter
 
@@ -66,7 +69,10 @@ class Cell:
     h: int
 
     def draw_cell(self, screen, color, filled=False):
-        pygame.draw.rect(screen, color, (self.x, self.y, self.w, self.h), 0 if filled else 1)
+        if filled:
+            pygame.draw.rect(screen, (color[0], color[1], color[2], 128), (self.x, self.y, self.w, self.h), 0)  
+        else:
+            pygame.draw.rect(screen, color, (self.x, self.y, self.w, self.h), 1)  
 
 class Grid:
     def __init__(self, config):
@@ -82,6 +88,7 @@ class Grid:
 
     def draw_grid(self, screen):
         for cell in self.g:
+            # if 
             cell.draw_cell(screen, (255, 255, 255), False)
         """
         pygame.draw.line(screen, self.color, (self.start_x, self.start_y), (self.end_x, self.start_y))
@@ -114,24 +121,32 @@ screen = pygame.display.set_mode(background_image.get_rect()[2:])
 clock = pygame.time.Clock()
 screen.blit(background_image, [0, 0])
 all_sprites = pygame.sprite.Group()
-car = Car(config, dir=-90)
 grid = Grid(config["intersection"])
+car = Car(config, dir=-90)
 all_sprites.add(car)
 n = 1
+rolling_counter = 0
+framerate = 60
 
-
-while True:
+dead = False
+while not dead:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             dead = True
+
+    rolling_counter += 1
+    if rolling_counter >= (framerate / 2):
+        rolling_counter = 0
+        car = Car(config, dir=-90)
+        all_sprites.add(car)
 
     screen.blit(background_image, [0, 0])
     all_sprites.update()
 
     all_sprites.draw(screen)
-    pygame.draw.rect(screen, (255, 0, 0), car.rect, 5)
+    # pygame.draw.rect(screen, (255, 0, 0), car.rect, 5)
     grid.draw_grid(screen)
-    for w in car.waypoints:
-        pygame.draw.rect(screen, (255, 0, 0), w + [5, 5], 2)
+    # for w in car.waypoints:
+    #     pygame.draw.rect(screen, (255, 0, 0), w + [5, 5], 2)
     pygame.display.flip()
-    clock.tick(60)
+    clock.tick(framerate)
