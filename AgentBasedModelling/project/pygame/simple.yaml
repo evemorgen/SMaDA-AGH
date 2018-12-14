@@ -2,7 +2,7 @@ background: pictures/background.png
 intersection:
     start: [350, 235]
     end: [600, 490]
-    num_of_squares: 9
+    num_of_squares: 16
     color: [255, 255, 255]
 car:
     velocity: 10

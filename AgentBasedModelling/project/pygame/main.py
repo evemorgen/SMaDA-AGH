@@ -3,6 +3,8 @@ import yaml
 from math import pi, sin, cos, sqrt
 from copy import copy
 from random import choice
+from itertools import product
+from dataclasses import dataclass
 
 
 def load_config(filename):
@@ -56,6 +58,16 @@ class Car(pygame.sprite.Sprite):
             self.next_waypoint()
 
 
+@dataclass
+class Cell:
+    x: int
+    y: int
+    w: int
+    h: int
+
+    def draw_cell(self, screen, color, filled=False):
+        pygame.draw.rect(screen, color, (self.x, self.y, self.w, self.h), 0 if filled else 1)
+
 class Grid:
     def __init__(self, config):
         self.squares = config["num_of_squares"]
@@ -64,8 +76,14 @@ class Grid:
         self.start_x, self.start_y = config["start"]
         self.end_x, self.end_y = config["end"]
         self.color = config["color"]
+        spacing_y = (self.end_y - self.start_y) / (self.y_lines + 1)
+        spacing_x = (self.end_x - self.start_x) / (self.x_lines + 1)
+        self.g = [Cell(self.start_x + spacing_x * x, self.start_y + spacing_y * y, spacing_x, spacing_y) for x, y in product(range(0, self.x_lines + 1), range(0, self.y_lines + 1))]
 
     def draw_grid(self, screen):
+        for cell in self.g:
+            cell.draw_cell(screen, (255, 255, 255), False)
+        """
         pygame.draw.line(screen, self.color, (self.start_x, self.start_y), (self.end_x, self.start_y))
         pygame.draw.line(screen, self.color, (self.start_x, self.end_y), (self.end_x, self.end_y))
         spacing_y = (self.end_y - self.start_y) / (self.y_lines + 1)
@@ -86,6 +104,7 @@ class Grid:
                 (self.start_x + spacing_x * x_line, self.start_y),
                 (self.start_x + spacing_x * x_line, self.end_y)
             )
+        """
 
 
 pygame.init()
