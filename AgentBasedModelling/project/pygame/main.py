@@ -30,13 +30,16 @@ class Car(pygame.sprite.Sprite):
 
     def next_waypoint(self):
         self.waypoint_idx += 1
-        self.current_waypoint = self.waypoints[self.waypoint_idx]
+        try:
+            self.current_waypoint = self.waypoints[self.waypoint_idx]
+        except:
+            self.kill()
 
     def turn(self, amount):
         "turn some amount"
         oldCenter = self.rect.center
         self.dir += amount
-        self.image = pygame.transform.rotate(self.oryginal, self.dir)
+        self.image = pygame.transform.rotate(self.oryginal, 270 - self.dir)
         self.rect = self.image.get_rect()
         self.rect.center = oldCenter
 
@@ -60,16 +63,17 @@ class Car(pygame.sprite.Sprite):
 
 @dataclass
 class Cell:
-    x: int
-    y: int
-    w: int
-    h: int
+    rect: pygame.Rect
 
     def draw_cell(self, screen, color, filled=False):
-        pygame.draw.rect(screen, color, (self.x, self.y, self.w, self.h), 0 if filled else 1)
+        if filled:
+            pygame.draw.rect(screen, (color[0], color[1], color[2], 128), self.rect, 0)  
+        else:
+            pygame.draw.rect(screen, color, self.rect, 1)  
 
 class Grid:
-    def __init__(self, config):
+    def __init__(self, config, cars):
+        self.cars = cars
         self.squares = config["num_of_squares"]
         self.x_lines = int(sqrt(self.squares)) - 1
         self.y_lines = int(sqrt(self.squares)) - 1
@@ -78,11 +82,14 @@ class Grid:
         self.color = config["color"]
         spacing_y = (self.end_y - self.start_y) / (self.y_lines + 1)
         spacing_x = (self.end_x - self.start_x) / (self.x_lines + 1)
-        self.g = [Cell(self.start_x + spacing_x * x, self.start_y + spacing_y * y, spacing_x, spacing_y) for x, y in product(range(0, self.x_lines + 1), range(0, self.y_lines + 1))]
+        self.g = [Cell(pygame.Rect(self.start_x + spacing_x * x, self.start_y + spacing_y * y, spacing_x, spacing_y)) for x, y in product(range(0, self.x_lines + 1), range(0, self.y_lines + 1))]
 
     def draw_grid(self, screen):
         for cell in self.g:
-            cell.draw_cell(screen, (255, 255, 255), False)
+            if pygame.sprite.spritecollideany(cell, self.cars) is None:
+                cell.draw_cell(screen, (255, 255, 255), False)
+            else:
+                cell.draw_cell(screen, (255, 255, 255), True)
         """
         pygame.draw.line(screen, self.color, (self.start_x, self.start_y), (self.end_x, self.start_y))
         pygame.draw.line(screen, self.color, (self.start_x, self.end_y), (self.end_x, self.end_y))
@@ -114,24 +121,32 @@ screen = pygame.display.set_mode(background_image.get_rect()[2:])
 clock = pygame.time.Clock()
 screen.blit(background_image, [0, 0])
 all_sprites = pygame.sprite.Group()
+grid = Grid(config["intersection"], all_sprites)    
 car = Car(config, dir=-90)
-grid = Grid(config["intersection"])
 all_sprites.add(car)
 n = 1
+rolling_counter = 0
+framerate = 120
 
-
-while True:
+dead = False
+while not dead:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             dead = True
 
+    rolling_counter += 1
+    if rolling_counter >= (framerate / 10):
+        rolling_counter = 0
+        car = Car(config, dir=-90)
+        all_sprites.add(car)
+
     screen.blit(background_image, [0, 0])
     all_sprites.update()
-
+    grid.draw_grid(screen)  
     all_sprites.draw(screen)
-    pygame.draw.rect(screen, (255, 0, 0), car.rect, 5)
-    grid.draw_grid(screen)
-    for w in car.waypoints:
-        pygame.draw.rect(screen, (255, 0, 0), w + [5, 5], 2)
+    # pygame.draw.rect(screen, (255, 0, 0), car.rect, 5)
+
+    # for w in car.waypoints:
+    #     pygame.draw.rect(screen, (255, 0, 0), w + [5, 5], 2)
     pygame.display.flip()
-    clock.tick(60)
+    clock.tick(framerate)
