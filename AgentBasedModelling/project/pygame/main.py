@@ -4,9 +4,12 @@ from sys import argv
 from utils import load_config
 from car import Car
 from grid import Grid
+from typing import Dict, Any, Tuple
+
+Config = Dict[str, Any]
 
 
-def init_simulation(confg):
+def init_simulation(confg: Config) -> Tuple[pygame.Surface, pygame.time.Clock, pygame.Surface]:
     pygame.init()
     background_image = pygame.image.load(config["background"])
     screen = pygame.display.set_mode(background_image.get_rect()[2:])
@@ -15,14 +18,14 @@ def init_simulation(confg):
     return screen, clock, background_image
 
 
-def process_events():
+def process_events() -> bool:
     for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return True
     return False
 
 
-def spawn_cars(config, rolling_counter, all_sprites):
+def spawn_cars(config: Config, rolling_counter: int, all_sprites: pygame.sprite.Group) -> int:
     rolling_counter += 1
     if rolling_counter + 1 >= (framerate / config["spawn_cooldown"]):
         car = Car(config["car"], dir=-90)
@@ -31,7 +34,10 @@ def spawn_cars(config, rolling_counter, all_sprites):
     return rolling_counter + 1
 
 
-def draw(screen=None, background=None, framerate=None, all_sprites=None, clock=None, grid=None):
+def draw(screen: pygame.Surface, background: pygame.Surface,
+         framerate: int, all_sprites: pygame.sprite.Group,
+         clock: pygame.time.Clock, grid: Grid) -> None:
+
     screen.blit(background, [0, 0])
     all_sprites.update()
     grid.draw_grid(screen)
