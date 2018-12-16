@@ -1,4 +1,6 @@
 background: pictures/background_map.png
+framerate: 120
+spawn_cooldown: 10
 intersection:
     start: [532, 208]
     end: [858, 650]
