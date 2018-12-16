@@ -1,7 +1,7 @@
 **/.idea
 **/venv
 **/ENV
-**/*.sw[po]
+**/*.sw[ponm]
 **/.mypy_cache
 
 #python cache stuff
