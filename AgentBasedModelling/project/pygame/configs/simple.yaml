@@ -1,14 +1,14 @@
 background: pictures/background.png
 framerate: 60
-spawn_cooldown: 10
+spawn_cooldown: 30
 intersection:
     start: [350, 235]
     end: [600, 490]
-    num_of_squares: 16
+    num_of_squares: 1
     color: [255, 255, 255]
 car:
     velocity: 10
-    waypoint_clearance: 30
+    waypoint_clearance: 5
     sprites:
         - pictures/car1.png
         - pictures/car2.png

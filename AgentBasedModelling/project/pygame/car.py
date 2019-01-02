@@ -7,20 +7,29 @@ from typing import List
 Waypoint = List[int]
 
 
+def random_vin(i=1234):
+    while True:
+        i = (i + random.randint(0, 1000)) % 99999
+        yield "VIN" + str(i)
+
+
 class Car(pygame.sprite.Sprite):
-    def __init__(self, config, path=None, dir=None, image=None):
+    def __init__(self, config, path=None, dir=None, image=None, supervisor=None):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.image.load(image or random.choice(config["sprites"]))
+        self.vin = next(random_vin())
         self.rect = self.image.get_rect()
         self.oryginal = copy(self.image)
         self.dir = dir or 0
         self.velocity: float = config["velocity"]
+        self.acceleration: float = 0
         self.waypoints: List[Waypoint] = path or random.choice(config["paths"])
         self.waypoint_idx: int = 1
         self.current_waypoint: Waypoint = self.waypoints[1]
         self.rect.x, self.rect.y = self.waypoints[0]
         self.rect.x -= self.image.get_rect().size[0] / 2
         self.rect.y -= self.image.get_rect().size[1] / 2
+        self.supervisor = supervisor
 
     def next_waypoint(self) -> None:
         self.waypoint_idx += 1
@@ -52,3 +61,6 @@ class Car(pygame.sprite.Sprite):
         self.rect.y += sin(self.dir * pi / 180.0) * self.velocity
         if sqrt((self.rect.x - self.current_waypoint[0]) ** 2 + (self.rect.y - self.current_waypoint[1]) ** 2) < 30:
             self.next_waypoint()
+
+    def __repr__(self):
+        return f"Car(x={self.rect.x}, y={self.rect.y}, v={self.velocity})"

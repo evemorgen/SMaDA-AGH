@@ -2,6 +2,7 @@ import pygame
 from dataclasses import dataclass
 from math import sqrt
 from itertools import product
+from utils import Timeline
 
 from typing import Dict, Any, List, Tuple
 Config = Dict[str, Any]
@@ -11,12 +12,19 @@ Triple = Tuple[int, int, int]
 @dataclass
 class Cell:
     rect: pygame.Rect
+    timeline: Timeline
 
     def draw_cell(self, screen: pygame.Surface, color: Triple, filled: bool = False):
         if filled:
             pygame.draw.rect(screen, (color[0], color[1], color[2], 128), self.rect, 0)
         else:
             pygame.draw.rect(screen, color, self.rect, 1)
+
+    def __eq__(self, other):
+        return self.rect == other.rect and self.timeline == other.timeline
+
+    def __hash__(self):
+        return hash(str(self))
 
 
 class Grid:
@@ -30,12 +38,21 @@ class Grid:
         self.color: Triple = config["color"]
         spacing_y: float = (self.end_y - self.start_y) / (self.y_lines + 1)
         spacing_x: float = (self.end_x - self.start_x) / (self.x_lines + 1)
-        self.g: List[Cell] = [Cell(pygame.Rect(self.start_x + spacing_x * x, self.start_y + spacing_y * y, spacing_x, spacing_y))
+        self.points = None
+        self.g: List[Cell] = [Cell(pygame.Rect(self.start_x + spacing_x * x, self.start_y + spacing_y * y, spacing_x, spacing_y), Timeline())
                               for x, y in product(range(0, self.x_lines + 1), range(0, self.y_lines + 1))]
 
     def draw_grid(self, screen: pygame.Surface) -> None:
+        #FIXME remote after debugging
+        if self.points is not None:
+            for point in self.points:
+                pygame.draw.circle(screen, (255, 0, 0), point, 3)
         for cell in self.g:
             if pygame.sprite.spritecollideany(cell, self.cars) is None:
                 cell.draw_cell(screen, (255, 255, 255), False)
             else:
                 cell.draw_cell(screen, (255, 255, 255), True)
+
+    #FIXME remove after debugging
+    def add_points_to_draw(self, points):
+        self.points = points

@@ -4,6 +4,7 @@ from sys import argv
 from utils import load_config
 from car import Car
 from grid import Grid
+from supervisor import Supervisor
 from typing import Dict, Any, Tuple
 
 Config = Dict[str, Any]
@@ -22,14 +23,19 @@ def process_events() -> bool:
     for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return True
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                import pdb; pdb.set_trace()
     return False
 
 
-def spawn_cars(config: Config, rolling_counter: int, all_sprites: pygame.sprite.Group) -> int:
+def spawn_cars(config: Config, rolling_counter: int, all_sprites: pygame.sprite.Group, supervisor: Supervisor) -> int:
     rolling_counter += 1
     if rolling_counter + 1 >= (framerate / config["spawn_cooldown"]):
-        car = Car(config["car"], dir=-90)
+        car = Car(config["car"], dir=-90, supervisor=supervisor)
         all_sprites.add(car)
+        id, res = supervisor.reserve_road(car)
+        if res is False:
+            car.kill()
         return 0
     return rolling_counter + 1
 
@@ -52,10 +58,11 @@ if __name__ == '__main__':
     framerate = config["framerate"]
     all_sprites = pygame.sprite.Group()
     grid = Grid(config["intersection"], all_sprites)
+    supervisor = Supervisor(grid=grid, screen=screen)
     rolling_counter = 0
     dead = False
     while not dead:
         dead = process_events()
-        rolling_counter = spawn_cars(config, rolling_counter, all_sprites)
+        rolling_counter = spawn_cars(config, rolling_counter, all_sprites, supervisor)
         draw(screen=screen, background=background, all_sprites=all_sprites,
              grid=grid, clock=clock, framerate=framerate)
