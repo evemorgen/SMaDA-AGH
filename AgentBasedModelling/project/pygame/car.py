@@ -8,9 +8,12 @@ Waypoint = List[int]
 
 
 def random_vin(i=1234):
+    used_vins = []
     while True:
         i = (i + random.randint(0, 1000)) % 99999
-        yield "VIN" + str(i)
+        if i not in used_vins:
+            yield "VIN" + str(i)
+            used_vins.append(i)
 
 
 class Car(pygame.sprite.Sprite):
@@ -63,4 +66,4 @@ class Car(pygame.sprite.Sprite):
             self.next_waypoint()
 
     def __repr__(self):
-        return f"Car(x={self.rect.x}, y={self.rect.y}, v={self.velocity})"
+        return f"Car(vin={self.vin}, x={self.rect.x}, y={self.rect.y}, v={self.velocity})"

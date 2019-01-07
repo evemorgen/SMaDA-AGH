@@ -4,7 +4,7 @@ spawn_cooldown: 30
 intersection:
     start: [350, 235]
     end: [600, 490]
-    num_of_squares: 1
+    num_of_squares: 64
     color: [255, 255, 255]
 car:
     velocity: 10
