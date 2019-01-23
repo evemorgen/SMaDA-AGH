@@ -44,9 +44,9 @@ class Grid:
 
     def draw_grid(self, screen: pygame.Surface) -> None:
         #FIXME remote after debugging
-        if self.points is not None:
-            for point in self.points:
-                pygame.draw.circle(screen, (255, 0, 0), point, 3)
+        # if self.points is not None:
+        #     for point in self.points:
+        #         pygame.draw.circle(screen, (255, 0, 0), point, 3)
         for cell in self.g:
             if pygame.sprite.spritecollideany(cell, self.cars) is None:
                 cell.draw_cell(screen, (255, 255, 255), False)

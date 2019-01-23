@@ -3,8 +3,9 @@ import time
 import logging
 
 from typing import List
-
 from car import Car
+
+from pygame import sprite, rect
 
 Waypoint = List[int]
 
@@ -21,7 +22,7 @@ class Supervisor:
     def reserve_road(self, car: Car) -> int:
         cells = self.cells_from_waypoints(car.waypoints, car)
         now = time.time()
-        duration = 3
+        duration = .8
         results = [cell.timeline.add_timespan(now + t, duration=duration, vin=car.vin) for cell, t in cells]
         logging.debug(f"car:{car.vin} is trying to reserve cells: {cells} at {now} with following results: {results}")
         if not all(results):
@@ -38,7 +39,7 @@ class Supervisor:
     def points_len(self, p1, p2):
         p1x, p1y = p1
         p2x, p2y = p2
-        return math.sqrt((p1x - p2x)**2 + (p1y - p2y)**2)
+        return math.hypot(p1x - p2x, p1y - p2y)
 
     def cells_from_waypoints(self, road, car):
         cells = set()
@@ -50,8 +51,9 @@ class Supervisor:
             points = [((int(w1x + i * (w2x - w1x) / 10)), int(w1y + i * (w2y - w1y) / 10)) for i in range(10)]
             points_to_add = points_to_add + points
             for point in points:
-                for cell in self.grid.g:
-                    if cell.rect.collidepoint(point) and cell not in [c for c, _ in cells]:
+                for cell in self.grid.g: # rak driven development   
+                    potential_dist = (car.rect.size[1] + cell.rect.size[0]) / 2
+                    if self.points_len(cell.rect.center, point) < potential_dist and cell not in [c for c, _ in cells]:
                         cells.add((cell, (self.route_len(road, i) + self.points_len(road[i], point)) / car.velocity / 60))
 
         self.grid.add_points_to_draw(points_to_add)
