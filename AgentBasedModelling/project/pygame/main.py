@@ -25,10 +25,16 @@ def process_events() -> Dict[str, bool]:
     for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 events["dead"] = True
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_q:
+                events["dead"] = True
             if event.type == pygame.KEYDOWN and event.key == pygame.K_d:
                 import pdb; pdb.set_trace()
             if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
                 events["spawn"] = True
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN:
+                events["slower"] = True
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_UP:
+                events["faster"] = True
     return events
 
 
@@ -62,6 +68,7 @@ if __name__ == '__main__':
     config = load_config(argv[1] if len(argv) > 1 else "configs/simple.yaml")
     screen, clock, background = init_simulation(config)
     framerate = config["framerate"]
+    framerate_modifier = 1
     all_sprites = pygame.sprite.Group()
     grid = Grid(config["intersection"], all_sprites)
     supervisor = Supervisor(grid=grid, screen=screen)
@@ -70,8 +77,12 @@ if __name__ == '__main__':
     while not dead:
         events = process_events()
         dead = events.get("dead", False)
+        if (events.get("faster", False)):
+            framerate_modifier *= 1.25
+        if (events.get("slower", False)):
+            framerate_modifier *= 0.8
         #if events.get("spawn", False):
         #    rolling_counter = spawn_car(config, rolling_counter, all_sprites, supervisor)
         rolling_counter = spawn_car(config, rolling_counter, all_sprites, supervisor)
         draw(screen=screen, background=background, all_sprites=all_sprites,
-             grid=grid, clock=clock, framerate=framerate)
+             grid=grid, clock=clock, framerate=framerate * framerate_modifier)
