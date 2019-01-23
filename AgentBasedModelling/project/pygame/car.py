@@ -49,10 +49,15 @@ class Car(pygame.sprite.Sprite):
         self.rect.center = oldCenter
 
     def towards_waypoint(self) -> None:
-        waypoint_vector = pygame.math.Vector2(
-            self.current_waypoint[0] - self.rect.x - self.image.get_rect()[0],
-            self.current_waypoint[1] - self.rect.center[1]
-        )
+        # waypoint_vector = pygame.math.Vector2(
+        #     self.current_waypoint[0] - self.rect.x - self.image.get_rect()[0],
+        #     self.current_waypoint[1] - self.rect.center[1]
+        # )
+        # current_heading = pygame.math.Vector2(self.velocity, 0)
+        # current_heading.rotate_ip(self.dir)
+        (waypoint_x, waypoint_y) = self.current_waypoint
+        (center_x, center_y) = self.rect.center
+        waypoint_vector = pygame.math.Vector2(waypoint_x - center_x, waypoint_y - center_y)
         current_heading = pygame.math.Vector2(self.velocity, 0)
         current_heading.rotate_ip(self.dir)
         to_rotate = current_heading.angle_to(waypoint_vector)
@@ -62,7 +67,7 @@ class Car(pygame.sprite.Sprite):
         self.towards_waypoint()
         self.rect.x += cos(self.dir * pi / 180.0) * self.velocity
         self.rect.y += sin(self.dir * pi / 180.0) * self.velocity
-        if sqrt((self.rect.x - self.current_waypoint[0]) ** 2 + (self.rect.y - self.current_waypoint[1]) ** 2) < 30:
+        if sqrt((self.rect.center[0] - self.current_waypoint[0]) ** 2 + (self.rect.center[1] - self.current_waypoint[1]) ** 2) < 10:
             self.next_waypoint()
 
     def __repr__(self):
