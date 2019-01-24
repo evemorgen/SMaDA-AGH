@@ -35,6 +35,13 @@ class Car(pygame.sprite.Sprite):
         self.rect.x -= self.image.get_rect().size[0] / 2
         self.rect.y -= self.image.get_rect().size[1] / 2
 
+    def _entering_leaving_waypoint_index(self):
+        # list of bools indicating waypoint-grid overlapping
+        props = [self.waypoint_grid_intersect[w] for w in self.waypoints]
+        start = props.index(True)
+        end = props.index(False, start)
+        return (start, end)
+
     def next_waypoint(self) -> None:
         self.waypoint_idx += 1
         try:
