@@ -22,8 +22,8 @@ class Supervisor:
 
     def reserve_road(self, car: Car, current_time: int) -> int:
         cells = self.cells_from_waypoints(car.waypoints, car)
-        now = current_time
-        duration = 50 / car.velocity
+        now = current_time - 1
+        duration = 68 / car.velocity
         results = [cell.timeline.add_timespan(now + t, duration=duration, vin=car.vin) for cell, t in cells]
         logging.debug(f"car:{car.vin} is trying to reserve cells: {cells} at {now} with following results: {results}")
         if not all(results):

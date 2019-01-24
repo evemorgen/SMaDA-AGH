@@ -87,3 +87,4 @@ if __name__ == '__main__':
         draw(screen=screen, background=background, all_sprites=all_sprites,
              grid=grid, clock=clock, framerate=framerate * framerate_modifier,
              current_time=current_time)
+        grid.clear_old_reservations(current_time - 10)
