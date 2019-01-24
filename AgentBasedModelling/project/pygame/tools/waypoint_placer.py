@@ -4,7 +4,6 @@ from sys import argv
 from ast import literal_eval
 
 
-
 background_file = argv[1]
 waypoints_file = argv[2]
 
@@ -25,7 +24,9 @@ while (running):
             running = False
     screen.blit(background, (0, 0))
     for points, color in waypoints:
-        for point in points:
+        for i, point in enumerate(points):
             pygame.draw.circle(screen, color, point, 5)
+            if i != 0 and i != len(points):
+                pygame.draw.line(screen, color, points[i - 1], point)
     pygame.display.flip()
     clock.tick(60)
