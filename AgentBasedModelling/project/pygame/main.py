@@ -32,6 +32,8 @@ def process_events() -> Dict[str, bool]:
                 events["dead"] = True
             if event.type == pygame.KEYDOWN and event.key == pygame.K_q:
                 events["dead"] = True
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_g:
+                events["toggle_grid"] = True
             if event.type == pygame.KEYDOWN and event.key == pygame.K_d:
                 pdb.set_trace()
             if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
@@ -58,10 +60,12 @@ def spawn_car(config: Config, rolling_counter: int, all_sprites: pygame.sprite.G
 
 def draw(screen: pygame.Surface, background: pygame.Surface,
          framerate: int, all_sprites: pygame.sprite.Group,
-         clock: pygame.time.Clock, grid: Grid, current_time: int) -> None:
+         clock: pygame.time.Clock, grid: Grid, current_time: int,
+         grid_visible: bool) -> None:
     screen.blit(background, [0, 0])
     all_sprites.update()
-    grid.draw_grid(screen, current_time)
+    if grid_visible:
+        grid.draw_grid(screen, current_time)
     all_sprites.draw(screen)
     pygame.display.flip()
     clock.tick(framerate)
@@ -80,6 +84,7 @@ if __name__ == '__main__':
     supervisor = Supervisor(grid=grid, screen=screen)
     rolling_counter = 0
     current_time = 0
+    grid_visible = True
     dead = False
     while not dead:
         current_time += 1
@@ -89,10 +94,12 @@ if __name__ == '__main__':
             framerate_modifier *= 1.25
         if (events.get("slower", False)):
             framerate_modifier *= 0.8
+        if (events.get("toggle_grid", False)):
+            grid_visible = not grid_visible
         #if events.get("spawn", False):
         #    rolling_counter = spawn_car(config, rolling_counter, all_sprites, supervisor)
         rolling_counter = spawn_car(config, rolling_counter, all_sprites, supervisor, current_time)
         draw(screen=screen, background=background, all_sprites=all_sprites,
              grid=grid, clock=clock, framerate=framerate * framerate_modifier,
-             current_time=current_time)
+             current_time=current_time, grid_visible=grid_visible)
         grid.clear_old_reservations(current_time - 10)
