@@ -1,10 +1,10 @@
 import pygame
 import random
 from copy import copy
-from math import cos, sin, pi, sqrt, hypot
+from math import cos, sin, pi, hypot
 
-from typing import List
-Waypoint = List[int]
+from typing import List, Dict, Tuple
+Waypoint = Tuple[int, int]
 
 
 def random_vin(i=1234):
@@ -25,8 +25,10 @@ class Car(pygame.sprite.Sprite):
         self.oryginal = copy(self.image)
         self.dir = dir or 0
         self.velocity: float = config["velocity"]
+        self.max_velocity: float = config["velocity"]
         self.acceleration: float = 0
-        self.waypoints: List[Waypoint] = path or random.choice(config["paths"])
+        self.waypoints: List[Waypoint] = random.choice(config["paths"])
+        self.waypoint_grid_intersect: Dict[Waypoint, bool] = [d for d in config["paths_gridded"] if set(d.keys()) == set(self.waypoints)][0]
         self.waypoint_idx: int = 1
         self.current_waypoint: Waypoint = self.waypoints[1]
         self.rect.x, self.rect.y = self.waypoints[0]
