@@ -25,9 +25,11 @@ class TimeRange:
         overlap = max(0, delta)
         return overlap
 
+    def inside(self, point):
+        return self.end > point > self.start
+
     def __eq__(self, other):
         return self.start == other.start and self.end == other.end and self.vin == other.vin
-
 
 
 class Timeline:
@@ -51,6 +53,8 @@ class Timeline:
         self.timeline = [e for e in self.timeline if e != to_remove]
         return True
 
+    def within_reserved(self, timestamp):
+        return any([time_range.inside(timestamp) for time_range in self.timeline])
 
     def _insert_timespan(self, new_r: TimeRange) -> None:
         logging.debug(f"inserting range: {new_r}")

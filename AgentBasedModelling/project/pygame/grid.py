@@ -1,4 +1,5 @@
 import pygame
+from time import time
 from dataclasses import dataclass
 from math import sqrt
 from itertools import product
@@ -15,7 +16,10 @@ class Cell:
     timeline: Timeline
 
     def draw_cell(self, screen: pygame.Surface, color: Triple, filled: bool = False):
-        if filled:
+        now = time()
+        if self.timeline.within_reserved(now):
+            pygame.draw.rect(screen, (255, 0, 0, 128), self.rect, 0)
+        elif filled:
             pygame.draw.rect(screen, (color[0], color[1], color[2], 128), self.rect, 0)
         else:
             pygame.draw.rect(screen, color, self.rect, 1)
@@ -43,7 +47,7 @@ class Grid:
                               for x, y in product(range(0, self.x_lines + 1), range(0, self.y_lines + 1))]
 
     def draw_grid(self, screen: pygame.Surface) -> None:
-        #FIXME remote after debugging
+        # FIXME remote after debugging
         # if self.points is not None:
         #     for point in self.points:
         #         pygame.draw.circle(screen, (255, 0, 0), point, 3)
@@ -53,6 +57,6 @@ class Grid:
             else:
                 cell.draw_cell(screen, (255, 255, 255), True)
 
-    #FIXME remove after debugging
+    # FIXME remove after debugging
     def add_points_to_draw(self, points):
         self.points = points
