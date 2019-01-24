@@ -1,5 +1,6 @@
 import pygame
 import logging
+import pdb
 
 from sys import argv
 from utils import load_config
@@ -20,6 +21,10 @@ def init_simulation(confg: Config) -> Tuple[pygame.Surface, pygame.time.Clock, p
     return screen, clock, background_image
 
 
+def precompute_waypoint_grid_relation(grid, paths):
+    return [{tuple(waypoint): grid.point_in_grid(waypoint)} for path in paths for waypoint in path]
+
+
 def process_events() -> Dict[str, bool]:
     events = dict()
     for event in pygame.event.get():
@@ -28,7 +33,7 @@ def process_events() -> Dict[str, bool]:
             if event.type == pygame.KEYDOWN and event.key == pygame.K_q:
                 events["dead"] = True
             if event.type == pygame.KEYDOWN and event.key == pygame.K_d:
-                import pdb; pdb.set_trace()
+                pdb.set_trace()
             if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
                 events["spawn"] = True
             if event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN:
@@ -61,14 +66,17 @@ def draw(screen: pygame.Surface, background: pygame.Surface,
     pygame.display.flip()
     clock.tick(framerate)
 
+
 if __name__ == '__main__':
     logging.basicConfig(format='%(funcName)s#%(lineno)-15s [%(asctime)-15s] %(message)s', level=logging.INFO)
+    all_sprites = pygame.sprite.Group()
     config = load_config(argv[1] if len(argv) > 1 else "configs/simple.yaml")
+    grid = Grid(config["intersection"], all_sprites)
+    config['car']['paths_gridded'] = precompute_waypoint_grid_relation(grid, config["car"]["paths"])
+    config['car']['paths'] = [[tuple(waypoint) for waypoint in path] for path in config['car']['paths']]
     screen, clock, background = init_simulation(config)
     framerate = config["framerate"]
     framerate_modifier = 1
-    all_sprites = pygame.sprite.Group()
-    grid = Grid(config["intersection"], all_sprites)
     supervisor = Supervisor(grid=grid, screen=screen)
     rolling_counter = 0
     current_time = 0

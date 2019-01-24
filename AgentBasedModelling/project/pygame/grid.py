@@ -49,6 +49,9 @@ class Grid:
         self.g: List[Cell] = [Cell(pygame.Rect(self.start_x + spacing_x * x, self.start_y + spacing_y * y, spacing_x, spacing_y), Timeline())
                               for x, y in product(range(0, self.x_lines + 1), range(0, self.y_lines + 1))]
 
+    def point_in_grid(self, point):
+        return self.end_x > point[0] > self.start_x and self.end_y > point[1] > self.start_y
+
     def draw_grid(self, screen: pygame.Surface, current_time: int) -> None:
         # FIXME remote after debugging
         # if self.points is not None:
