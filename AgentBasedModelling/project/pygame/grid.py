@@ -18,7 +18,10 @@ class Cell:
     def draw_cell(self, screen: pygame.Surface, color: Triple, filled: bool = False):
         now = time()
         if self.timeline.within_reserved(now):
-            pygame.draw.rect(screen, (255, 0, 0, 128), self.rect, 0)
+            if filled:
+                pygame.draw.rect(screen, (255, 0, 255, 128), self.rect, 0)
+            else:
+                pygame.draw.rect(screen, (255, 0, 0, 128), self.rect, 0)
         elif filled:
             pygame.draw.rect(screen, (color[0], color[1], color[2], 128), self.rect, 0)
         else:
