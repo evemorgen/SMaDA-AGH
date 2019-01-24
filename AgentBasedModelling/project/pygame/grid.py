@@ -15,17 +15,17 @@ class Cell:
     rect: pygame.Rect
     timeline: Timeline
 
-    def draw_cell(self, screen: pygame.Surface, color: Triple, filled: bool = False):
-        now = time()
-        if self.timeline.within_reserved(now):
+    def draw_cell(self, screen: pygame.Surface, current_time: int, filled: bool = False,):
+        # now = time()
+        if self.timeline.within_reserved(current_time):
             if filled:
                 pygame.draw.rect(screen, (255, 0, 255, 128), self.rect, 0)
             else:
                 pygame.draw.rect(screen, (255, 0, 0, 128), self.rect, 0)
         elif filled:
-            pygame.draw.rect(screen, (color[0], color[1], color[2], 128), self.rect, 0)
+            pygame.draw.rect(screen, (255, 255, 255), self.rect, 0)
         else:
-            pygame.draw.rect(screen, color, self.rect, 1)
+            pygame.draw.rect(screen, (255, 255, 255), self.rect, 1)
 
     def __eq__(self, other):
         return self.rect == other.rect and self.timeline == other.timeline
@@ -49,16 +49,16 @@ class Grid:
         self.g: List[Cell] = [Cell(pygame.Rect(self.start_x + spacing_x * x, self.start_y + spacing_y * y, spacing_x, spacing_y), Timeline())
                               for x, y in product(range(0, self.x_lines + 1), range(0, self.y_lines + 1))]
 
-    def draw_grid(self, screen: pygame.Surface) -> None:
+    def draw_grid(self, screen: pygame.Surface, current_time: int) -> None:
         # FIXME remote after debugging
         # if self.points is not None:
         #     for point in self.points:
         #         pygame.draw.circle(screen, (255, 0, 0), point, 3)
         for cell in self.g:
             if pygame.sprite.spritecollideany(cell, self.cars) is None:
-                cell.draw_cell(screen, (255, 255, 255), False)
+                cell.draw_cell(screen, current_time,  False)
             else:
-                cell.draw_cell(screen, (255, 255, 255), True)
+                cell.draw_cell(screen, current_time, True)
 
     # FIXME remove after debugging
     def add_points_to_draw(self, points):

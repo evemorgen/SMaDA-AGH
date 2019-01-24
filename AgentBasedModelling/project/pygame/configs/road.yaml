@@ -7,7 +7,7 @@ intersection:
     num_of_squares: 1024
     color: [255, 255, 255]
 car:
-    velocity: 5
+    velocity: 1
     waypoint_clearance: 30
     sprites:
         - pictures/car1.png

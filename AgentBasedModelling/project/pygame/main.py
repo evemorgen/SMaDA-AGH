@@ -38,12 +38,12 @@ def process_events() -> Dict[str, bool]:
     return events
 
 
-def spawn_car(config: Config, rolling_counter: int, all_sprites: pygame.sprite.Group, supervisor: Supervisor) -> int:
+def spawn_car(config: Config, rolling_counter: int, all_sprites: pygame.sprite.Group, supervisor: Supervisor, current_time: int) -> int:
     rolling_counter += 1
     if rolling_counter + 1 >= (framerate / config["spawn_cooldown"]):
         car = Car(config["car"], dir=-90, supervisor=supervisor)
         all_sprites.add(car)
-        id, res = supervisor.reserve_road(car)
+        id, res = supervisor.reserve_road(car, current_time)
         logging.debug(f"Spawned car: {car} with reservation {id}:{res}")
         if res is False:
             car.kill()
@@ -53,15 +53,13 @@ def spawn_car(config: Config, rolling_counter: int, all_sprites: pygame.sprite.G
 
 def draw(screen: pygame.Surface, background: pygame.Surface,
          framerate: int, all_sprites: pygame.sprite.Group,
-         clock: pygame.time.Clock, grid: Grid) -> None:
-
+         clock: pygame.time.Clock, grid: Grid, current_time: int) -> None:
     screen.blit(background, [0, 0])
     all_sprites.update()
-    grid.draw_grid(screen)
+    grid.draw_grid(screen, current_time)
     all_sprites.draw(screen)
     pygame.display.flip()
     clock.tick(framerate)
-
 
 if __name__ == '__main__':
     logging.basicConfig(format='%(funcName)s#%(lineno)-15s [%(asctime)-15s] %(message)s', level=logging.INFO)
@@ -73,8 +71,10 @@ if __name__ == '__main__':
     grid = Grid(config["intersection"], all_sprites)
     supervisor = Supervisor(grid=grid, screen=screen)
     rolling_counter = 0
+    current_time = 0
     dead = False
     while not dead:
+        current_time += 1
         events = process_events()
         dead = events.get("dead", False)
         if (events.get("faster", False)):
@@ -83,6 +83,7 @@ if __name__ == '__main__':
             framerate_modifier *= 0.8
         #if events.get("spawn", False):
         #    rolling_counter = spawn_car(config, rolling_counter, all_sprites, supervisor)
-        rolling_counter = spawn_car(config, rolling_counter, all_sprites, supervisor)
+        rolling_counter = spawn_car(config, rolling_counter, all_sprites, supervisor, current_time)
         draw(screen=screen, background=background, all_sprites=all_sprites,
-             grid=grid, clock=clock, framerate=framerate * framerate_modifier)
+             grid=grid, clock=clock, framerate=framerate * framerate_modifier,
+             current_time=current_time)
