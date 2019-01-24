@@ -66,3 +66,7 @@ class Grid:
     # FIXME remove after debugging
     def add_points_to_draw(self, points):
         self.points = points
+
+    def clear_old_reservations(self, time):
+        for cell in self.g:
+            cell.timeline._clear_old_events(time)
