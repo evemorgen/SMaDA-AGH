@@ -21,10 +21,11 @@ class Supervisor:
         return f"Supervisor(num_of_vec={len(self.grid.cars)})"
 
     def reserve_road(self, car: Car, current_time: int) -> int:
-        road_before = [] #todo: split to before and after
-        road_in_square = car.waypoints
+        start, end = car._entering_leaving_waypoint_index()
+        road_before = car.waypoints[0:start+1]
+        road_in_square = car.waypoints[start:end+1]
         init_speed = car.velocity
-        for speed in [init_speed * x for x in [1.0, .9, .8, .7, .6, .5]]:
+        for speed in [init_speed * x for x in [1.0]]: #[1.0, .9, .8, .7, .6, .5]]:
             cells = self.cells_from_waypoints(road_before, speed, road_in_square, car)
             now = current_time - 1
             duration = 68 / car.velocity
@@ -52,7 +53,7 @@ class Supervisor:
     def cells_from_waypoints(self, road_before, road_speed, road, car):
         cells = set()
         points_to_add = []
-        time_before = self.route_len(road_before, len(road_before)) / road_speed
+        time_before = self.route_len(road_before, len(road_before)-1) / road_speed
         for i in range(len(road) - 1):
             w1, w2 = road[i], road[i + 1]
             w1x, w1y = w1
