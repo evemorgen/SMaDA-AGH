@@ -30,6 +30,7 @@ while (running):
     screen.blit(background, (0, 0))
     for point in points:
         pygame.draw.circle(screen, color, point, 5)
+    pygame.draw.rect(screen, (255, 255, 255), [(350, 235), (250, 255)], 3)
     pygame.display.flip()
     clock.tick(60)
 
