@@ -44,8 +44,10 @@ class Car(pygame.sprite.Sprite):
         end = props.index(False, start)
         return (start, end)
 
-    def _adjust_velocity(self):
-        if self.waypoint_idx == self._entering_leaving_waypoint_index()[0]:
+    def _adjust_velocity(self, velo=None):
+        if velo is not None:
+            self.velocity = velo
+        elif self.waypoint_idx == self._entering_leaving_waypoint_index()[0]:
             self.velocity = self.max_velocity
         elif self.waypoint_idx >= self._entering_leaving_waypoint_index()[1]:
             self.velocity = self.config['velocity']
