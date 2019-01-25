@@ -49,6 +49,9 @@ def spawn_car(config: Config, rolling_counter: int, all_sprites: pygame.sprite.G
     rolling_counter += 1
     if rolling_counter + 1 >= (framerate / config["spawn_cooldown"]):
         car = Car(config["car"], dir=-90, supervisor=supervisor)
+        if pygame.sprite.spritecollideany(car, all_sprites):
+            car.kill()
+            return 0
         all_sprites.add(car)
         id, res = supervisor.reserve_road(car, current_time)
         logging.debug(f"Spawned car: {car} with reservation {id}:{res}")

@@ -25,7 +25,7 @@ class Supervisor:
         road_before = car.waypoints[0:start+1]
         road_in_square = car.waypoints[start:end+1]
         init_speed = car.velocity
-        for speed in [init_speed * x for x in [1.0]]: #[1.0, .9, .8, .7, .6, .5]]:
+        for speed in [init_speed * x for x in [1.0, .9, .8]]:
             cells = self.cells_from_waypoints(road_before, speed, road_in_square, car)
             now = current_time - 1
             duration = 68 / car.velocity
@@ -36,7 +36,7 @@ class Supervisor:
                 for cell, t in cells:
                     cell.timeline.cancel_timespan(now + t, duration=duration, vin=car.vin)
                 continue
-            #todo: set car velocity to speed too
+            car._adjust_velocity(speed)
             self.reservation_id += 1
             return (self.reservation_id, all(results))
         #superfail, none of the things worked

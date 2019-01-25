@@ -16,16 +16,20 @@ class Cell:
     timeline: Timeline
 
     def draw_cell(self, screen: pygame.Surface, current_time: int, filled: bool = False,):
-        # now = time()
         if self.timeline.within_reserved(current_time):
-            if filled:
-                pygame.draw.rect(screen, (255, 0, 255, 128), self.rect, 0)
-            else:
-                pygame.draw.rect(screen, (255, 0, 0, 128), self.rect, 0)
-        elif filled:
             pygame.draw.rect(screen, (255, 255, 255), self.rect, 0)
         else:
             pygame.draw.rect(screen, (255, 255, 255), self.rect, 1)
+        # now = time()
+        # if self.timeline.within_reserved(current_time):
+        #     if filled:
+        #         pygame.draw.rect(screen, (255, 0, 255, 128), self.rect, 0)
+        #     else:
+        #         pygame.draw.rect(screen, (255, 0, 0, 128), self.rect, 0)
+        # elif filled:
+        #     pygame.draw.rect(screen, (255, 255, 255), self.rect, 0)
+        # else:
+        #     pygame.draw.rect(screen, (255, 255, 255), self.rect, 1)
 
     def __eq__(self, other):
         return self.rect == other.rect and self.timeline == other.timeline
@@ -58,10 +62,11 @@ class Grid:
         #     for point in self.points:
         #         pygame.draw.circle(screen, (255, 0, 0), point, 3)
         for cell in self.g:
-            if pygame.sprite.spritecollideany(cell, self.cars) is None:
-                cell.draw_cell(screen, current_time,  False)
-            else:
-                cell.draw_cell(screen, current_time, True)
+            cell.draw_cell(screen, current_time)
+            # if pygame.sprite.spritecollideany(cell, self.cars) is None:
+            #     cell.draw_cell(screen, current_time, False)
+            # else:
+            #     cell.draw_cell(screen, current_time, True)
 
     # FIXME remove after debugging
     def add_points_to_draw(self, points):
