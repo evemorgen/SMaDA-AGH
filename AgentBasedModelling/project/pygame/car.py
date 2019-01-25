@@ -19,14 +19,16 @@ def random_vin(i=1234):
 class Car(pygame.sprite.Sprite):
     def __init__(self, config, path=None, dir=None, image=None, supervisor=None):
         pygame.sprite.Sprite.__init__(self)
+        self.config = config
         self.image = pygame.image.load(image or random.choice(config["sprites"]))
         self.vin = next(random_vin())
         self.rect = self.image.get_rect()
         self.oryginal = copy(self.image)
         self.dir = dir or 0
         self.velocity: float = config["velocity"]
-        self.max_velocity: float = config["velocity"]
+        self.max_velocity: float = config["max_velocity"]
         self.acceleration: float = 0
+        self.max_acceleration: float = 3
         self.waypoints: List[Waypoint] = random.choice(config["paths"])
         self.waypoint_grid_intersect: Dict[Waypoint, bool] = [d for d in config["paths_gridded"] if set(d.keys()) == set(self.waypoints)][0]
         self.waypoint_idx: int = 1
@@ -41,6 +43,12 @@ class Car(pygame.sprite.Sprite):
         start = props.index(True)
         end = props.index(False, start)
         return (start, end)
+
+    def _adjust_velocity(self):
+        if self.waypoint_idx == self._entering_leaving_waypoint_index()[0]:
+            self.velocity = self.max_velocity
+        elif self.waypoint_idx >= self._entering_leaving_waypoint_index()[1]:
+            self.velocity = self.config['velocity']
 
     def next_waypoint(self) -> None:
         self.waypoint_idx += 1
@@ -72,6 +80,7 @@ class Car(pygame.sprite.Sprite):
         (waypoint_x, waypoint_y) = self.current_waypoint
         (center_x, center_y) = self.rect.center
         if hypot(waypoint_x - center_x, waypoint_y - center_y) <= self.velocity:
+            self._adjust_velocity()
             self.next_waypoint()
 
     def __repr__(self):

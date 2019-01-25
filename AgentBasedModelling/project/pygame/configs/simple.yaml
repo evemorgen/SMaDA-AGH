@@ -8,6 +8,7 @@ intersection:
     color: [255, 255, 255]
 car:
     velocity: 10
+    max_velocity: 20
     waypoint_clearance: 5
     sprites:
         - pictures/car1.png
