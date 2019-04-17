@@ -18,3 +18,5 @@ TOC:
 13. [Decision Support Systems](DecisionSupportSystems/README.md)
 14. [Evolutionary Algorithms](EvolutionaryAlgorithms/README.md)
 15. [Cryptography and Cyber Security](CryptographyAndCyberSecurity/README.md)
+---
+16. [Advanced Methods In Machine Learning](AdvancedMethodsInMachineLearning/README.md)
