@@ -1,6 +1,7 @@
 import pygame
 import logging
 import pdb
+import time
 
 from sys import argv
 from utils import load_config
@@ -10,6 +11,7 @@ from supervisor import Supervisor
 from typing import Dict, Any, Tuple
 
 Config = Dict[str, Any]
+flow = 0
 
 
 def init_simulation(confg: Config) -> Tuple[pygame.Surface, pygame.time.Clock, pygame.Surface]:
@@ -46,9 +48,11 @@ def process_events() -> Dict[str, bool]:
 
 
 def spawn_car(config: Config, rolling_counter: int, all_sprites: pygame.sprite.Group, supervisor: Supervisor, current_time: int) -> int:
+    global flow
     rolling_counter += 1
     if rolling_counter + 1 >= (framerate / config["spawn_cooldown"]):
         car = Car(config["car"], dir=-90, supervisor=supervisor)
+        flow += 1
         if pygame.sprite.spritecollideany(car, all_sprites):
             car.kill()
             return 0
@@ -89,6 +93,7 @@ if __name__ == '__main__':
     current_time = 0
     grid_visible = True
     dead = False
+    start = time.time()
     while not dead:
         current_time += 1
         events = process_events()
@@ -106,3 +111,7 @@ if __name__ == '__main__':
              grid=grid, clock=clock, framerate=framerate * framerate_modifier,
              current_time=current_time, grid_visible=grid_visible)
         grid.clear_old_reservations(current_time - 10)
+        if time.time() - start > 60:
+            print(flow)
+            import sys
+            sys.exit(0)

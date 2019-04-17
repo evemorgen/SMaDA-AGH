@@ -7,8 +7,8 @@ intersection:
     num_of_squares: 64
     color: [255, 255, 255]
 car:
-    velocity: 10
-    max_velocity: 10
+    velocity: 20
+    max_velocity: 20
     waypoint_clearance: 5
     sprites:
         - pictures/car1.png
@@ -16,6 +16,7 @@ car:
         - pictures/car3.png
         - pictures/car4.png
         - pictures/car5.png
+    path_selection: random
     paths:
         #- [[-20, 450], [980, 450]]
         #- [[-20, 395], [980, 395]]

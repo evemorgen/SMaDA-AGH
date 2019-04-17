@@ -1,9 +1,9 @@
 import pygame
-from time import time
 from dataclasses import dataclass
 from math import sqrt
 from itertools import product
-from utils import Timeline
+from utils import Timeline, hash_dict
+from functools import lru_cache
 
 from typing import Dict, Any, List, Tuple
 Config = Dict[str, Any]

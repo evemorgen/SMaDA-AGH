@@ -2,6 +2,7 @@ import pygame
 import random
 from copy import copy
 from math import cos, sin, pi, hypot
+from utils import RoundRobin
 
 from typing import List, Dict, Tuple
 Waypoint = Tuple[int, int]
@@ -14,6 +15,11 @@ def random_vin(i=1234):
         if i not in used_vins:
             yield "VIN" + str(i)
             used_vins.append(i)
+
+path_selection = {
+    'random': random.choice,
+    'round_robin': RoundRobin().get
+}
 
 
 class Car(pygame.sprite.Sprite):
@@ -29,13 +35,14 @@ class Car(pygame.sprite.Sprite):
         self.max_velocity: float = config["max_velocity"]
         self.acceleration: float = 0
         self.max_acceleration: float = 3
-        self.waypoints: List[Waypoint] = random.choice(config["paths"])
+        self.waypoints: List[Waypoint] = path_selection[config["path_selection"]](config["paths"])
         self.waypoint_grid_intersect: Dict[Waypoint, bool] = [d for d in config["paths_gridded"] if set(d.keys()) == set(self.waypoints)][0]
         self.waypoint_idx: int = 1
         self.current_waypoint: Waypoint = self.waypoints[1]
         self.rect.x, self.rect.y = self.waypoints[0]
         self.rect.x -= self.image.get_rect().size[0] / 2
         self.rect.y -= self.image.get_rect().size[1] / 2
+        self.supervisor = supervisor
 
     def _entering_leaving_waypoint_index(self):
         # list of bools indicating waypoint-grid overlapping
@@ -51,6 +58,9 @@ class Car(pygame.sprite.Sprite):
             self.velocity = self.max_velocity
         elif self.waypoint_idx >= self._entering_leaving_waypoint_index()[1]:
             self.velocity = self.config['velocity']
+
+    def _reservation_failed(self, id):
+        pass
 
     def next_waypoint(self) -> None:
         self.waypoint_idx += 1

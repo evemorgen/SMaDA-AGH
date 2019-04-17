@@ -1,15 +1,35 @@
 import logging
 import yaml
+import functools
 
 from time import time
-from typing import List, Optional
+from typing import List
 from dataclasses import dataclass
-from car import Car
 
 
 def load_config(filename):
     with open(filename, 'r') as yml_file:
         return yaml.load(yml_file)
+
+
+def singleton(class_):
+    instances = {}
+
+    def getinstance(*args, **kwargs):
+        if class_ not in instances:
+            instances[class_] = class_(*args, **kwargs)
+        return instances[class_]
+    return getinstance
+
+
+@singleton
+class RoundRobin:
+    def __init__(self):
+        self.i = 0
+
+    def get(self, data):
+        self.i = (self.i + 1) % len(data)
+        return data[self.i]
 
 
 @dataclass
@@ -39,7 +59,6 @@ class Timeline:
     def add_timespan(self, start: float, end: float = None, duration: float = None, vin=None) -> bool:
         if end is not None and end > start:
             raise ValueError("End must be greater than the start")
-        #self._clear_old_events()
         new_range = TimeRange(start, end if end is not None else start + duration, vin)
         logging.debug(f"adding reservation for {vin} in range {new_range}")
         if any(map(lambda r: r.overlap(new_range) > 0, self.timeline)):
@@ -76,7 +95,7 @@ class Timeline:
                     break
                 elif new_r.start > r1.end and new_r.end < r2.start:
                     logging.debug(f"adding third and more ranges between {r1} and {r2}")
-                    self.timeline.insert(self.timeline.index(r1)+1, new_r)
+                    self.timeline.insert(self.timeline.index(r1) + 1, new_r)
                     break
             else:
                 self.timeline.append(new_r)
@@ -89,3 +108,19 @@ class Timeline:
     def __repr__(self):
         return f"Timeline{self.timeline}"
 
+
+def hash_dict(func):
+    """Transform mutable dictionnary
+    Into immutable
+    Useful to be compatible with cache
+    """
+    class HDict(dict):
+        def __hash__(self):
+            return hash(frozenset(self.items()))
+
+    @functools.wraps(func)
+    def wrapped(*args, **kwargs):
+        args = tuple([HDict(arg) if isinstance(arg, dict) else arg for arg in args])
+        kwargs = {k: HDict(v) if isinstance(v, dict) else v for k, v in kwargs.items()}
+        return func(*args, **kwargs)
+    return wrapped

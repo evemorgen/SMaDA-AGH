@@ -23,7 +23,8 @@ while (running):
         if event.type == pygame.QUIT:
             running = False
     screen.blit(background, (0, 0))
-    pygame.draw.rect(screen, (255, 255, 255), [(350, 235), (250, 255)], 3)
+    #pygame.draw.rect(screen, (255, 255, 255), [(350, 235), (250, 255)], 3)
+    pygame.draw.rect(screen, (255, 255, 255), [(467, 253), (381, 272)], 3)
     for points, color in waypoints:
         for i, point in enumerate(points):
             pygame.draw.circle(screen, color, point, 5)

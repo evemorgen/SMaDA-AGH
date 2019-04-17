@@ -3,6 +3,7 @@ import time
 import logging
 
 from typing import List
+from functools import lru_cache
 
 from car import Car
 
@@ -25,7 +26,7 @@ class Supervisor:
         road_before = car.waypoints[0:start+1]
         road_in_square = car.waypoints[start:end+1]
         init_speed = car.velocity
-        for speed in [init_speed * x for x in [1.0, .9, .8]]:
+        for speed in [init_speed * x for x in [1.0, .9, .8, 1.1, 1.2, 1.3]]:
             cells = self.cells_from_waypoints(road_before, speed, road_in_square, car)
             now = current_time - 1
             duration = 68 / car.velocity
@@ -45,6 +46,7 @@ class Supervisor:
     def route_len(self, route, until):
         return sum([self.points_len(route[j], route[j + 1]) for j in range(until)])
 
+    @lru_cache(1024)
     def points_len(self, p1, p2):
         p1x, p1y = p1
         p2x, p2y = p2
