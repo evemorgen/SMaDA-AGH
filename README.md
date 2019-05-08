@@ -20,3 +20,4 @@ TOC:
 15. [Cryptography and Cyber Security](CryptographyAndCyberSecurity/README.md)
 ---
 16. [Advanced Methods In Machine Learning](AdvancedMethodsInMachineLearning/README.md)
+17. [Quantum Computing](QuantumComputing/README.md)
