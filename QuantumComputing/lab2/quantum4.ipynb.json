@@ -1,0 +1,233 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "0"
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "import subprocess\n",
+    "subprocess.call([\"pip\", \"install\", \"projectq\"])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from projectq import MainEngine\n",
+    "\n",
+    "# H = Hadamard gate, H|0> -> (|0> + |1>)/sqrt(2)\n",
+    "#                    H|1> -> (|0> - |1>)/sqrt(2)\n",
+    "# X = Pauli X (not) gate.  X|0> -> |1>\n",
+    "#                          X|1> -> |0>\n",
+    "# Z = Pauli Z gate  Z|0> -> |0>\n",
+    "#                   Z|1> -> -|1>\n",
+    "# Measure - perform measurment on a given qubit\n",
+    "# All - performs operation on all qubits in given register\n",
+    "from projectq.ops import H, Z, X, Measure, All\n",
+    "\n",
+    "# Loop - in quantum computing there is no such thing as classical loop. It just duplicates given operation n times\n",
+    "# Control - acts like an if statement, code inside is executed based on qubit value passed as argument\n",
+    "from projectq.meta import Loop, Compute, Uncompute, Control"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def magic_function(qubits, output):\n",
+    "    # flip 0,1,3 qubits, so 0000 -> 1101, but 0010 -> 1111\n",
+    "    with Compute(engine):\n",
+    "        X | qubits[0]\n",
+    "        X | qubits[1]\n",
+    "        X | qubits[3]\n",
+    "    # if all qubits in register are 1\n",
+    "    with Control(engine, qubits):\n",
+    "        # X(|0> - |1>)/sqrt(2) -> (|1> - |0>)/sqrt(2)\n",
+    "        X | output\n",
+    "    Uncompute(engine)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "results = []\n",
+    "for _ in range(100):\n",
+    "    engine = MainEngine()\n",
+    "    # create quantum register with 4 qubits, all in state |0>\n",
+    "    register = engine.allocate_qureg(4)\n",
+    "    # allocate one qubit, starts with state |0> \n",
+    "    function_out = engine.allocate_qubit()\n",
+    "    \n",
+    "    # apply hadamard gate to all qubits in register\n",
+    "    # H|0> -> (|0> + |1>)/sqrt(2)\n",
+    "    All(H) | register\n",
+    "    \n",
+    "    # X|0> -> |1>\n",
+    "    X | function_out\n",
+    "    # H|1> -> (|0> - |1>)/sqrt(2)\n",
+    "    H | function_out\n",
+    "    \n",
+    "    with Loop(engine, 10):\n",
+    "        magic_function(register, function_out)\n",
+    "\n",
+    "        with Compute(engine):\n",
+    "            # H(|0> + |1>)/sqrt(2) -> |0>\n",
+    "            All(H) | register\n",
+    "            # X |0> -> |1>\n",
+    "            All(X) | register\n",
+    "\n",
+    "        with Control(engine, register[0:-1]):\n",
+    "            Z | register[-1]\n",
+    "\n",
+    "        Uncompute(engine)\n",
+    "    \n",
+    "    All(Measure) | register\n",
+    "    Measure | function_out\n",
+    "    engine.flush()\n",
+    "    \n",
+    "    results.append(tuple(int(qubit) for qubit in register))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 28,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from collections import Counter\n",
+    "counts = Counter(results)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "image/png": "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\n",
+      "text/plain": [
+       "<Figure size 1440x720 with 1 Axes>"
+      ]
+     },
+     "metadata": {
+      "needs_background": "light"
+     },
+     "output_type": "display_data"
+    }
+   ],
+   "source": [
+    "import matplotlib.pyplot as plot\n",
+    "y_pos = list(range(len(counts.keys())))\n",
+    "plot.figure(figsize=(20,10))\n",
+    "plot.bar(y_pos, counts.values())\n",
+    "_ = plot.xticks(y_pos, list(counts.keys()))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[0, 0, 1, 0]\n",
+      "True\n"
+     ]
+    }
+   ],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

@@ -111,3 +111,21 @@ def magic_function(qubits, output):
 
 
 ```
+
+
+----
+If you got that far, congratulations, I guess less than 1% did.  
+But it's not end of our journey, we need to do better.  
+
+### Adding some certainty  
+As you might have noticed, not allways we get the expected answer. That's because quantum-probability-mumbo-jumbo, it is explained in [previously mentioned article](). But fear not, we can increate our chance of getting the right answer greatly.  
+For the given example it would be enough to add `with Loop(eng, 4):` between steps *5* and *8*.  
+Try to do that.
+
+----
+### Plotting how our simulation goes
+I guess no one went that far, so just for fun and profit, please refer to [this Jupiters Notebook](quantum4.ipynb).  
+It performs the Grovers algorithm about 100 times, and plots the results. You might want to poke around with number of iterations in `Loop`, number of Grover's algorithm runs and so on.
+
+----
+That's all folks!
