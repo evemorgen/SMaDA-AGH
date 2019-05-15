@@ -2,7 +2,7 @@
 
 ## Lab 2
 
-### Grover’s algorithm
+###  Grover’s algorithm
 
 This time, we're gonna try to implement simple algorithm using quantum gates learned in the lab 1.  
 If you get stuck at some point or you're just lazy, there is [Jupiters Notebook](quantum3.ipynb) prepared for you.
