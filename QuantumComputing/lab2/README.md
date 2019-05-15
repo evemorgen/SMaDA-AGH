@@ -42,12 +42,13 @@ for i, value in enumerate(haystack):
 
 ----
 
-Alright, let's try to do the same thing in quantum world.
+Alright, let's try to do the same thing in quantum world.  
+Try to follow tips in the template, there is a [projectq example](https://github.com/ProjectQ-Framework/ProjectQ/blob/develop/examples/grover.py) and [Jupiters Notebook](quantum3.ipynb) there to help you.  
 
 Here is [projectq docs](https://projectq.readthedocs.io/en/latest/tutorials.html#basic-quantum-program) with quickstart guide  
 
 You might want to use this template
-```
+```python
 from projectq import MainEngine
 
 # H = Hadamard gate, H|0> -> (|0> + |1>)/sqrt(2)
