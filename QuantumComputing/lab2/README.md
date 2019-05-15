@@ -13,7 +13,7 @@ If you get stuck at some point or you're just lazy, there is [Jupiters Notebook]
 
 At first we should get some intuition about Grover’s algorithm, it is a algorith that finds with *high probability* (not for sure!) the unique input to a black box function that produces a particular output value. Other way to describe it - it is an algorithm for finding a needle in a haystack.
 
-For example, we might have the following "haystack" of words:
+For example ([working example here](slides1.ipynb)), we might have the following "haystack" of words:
 ```python
 haystack = ["Hoary Hedgehog", "Gutsy Gibbon", "Oneiric Ocelot", "Precise Pangolin"]
 # needle is md5 from one of the words in a haystack
