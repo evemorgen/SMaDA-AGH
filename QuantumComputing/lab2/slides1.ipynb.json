@@ -1,0 +1,107 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "from hashlib import md5"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
+   "outputs": [],
+   "source": [
+    "haystack = [\"Hoary Hedgehog\", \"Gutsy Gibbon\", \"Oneiric Ocelot\", \"Precise Pangolin\"]\n",
+    "# needle is md5 from one of the words in a haystack\n",
+    "needle = \"fd06f6aff94b8f2bade7efde2b949672\""
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Aha! Our word is ~~> Oneiric Ocelot <~~\n"
+     ]
+    }
+   ],
+   "source": [
+    "# That is O(n), n = len(haystack)\n",
+    "for word in haystack:\n",
+    "    hashed = md5(word.encode()).hexdigest()\n",
+    "    if hashed == needle:\n",
+    "        print(\"Aha! Our word is ~~> %s <~~\" % word)   "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Aha! Our 1 is on position 2\n"
+     ]
+    }
+   ],
+   "source": [
+    "# Grover’s algorithm does the same but on \"binary\" numbers\n",
+    "\n",
+    "haystack = [0, 0, 1, 0]\n",
+    "needle = 1\n",
+    "\n",
+    "for i, value in enumerate(haystack):\n",
+    "    if value == needle:\n",
+    "        print(\"Aha! Our 1 is on position %s\" % i)"
+   ]
+  }
+ ],
+ "metadata": {
+  "celltoolbar": "Slideshow",
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.3"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
