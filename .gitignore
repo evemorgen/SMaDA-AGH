@@ -3,6 +3,7 @@
 **/ENV
 **/*.sw[ponm]
 **/.mypy_cache
+**/.vscode
 
 #python cache stuff
 **/*.pyc
