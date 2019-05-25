@@ -21,3 +21,4 @@ TOC:
 ---
 16. [Advanced Methods In Machine Learning](AdvancedMethodsInMachineLearning/README.md)
 17. [Quantum Computing](QuantumComputing/README.md)
+18. [Advanced Methods in Intelligent Data Processing](AdvancedMethodsinIntelligentDataProcessing/project/README.md)
