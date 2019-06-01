@@ -6,5 +6,6 @@ Course website: [link!](http://home.agh.edu.pl/~mdig/dokuwiki/doku.php?id=teachi
   1. [Basic data manipulation for Pandas and Scikit Learn](lab1/README.md)  
   1.5. [Classification, Regression, Clustering recap](lab1.5/README.md)  
   2. [Optimisation approach to linear regression](lab2/README.md)  
+  2.5. [Data preparation and model validation](lab2.5/README.md)  
   3. [Deep learning cat classifier](lab3/README.md)  
   4. [TensorFlow for dummies](lab4/README.md)  
