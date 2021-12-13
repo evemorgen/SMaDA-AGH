@@ -26,7 +26,7 @@ language-selector==0.1
 line-profiler==2.1.2
 louis==2.6.4
 lutris==0.4.18
-lxml==4.6.3
+lxml==4.6.5
 Mako==1.0.3
 MarkupSafe==0.23
 matplotlib==2.2.2
