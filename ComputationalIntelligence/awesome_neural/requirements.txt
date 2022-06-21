@@ -32,7 +32,7 @@ MarkupSafe==0.23
 matplotlib==2.2.2
 neo4j-driver==1.6.0
 neotime==1.0.0
-numpy==1.14.5
+numpy==1.22.0
 oauthlib==1.0.3
 onboard==1.2.0
 padme==1.1.1
